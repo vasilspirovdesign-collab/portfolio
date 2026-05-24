@@ -1,4 +1,4 @@
-import { Home, LightbulbOff } from 'lucide-react'
+import { Home, Moon, Sun } from 'lucide-react'
 import { t } from '../theme'
 import ProjectCard from '../components/ProjectCard'
 
@@ -29,28 +29,23 @@ export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) 
       {/* Page header */}
       <div
         style={{
-          display: 'flex',
-          height: '94px',
-          alignItems: 'center',
-          padding: '31px 30px',
+          position: 'sticky', top: 0, zIndex: 10,
+          display: 'flex', height: '94px', alignItems: 'center',
+          padding: '31px 30px', gap: '24px',
           borderBottom: `1px solid ${t(dark, 'border')}`,
           backgroundColor: t(dark, 'bg'),
-          gap: '24px',
+          transition: 'background-color 0.3s',
         }}
       >
-        <button
-          onClick={onBack}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}
-          aria-label="Go home"
-        >
-          <Home size={24} color={dark ? '#d0d2d0' : '#414141'} strokeWidth={1.5} />
-        </button>
-        <div style={{ width: '1px', height: '26px', backgroundColor: t(dark, 'border') }} />
-        <span style={{ fontSize: '22px', fontWeight: 600, color: dark ? '#d0d2d0' : '#414141', lineHeight: '28px' }}>
-          Projects
-        </span>
-        <button onClick={onToggle} aria-label="Toggle theme" style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
-          <LightbulbOff size={24} color={dark ? '#d0d2d0' : '#414141'} strokeWidth={1.5} />
+        <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '24px', minWidth: 0 }}>
+          <button onClick={onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }} aria-label="Go home">
+            <Home size={24} color={t(dark, 'text')} strokeWidth={1.5} />
+          </button>
+          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px', color: t(dark, 'border'), flexShrink: 0 }}>/</span>
+          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 500, lineHeight: 1.2, letterSpacing: '-0.18px', color: t(dark, 'muted'), whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>Projects</span>
+        </div>
+        <button onClick={onToggle} aria-label="Toggle theme" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
+          {dark ? <Sun size={24} color={t(dark, 'text')} strokeWidth={1.5} /> : <Moon size={24} color={t(dark, 'text')} strokeWidth={1.5} />}
         </button>
       </div>
 
@@ -61,9 +56,11 @@ export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) 
             <h2
               style={{
                 margin: '0 0 24px',
-                fontSize: '22px',
-                fontWeight: 600,
-                lineHeight: '28px',
+                fontFamily: 'Inter, system-ui, sans-serif',
+                fontSize: '18px',
+                fontWeight: 500,
+                lineHeight: 1.2,
+                letterSpacing: '-0.18px',
                 color: dark ? '#a2a3a5' : '#414141',
               }}
             >

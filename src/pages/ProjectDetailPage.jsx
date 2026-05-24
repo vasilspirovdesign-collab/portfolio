@@ -1,4 +1,4 @@
-import { Home, LightbulbOff } from 'lucide-react'
+import { Home, Moon, Sun } from 'lucide-react'
 import { t } from '../theme'
 
 const projectScreenshot = 'https://www.figma.com/api/mcp/asset/627d18d0-1990-44d7-b04c-59023a5bde89'
@@ -7,7 +7,7 @@ const imgShadow = '1px 1px 12px 2px rgba(65,65,65,0.07), -2px -2px 20px 8px rgba
 
 const TABS = ['The Solution', 'Challenge', 'Feature', 'Feature', 'Feature', 'Feature']
 
-export default function ProjectDetailPage({ dark, onBack, onToggle, project = 'Opus Edu' }) {
+export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, project = 'Opus Edu' }) {
   const activeTab = 'Challenge'
 
   const bg = t(dark, 'bg')
@@ -19,22 +19,29 @@ export default function ProjectDetailPage({ dark, onBack, onToggle, project = 'O
   return (
     <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: bg, transition: 'background-color 0.3s', fontFamily: 'Inter, system-ui, sans-serif' }}>
 
-      {/* Header */}
+      {/* Header — breadcrumbs */}
       <div style={{
         position: 'sticky', top: 0, zIndex: 10,
         display: 'flex', height: '94px', alignItems: 'center',
         padding: '31px 30px', borderBottom: `1px solid ${border}`,
         backgroundColor: bg, gap: '24px',
+        transition: 'background-color 0.3s',
       }}>
-        <button onClick={onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }} aria-label="Go home">
-          <Home size={24} color={textPrimary} strokeWidth={1.5} />
-        </button>
-        <div style={{ width: '1px', height: '26px', backgroundColor: border }} />
-        <span style={{ fontSize: '22px', fontWeight: 600, color: textPrimary, lineHeight: '28px' }}>
-          {project}
-        </span>
-        <button onClick={onToggle} aria-label="Toggle theme" style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
-          <LightbulbOff size={24} color={textPrimary} strokeWidth={1.5} />
+        <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '16px', minWidth: 0 }}>
+          <button onClick={onHome || onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }} aria-label="Go home">
+            <Home size={24} color={textPrimary} strokeWidth={1.5} />
+          </button>
+          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px', color: border, flexShrink: 0 }}>/</span>
+          <button onClick={onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 500, lineHeight: 1.2, letterSpacing: '-0.18px', color: textSecondary, whiteSpace: 'nowrap', flexShrink: 0 }}>
+            Projects
+          </button>
+          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px', color: border, flexShrink: 0 }}>/</span>
+          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 500, lineHeight: 1.2, letterSpacing: '-0.18px', color: dark ? '#d0d2d0' : '#171717', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {project}
+          </span>
+        </div>
+        <button onClick={onToggle} aria-label="Toggle theme" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
+          {dark ? <Sun size={24} color={textPrimary} strokeWidth={1.5} /> : <Moon size={24} color={textPrimary} strokeWidth={1.5} />}
         </button>
       </div>
 
@@ -44,7 +51,7 @@ export default function ProjectDetailPage({ dark, onBack, onToggle, project = 'O
         {/* Left sidebar nav */}
         <aside style={{
           width: '436px', flexShrink: 0,
-          padding: '30px', display: 'flex', flexDirection: 'column', gap: '24px',
+          padding: '30px', display: 'flex', flexDirection: 'column',
         }}>
           {TABS.map((tab, i) => {
             const isActive = tab === activeTab
@@ -53,7 +60,7 @@ export default function ProjectDetailPage({ dark, onBack, onToggle, project = 'O
                 key={i}
                 style={{
                   display: 'flex', alignItems: 'center', gap: '20px',
-                  padding: '16px', borderRadius: '8px', cursor: 'pointer',
+                  height: '72px', padding: '0 16px', borderRadius: '8px', cursor: 'pointer',
                   backgroundColor: isActive ? activeBg : 'transparent',
                   transition: 'background-color 0.2s',
                 }}

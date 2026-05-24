@@ -35,6 +35,7 @@ export default function App() {
       <ProjectDetailPage
         dark={dark}
         project={selectedProject}
+        onHome={() => setPage('home')}
         onBack={() => setPage('projects')}
         onToggle={toggle}
       />
