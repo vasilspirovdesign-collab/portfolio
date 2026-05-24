@@ -1,4 +1,4 @@
-const cvImage = 'https://www.figma.com/api/mcp/asset/dc9912e7-2b80-488d-9ecf-ba305676be40'
+import cvImage from '../assets/hero.png'
 const vector1 = 'https://www.figma.com/api/mcp/asset/6c62d461-a7ad-44c1-b7f0-a941b5baa6bb'
 const vector2 = 'https://www.figma.com/api/mcp/asset/a7193f65-b69c-418a-9bde-2ebb953d62d3'
 const vector3 = 'https://www.figma.com/api/mcp/asset/1f5110bf-413a-4a38-a35b-d2e173c09d30'

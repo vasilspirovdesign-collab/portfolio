@@ -1,4 +1,4 @@
-const projectBg = 'https://www.figma.com/api/mcp/asset/8f4edadb-fa42-47df-a863-e763f1e27a2c'
+import projectBg from '../assets/project-bg.png'
 const projectScreenshot = 'https://www.figma.com/api/mcp/asset/7e5cfbd8-a6b1-46d7-a671-58627c881835'
 
 export default function ProjectCard({ title = 'Opus Edu', description = 'Lorem ipsum dolor sit amet consectetur.' }) {
