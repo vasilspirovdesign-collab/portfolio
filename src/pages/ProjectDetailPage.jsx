@@ -1,20 +1,23 @@
-const projectScreenshot = 'https://www.figma.com/api/mcp/asset/401e34a9-9d64-4b33-bab9-80d43ba7e6d5'
+import { Home, LightbulbOff } from 'lucide-react'
+import { t } from '../theme'
+
+const projectScreenshot = 'https://www.figma.com/api/mcp/asset/627d18d0-1990-44d7-b04c-59023a5bde89'
 
 const imgShadow = '1px 1px 12px 2px rgba(65,65,65,0.07), -2px -2px 20px 8px rgba(117,117,117,0.08), 5px -3px 30px 20px rgba(117,117,117,0.1)'
 
 const TABS = ['The Solution', 'Challenge', 'Feature', 'Feature', 'Feature', 'Feature']
 
-export default function ProjectDetailPage({ dark, onBack, project = 'Opus Edu' }) {
+export default function ProjectDetailPage({ dark, onBack, onToggle, project = 'Opus Edu' }) {
   const activeTab = 'Challenge'
 
-  const bg = dark ? '#16171d' : '#f0f0f0'
-  const border = dark ? '#2e303a' : '#d0d2d0'
-  const textPrimary = dark ? '#f3f4f6' : '#414141'
+  const bg = t(dark, 'bg')
+  const border = t(dark, 'border')
+  const textPrimary = dark ? '#d0d2d0' : '#414141'
   const textSecondary = dark ? '#a2a3a5' : '#757575'
-  const activeBg = dark ? '#2e303a' : '#d0d2d0'
+  const activeBg = t(dark, 'border')
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: bg, transition: 'background-color 0.3s', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: bg, transition: 'background-color 0.3s', fontFamily: 'Inter, system-ui, sans-serif' }}>
 
       {/* Header */}
       <div style={{
@@ -23,15 +26,16 @@ export default function ProjectDetailPage({ dark, onBack, project = 'Opus Edu' }
         padding: '31px 30px', borderBottom: `1px solid ${border}`,
         backgroundColor: bg, gap: '24px',
       }}>
-        <button onClick={onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }} aria-label="Go back">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M15 18L9 12L15 6" stroke={textPrimary} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        <button onClick={onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }} aria-label="Go home">
+          <Home size={24} color={textPrimary} strokeWidth={1.5} />
         </button>
         <div style={{ width: '1px', height: '26px', backgroundColor: border }} />
         <span style={{ fontSize: '22px', fontWeight: 600, color: textPrimary, lineHeight: '28px' }}>
           {project}
         </span>
+        <button onClick={onToggle} aria-label="Toggle theme" style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
+          <LightbulbOff size={24} color={textPrimary} strokeWidth={1.5} />
+        </button>
       </div>
 
       {/* Body: sidebar + content */}
@@ -41,7 +45,6 @@ export default function ProjectDetailPage({ dark, onBack, project = 'Opus Edu' }
         <aside style={{
           width: '436px', flexShrink: 0,
           padding: '30px', display: 'flex', flexDirection: 'column', gap: '24px',
-          borderRight: `1px solid ${border}`,
         }}>
           {TABS.map((tab, i) => {
             const isActive = tab === activeTab
@@ -56,8 +59,10 @@ export default function ProjectDetailPage({ dark, onBack, project = 'Opus Edu' }
                 }}
               >
                 <span style={{
-                  fontSize: '22px', fontWeight: 600, lineHeight: '28px',
-                  color: isActive ? textPrimary : textSecondary,
+                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontSize: '18px', fontWeight: 500, lineHeight: 1.2,
+                  letterSpacing: '-0.18px',
+                  color: isActive ? (dark ? '#d0d2d0' : '#171717') : textSecondary,
                   whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                   width: '279px',
                 }}>
@@ -73,7 +78,7 @@ export default function ProjectDetailPage({ dark, onBack, project = 'Opus Edu' }
 
           {/* Screenshot card */}
           <div style={{
-            backgroundColor: dark ? '#1e1f26' : '#ffffff',
+            backgroundColor: t(dark, 'cardBg'),
             borderRadius: '16px', height: '462px', width: '694px',
             overflow: 'hidden', position: 'relative', flexShrink: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -85,22 +90,22 @@ export default function ProjectDetailPage({ dark, onBack, project = 'Opus Edu' }
               <img
                 src={projectScreenshot}
                 alt="Project screenshot"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
+                style={{ position: 'absolute', top: 0, left: 0, width: '100.01%', height: '169.93%', maxWidth: 'none', objectFit: 'cover' }}
               />
             </div>
           </div>
 
           {/* Challenge heading */}
           <h1 style={{
-            margin: 0, fontSize: '28px', fontWeight: 700,
-            lineHeight: '40px', letterSpacing: '0.28px',
-            color: textPrimary,
+            margin: 0, fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '22px', fontWeight: 600, lineHeight: '28px',
+            letterSpacing: '0.22px', color: textPrimary,
           }}>
             Challenge
           </h1>
 
           {/* Body text */}
-          <div style={{ fontSize: '20px', fontWeight: 500, lineHeight: 1.35, color: textPrimary, maxWidth: '694px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ fontSize: '18px', fontWeight: 400, lineHeight: 1.35, color: textPrimary, maxWidth: '694px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <p style={{ margin: 0 }}>
               Designing a <strong>multi-stakeholder platform</strong> where <strong>complexity is the product.</strong>
             </p>

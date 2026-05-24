@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { t } from './theme'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProjectCard from './components/ProjectCard'
@@ -23,8 +24,10 @@ export default function App() {
     setPage('project-detail')
   }
 
+  const toggle = () => setDark((d) => !d)
+
   if (page === 'about-me') {
-    return <AboutPage dark={dark} onBack={() => setPage('home')} />
+    return <AboutPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} />
   }
 
   if (page === 'project-detail') {
@@ -33,6 +36,7 @@ export default function App() {
         dark={dark}
         project={selectedProject}
         onBack={() => setPage('projects')}
+        onToggle={toggle}
       />
     )
   }
@@ -43,12 +47,13 @@ export default function App() {
         dark={dark}
         onBack={() => setPage('home')}
         onOpenProject={openProject}
+        onToggle={toggle}
       />
     )
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: dark ? '#16171d' : '#f0f0f0', transition: 'background-color 0.3s' }}>
+    <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), transition: 'background-color 0.3s' }}>
       <Navbar dark={dark} onToggle={() => setDark((d) => !d)} onNavigate={setPage} page={page} />
 
       <main style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '30px' }}>
@@ -56,8 +61,8 @@ export default function App() {
 
         <section>
           <h2 style={{
-            margin: '0 0 24px', fontSize: '22px', fontWeight: 600, lineHeight: '28px',
-            color: dark ? '#a2a3a5' : '#757575', whiteSpace: 'nowrap',
+            margin: '0 0 24px', fontSize: '18px', fontWeight: 500, lineHeight: 'normal',
+            letterSpacing: '-0.18px', color: t(dark, 'muted'), whiteSpace: 'nowrap',
             overflow: 'hidden', textOverflow: 'ellipsis', transition: 'color 0.3s',
           }}>
             Projects I&apos;m Proud Of

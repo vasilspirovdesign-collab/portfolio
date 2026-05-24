@@ -1,6 +1,8 @@
 import { useState } from 'react'
-
-const profilePhoto = 'https://www.figma.com/api/mcp/asset/d322dc28-516f-4de8-9f41-fb597c7e6190'
+import { Home, LightbulbOff } from 'lucide-react'
+import { t } from '../theme'
+import profilePhoto from '../assets/profile.png'
+const contactCardAsset = 'https://www.figma.com/api/mcp/asset/a91b663e-7b87-4b4e-9ad9-687f5171fd35'
 
 const CERTIFICATES = [
   { title: 'Artificial Intelligence Specialization', issuer: 'IBM',                logo: 'https://www.figma.com/api/mcp/asset/ab9cfaab-2982-42f5-8a85-2c8bdc3f0d98', logoW: 81,  logoH: 44  },
@@ -20,17 +22,17 @@ const BIO = [
   'I work across research, interaction design, and visual craft to turn ambiguous problems into shipped product. Equally at home defining new products from scratch and improving systems that already serve millions.',
 ]
 
-export default function AboutPage({ dark, onBack }) {
+export default function AboutPage({ dark, onBack, onToggle }) {
   const [activeTab, setActiveTab] = useState('Introduction')
 
-  const bg = dark ? '#16171d' : '#f0f0f0'
-  const border = dark ? '#2e303a' : '#d0d2d0'
-  const textPrimary = dark ? '#f3f4f6' : '#414141'
+  const bg = t(dark, 'bg')
+  const border = t(dark, 'border')
+  const textPrimary = dark ? '#d0d2d0' : '#414141'
   const textSecondary = dark ? '#a2a3a5' : '#757575'
-  const activeBg = dark ? '#2e303a' : '#d0d2d0'
+  const activeBg = t(dark, 'border')
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: bg, transition: 'background-color 0.3s', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: bg, transition: 'background-color 0.3s', fontFamily: 'Inter, system-ui, sans-serif' }}>
 
       {/* Header */}
       <div style={{
@@ -41,17 +43,18 @@ export default function AboutPage({ dark, onBack }) {
       }}>
         <button
           onClick={onBack}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
-          aria-label="Go back"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}
+          aria-label="Go home"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M15 18L9 12L15 6" stroke={textPrimary} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <Home size={24} color={textPrimary} strokeWidth={1.5} />
         </button>
         <div style={{ width: '1px', height: '26px', backgroundColor: border }} />
         <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 600, color: textPrimary, lineHeight: '28px' }}>
           About me
         </span>
+        <button onClick={onToggle} aria-label="Toggle theme" style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
+          <LightbulbOff size={24} color={textPrimary} strokeWidth={1.5} />
+        </button>
       </div>
 
       {/* Body */}
@@ -61,7 +64,6 @@ export default function AboutPage({ dark, onBack }) {
         <aside style={{
           width: '436px', flexShrink: 0,
           padding: '30px', display: 'flex', flexDirection: 'column', gap: '24px',
-          borderRight: `1px solid ${border}`,
         }}>
           {TABS.map((tab) => {
             const isActive = tab === activeTab
@@ -78,8 +80,9 @@ export default function AboutPage({ dark, onBack }) {
               >
                 <span style={{
                   fontFamily: 'Inter, system-ui, sans-serif',
-                  fontSize: '22px', fontWeight: 600, lineHeight: '28px',
-                  color: isActive ? textPrimary : textSecondary,
+                  fontSize: '18px', fontWeight: 400, lineHeight: 1.2,
+                  letterSpacing: '-0.18px',
+                  color: isActive ? (dark ? '#d0d2d0' : '#171717') : textSecondary,
                   whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                   width: '279px',
                   transition: 'color 0.2s',
@@ -99,17 +102,12 @@ export default function AboutPage({ dark, onBack }) {
               {/* Profile photo */}
               <div style={{
                 width: '221px', height: '229px', borderRadius: '8px',
-                overflow: 'hidden', flexShrink: 0, position: 'relative',
+                overflow: 'hidden', flexShrink: 0,
               }}>
                 <img
                   src={profilePhoto}
                   alt="Vasil Spirov"
-                  style={{
-                    position: 'absolute',
-                    top: '-19.56%', left: '-2.24%',
-                    width: '104.48%', height: '151.83%',
-                    maxWidth: 'none', objectFit: 'cover',
-                  }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
               </div>
 
@@ -117,17 +115,17 @@ export default function AboutPage({ dark, onBack }) {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '694px' }}>
                 <h1 style={{
                   margin: 0, fontFamily: 'Inter, system-ui, sans-serif',
-                  fontSize: '28px', fontWeight: 700, lineHeight: '40px',
-                  letterSpacing: '0.28px', color: textPrimary,
+                  fontSize: '22px', fontWeight: 600, lineHeight: '28px',
+                  letterSpacing: '0.22px', color: textPrimary,
                 }}>
                   Hi, I&apos;m Vasil
                 </h1>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {BIO.map((para, i) => (
                     <p key={i} style={{
                       margin: 0, fontFamily: 'Inter, system-ui, sans-serif',
-                      fontSize: '20px', fontWeight: 500, lineHeight: 1.35,
-                      color: textPrimary,
+                      fontSize: '18px', fontWeight: 400, lineHeight: 1.2,
+                      letterSpacing: '-0.18px', color: textPrimary,
                     }}>
                       {para}
                     </p>
@@ -138,33 +136,72 @@ export default function AboutPage({ dark, onBack }) {
           )}
 
           {activeTab === 'Certificates' && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '706px', width: '100%' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', maxWidth: '706px', width: '100%' }}>
               {CERTIFICATES.map((cert, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', paddingRight: '16px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                    <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 600, lineHeight: '28px', color: textPrimary, whiteSpace: 'nowrap' }}>
-                      {cert.title}
-                    </span>
-                    <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '20px', fontWeight: 500, lineHeight: 1.35, color: '#253852' }}>
-                      {cert.issuer}
-                    </span>
+                <div key={i}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', paddingRight: '16px', padding: '16px 16px 16px 0' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 600, lineHeight: '28px', color: textPrimary, whiteSpace: 'nowrap' }}>
+                        {cert.title}
+                      </span>
+                      <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 400, lineHeight: 'normal', letterSpacing: '-0.18px', color: textPrimary }}>
+                        {cert.issuer}
+                      </span>
+                    </div>
+                    <div style={{ width: `${cert.logoW}px`, height: `${cert.logoH}px`, flexShrink: 0, position: 'relative', borderRadius: cert.rounded || 0 }}>
+                      <img
+                        src={cert.logo}
+                        alt={cert.issuer}
+                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', borderRadius: cert.rounded || 0 }}
+                      />
+                    </div>
                   </div>
-                  <div style={{ width: `${cert.logoW}px`, height: `${cert.logoH}px`, flexShrink: 0, position: 'relative', borderRadius: cert.rounded || 0 }}>
-                    <img
-                      src={cert.logo}
-                      alt={cert.issuer}
-                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', borderRadius: cert.rounded || 0 }}
-                    />
-                  </div>
+                  {i < CERTIFICATES.length - 1 && (
+                    <div style={{ height: '1px', backgroundColor: t(dark, 'border') }} />
+                  )}
                 </div>
               ))}
             </div>
           )}
 
           {activeTab === 'Contacts' && (
-            <p style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '20px', fontWeight: 500, color: textSecondary }}>
-              Contacts coming soon.
-            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px', width: '100%' }}>
+
+              {/* Contact card */}
+              <div style={{ width: '694px', height: '462px', borderRadius: '16px', overflow: 'hidden', backgroundColor: dark ? t(dark, 'cardBg') : '#ffffff', flexShrink: 0 }}>
+                <img src={contactCardAsset} alt="Contact methods" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+
+              {/* Heading */}
+              <h1 style={{ margin: 0, fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 600, lineHeight: '28px', letterSpacing: '0.22px', color: textPrimary }}>
+                Contacts
+              </h1>
+
+              {/* Rows */}
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {[
+                  { label: 'mobile',   value: '+359878517684',                         href: null },
+                  { label: 'email',    value: 'vasilspirovdesign@gmail.com',           href: null },
+                  { label: 'Behance',  value: 'http://behance.net/vasilspirov',        href: 'http://behance.net/vasilspirov' },
+                  { label: 'Linkedin', value: 'https://www.linkedin.com/in/vasil-spirov/', href: 'https://www.linkedin.com/in/vasil-spirov/' },
+                ].map((row, i, arr) => (
+                  <div key={row.label}>
+                    <div style={{ display: 'flex', gap: '16px', padding: '16px 0', fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 400, lineHeight: 1.35, color: textPrimary }}>
+                      <span style={{ width: '84px', flexShrink: 0 }}>{row.label}</span>
+                      {row.href ? (
+                        <a href={row.href} target="_blank" rel="noopener noreferrer" style={{ color: textPrimary, textDecoration: 'underline', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          {row.value}
+                        </a>
+                      ) : (
+                        <span>{row.value}</span>
+                      )}
+                    </div>
+                    {i < arr.length - 1 && <div style={{ height: '1px', backgroundColor: t(dark, 'border') }} />}
+                  </div>
+                ))}
+              </div>
+
+            </div>
           )}
 
         </main>

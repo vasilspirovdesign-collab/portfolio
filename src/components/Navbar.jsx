@@ -1,58 +1,42 @@
-const shopIconAsset = 'https://www.figma.com/api/mcp/asset/e31d7205-049d-4ef4-add0-bd22c3e2146d'
-const lightbulbIcon = 'https://www.figma.com/api/mcp/asset/d0d17838-9071-493d-9879-18e1a6609157'
+import { LightbulbOff } from 'lucide-react'
+import { t } from '../theme'
 
 const NAV_LINKS = ['Projects', 'Workflow', 'About Me']
 
-function ShopIcon({ dark }) {
-  return (
-    <div style={{ position: 'relative', width: '48px', height: '48px', overflow: 'hidden', flexShrink: 0 }}>
-      <div style={{ position: 'absolute', top: '27.59%', right: '30.56%', bottom: '27.59%', left: '29.86%' }}>
-        <div style={{ position: 'absolute', top: '-5%', right: '-5.66%', bottom: '-5%', left: '-5.66%' }}>
-          <img
-            src={shopIconAsset}
-            alt=""
-            style={{
-              display: 'block', width: '100%', height: '100%', maxWidth: 'none',
-              filter: dark ? 'invert(1) brightness(2)' : 'none',
-            }}
-          />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default function Navbar({ dark, onToggle, onNavigate, page }) {
-  const bg = dark ? '#16171d' : '#ffffff'
-  const border = dark ? '#2e303a' : '#d0d2d0'
-
+export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
   return (
     <nav style={{
-      display: 'flex', height: '92px', alignItems: 'center',
+      display: 'flex', height: '94px', alignItems: 'center',
       justifyContent: 'space-between', padding: '31px 30px',
-      borderBottom: `1px solid ${border}`,
-      backgroundColor: bg, transition: 'background-color 0.3s, border-color 0.3s',
+      borderBottom: `1px solid ${t(isDark, 'border')}`,
+      backgroundColor: t(isDark, 'navBg'),
+      transition: 'background-color 0.3s, border-color 0.3s',
     }}>
 
-      {/* Left: logo + name */}
+      {/* Left: name + divider + Portfolio label */}
       <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '24px', minWidth: 0 }}>
         <button onClick={() => onNavigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-          <ShopIcon dark={dark} />
+          <span style={{
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '22px', fontWeight: 600, lineHeight: '28px',
+            color: t(isDark, 'text'),
+            fontFeatureSettings: "'liga' 0",
+            whiteSpace: 'nowrap',
+            transition: 'color 0.3s',
+          }}>
+            Vasil Spirov
+          </span>
         </button>
-
-        {/* Vertical divider */}
-        <div style={{ width: '1px', height: '26px', backgroundColor: dark ? '#2e303a' : '#d0d2d0', flexShrink: 0 }} />
-
+        <div style={{ width: '1px', height: '26px', backgroundColor: t(isDark, 'border'), flexShrink: 0 }} />
         <span style={{
           fontFamily: 'Inter, system-ui, sans-serif',
-          fontSize: '22px', fontWeight: 600, lineHeight: '28px',
-          color: dark ? '#f3f4f6' : '#414141',
-          fontFeatureSettings: "'liga' 0",
-          whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-          width: '359px', flexShrink: 0,
+          fontSize: '18px', fontWeight: 500, lineHeight: 1.2,
+          letterSpacing: '-0.18px',
+          color: t(isDark, 'muted'),
+          whiteSpace: 'nowrap',
           transition: 'color 0.3s',
         }}>
-          Vasil Spirov
+          Portfolio
         </span>
       </div>
 
@@ -70,14 +54,12 @@ export default function Navbar({ dark, onToggle, onNavigate, page }) {
                 fontFamily: 'Inter, system-ui, sans-serif',
                 fontSize: '18px', fontWeight: 500,
                 lineHeight: 1.2, letterSpacing: '-0.18px',
-                color: isActive ? (dark ? '#f3f4f6' : '#414141') : (dark ? '#d0d2d0' : '#757575'),
+                color: isActive ? t(isDark, 'text') : t(isDark, 'muted'),
                 transition: 'color 0.2s',
                 whiteSpace: 'nowrap',
               }}
-              onMouseEnter={e => e.currentTarget.style.color = dark ? '#f3f4f6' : '#414141'}
-              onMouseLeave={e => {
-                if (!isActive) e.currentTarget.style.color = dark ? '#d0d2d0' : '#757575'
-              }}
+              onMouseEnter={e => e.currentTarget.style.color = t(isDark, 'text')}
+              onMouseLeave={e => { if (!isActive) e.currentTarget.style.color = t(isDark, 'muted') }}
             >
               {link}
             </button>
@@ -87,16 +69,8 @@ export default function Navbar({ dark, onToggle, onNavigate, page }) {
 
       {/* Right: theme toggle */}
       <div style={{ display: 'flex', flex: '1 0 0', justifyContent: 'flex-end', alignItems: 'center', minWidth: 0 }}>
-        <button
-          onClick={onToggle}
-          aria-label="Toggle theme"
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, width: '24px', height: '24px', display: 'block', position: 'relative' }}
-        >
-          <img
-            src={lightbulbIcon}
-            alt=""
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', maxWidth: 'none', filter: dark ? 'invert(1) brightness(2)' : 'none' }}
-          />
+        <button onClick={onToggle} aria-label="Toggle theme" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
+          <LightbulbOff size={24} color={t(isDark, 'text')} strokeWidth={1.5} />
         </button>
       </div>
     </nav>

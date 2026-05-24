@@ -74,7 +74,7 @@ export default function Hero() {
         {/* Email row */}
         <div style={{ display: 'flex', height: '87px', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '0 24px' }}>
           <img src={mailIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
-          <span style={{ fontSize: '20px', fontWeight: 500, lineHeight: 1.35, color: '#757575' }}>
+          <span style={{ fontSize: '20px', fontWeight: 400, lineHeight: 1.35, color: '#757575' }}>
             vasilspirovdesign@gmail.com
           </span>
         </div>
@@ -85,14 +85,14 @@ export default function Hero() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '22px', padding: '20px 24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <img src={phoneIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
-            <span style={{ fontSize: '20px', fontWeight: 500, lineHeight: 1.35, color: '#757575' }}>
+            <span style={{ fontSize: '20px', fontWeight: 400, lineHeight: 1.35, color: '#757575' }}>
               +359878517684
             </span>
           </div>
           <div style={{ width: '1px', height: '48px', backgroundColor: '#d0d2d0' }} />
           <a
             href="#"
-            style={{ display: 'flex', width: '192px', alignItems: 'center', gap: '8px', fontSize: '20px', fontWeight: 500, lineHeight: 1.35, color: '#757575', textDecoration: 'none' }}
+            style={{ display: 'flex', width: '192px', alignItems: 'center', gap: '8px', fontSize: '20px', fontWeight: 400, lineHeight: 1.35, color: '#757575', textDecoration: 'none' }}
           >
             <img src={downloadIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
             Resume
