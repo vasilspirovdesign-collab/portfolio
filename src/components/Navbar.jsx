@@ -36,8 +36,15 @@ export default function Navbar({ dark, onToggle, onNavigate, page }) {
           style={{ backgroundColor: dark ? '#2e303a' : '#d0d2d0' }}
         />
         <span
-          className="text-[22px] font-semibold leading-[28px] transition-colors duration-300"
-          style={{ color: dark ? '#f3f4f6' : '#414141', fontFeatureSettings: "'liga' 0" }}
+          style={{
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '22px',
+            fontWeight: 600,
+            lineHeight: '28px',
+            color: dark ? '#f3f4f6' : '#414141',
+            fontFeatureSettings: "'liga' 0",
+            transition: 'color 0.3s',
+          }}
         >
           Vasil Spirov
         </span>
@@ -48,12 +55,23 @@ export default function Navbar({ dark, onToggle, onNavigate, page }) {
           <button
             key={link}
             onClick={() => onNavigate(link.toLowerCase().replace(' ', '-'))}
-            className="cursor-pointer border-none bg-transparent text-[22px] font-semibold leading-[28px] transition-colors duration-300 hover:opacity-70"
             style={{
+              cursor: 'pointer',
+              border: 'none',
+              background: 'transparent',
+              padding: 0,
+              fontFamily: 'Inter, system-ui, sans-serif',
+              fontSize: '22px',
+              fontWeight: 600,
+              lineHeight: '28px',
               color: dark ? '#d0d2d0' : '#757575',
               fontFeatureSettings: "'liga' 0",
+              letterSpacing: 0,
               textDecoration: page === link.toLowerCase().replace(' ', '-') ? 'underline' : 'none',
+              transition: 'opacity 0.2s',
             }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.65'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
             {link}
           </button>
