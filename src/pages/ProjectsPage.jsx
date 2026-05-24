@@ -56,7 +56,7 @@ function ProjectCard({ title, description, dark }) {
   )
 }
 
-export default function ProjectsPage({ dark, onBack }) {
+export default function ProjectsPage({ dark, onBack, onOpenProject }) {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: dark ? '#16171d' : '#f0f0f0', transition: 'background-color 0.3s' }}>
       {/* Page header */}
@@ -103,7 +103,7 @@ export default function ProjectsPage({ dark, onBack }) {
             </h2>
             <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
               {category.projects.map((project, i) => (
-                <ProjectCard key={i} dark={dark} title={project.title} description={project.description} />
+                <ProjectCard key={i} dark={dark} title={project.title} description={project.description} onClick={() => onOpenProject && onOpenProject(project.title)} />
               ))}
             </div>
           </section>
