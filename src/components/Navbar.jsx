@@ -1,4 +1,4 @@
-import { LightbulbOff } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
 import { t } from '../theme'
 
 const NAV_LINKS = ['Projects', 'Workflow', 'About Me']
@@ -13,12 +13,12 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
       transition: 'background-color 0.3s, border-color 0.3s',
     }}>
 
-      {/* Left: name + divider + Portfolio label */}
-      <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '24px', minWidth: 0 }}>
+      {/* Left: name */}
+      <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '8px', minWidth: 0 }}>
         <button onClick={() => onNavigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
           <span style={{
-            fontFamily: 'Inter, system-ui, sans-serif',
-            fontSize: '22px', fontWeight: 600, lineHeight: '28px',
+            fontFamily: 'Questrial, sans-serif',
+            fontSize: '22px', fontWeight: 400, lineHeight: '28px',
             color: t(isDark, 'text'),
             fontFeatureSettings: "'liga' 0",
             whiteSpace: 'nowrap',
@@ -27,17 +27,6 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
             Vasil Spirov
           </span>
         </button>
-        <div style={{ width: '1px', height: '26px', backgroundColor: t(isDark, 'border'), flexShrink: 0 }} />
-        <span style={{
-          fontFamily: 'Inter, system-ui, sans-serif',
-          fontSize: '18px', fontWeight: 500, lineHeight: 1.2,
-          letterSpacing: '-0.18px',
-          color: t(isDark, 'muted'),
-          whiteSpace: 'nowrap',
-          transition: 'color 0.3s',
-        }}>
-          Portfolio
-        </span>
       </div>
 
       {/* Center: nav links */}
@@ -70,7 +59,7 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
       {/* Right: theme toggle */}
       <div style={{ display: 'flex', flex: '1 0 0', justifyContent: 'flex-end', alignItems: 'center', minWidth: 0 }}>
         <button onClick={onToggle} aria-label="Toggle theme" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
-          <LightbulbOff size={24} color={t(isDark, 'text')} strokeWidth={1.5} />
+          {isDark ? <Sun size={24} color={t(isDark, 'text')} strokeWidth={1.5} /> : <Moon size={24} color={t(isDark, 'text')} strokeWidth={1.5} />}
         </button>
       </div>
     </nav>

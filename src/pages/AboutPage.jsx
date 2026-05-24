@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Home, LightbulbOff } from 'lucide-react'
+import { Home, Moon, Sun } from 'lucide-react'
 import { t } from '../theme'
 import profilePhoto from '../assets/profile.png'
 const contactCardAsset = 'https://www.figma.com/api/mcp/asset/a91b663e-7b87-4b4e-9ad9-687f5171fd35'
@@ -38,23 +38,23 @@ export default function AboutPage({ dark, onBack, onToggle }) {
       <div style={{
         position: 'sticky', top: 0, zIndex: 10,
         display: 'flex', height: '94px', alignItems: 'center',
-        padding: '31px 30px', borderBottom: `1px solid ${border}`,
-        backgroundColor: bg, gap: '24px',
+        padding: '31px 30px', gap: '24px',
+        borderBottom: `1px solid ${border}`,
+        backgroundColor: bg,
+        transition: 'background-color 0.3s',
       }}>
-        <button
-          onClick={onBack}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}
-          aria-label="Go home"
-        >
-          <Home size={24} color={textPrimary} strokeWidth={1.5} />
-        </button>
-        <div style={{ width: '1px', height: '26px', backgroundColor: border }} />
-        <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 600, color: textPrimary, lineHeight: '28px' }}>
-          About me
-        </span>
-        <button onClick={onToggle} aria-label="Toggle theme" style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
-          <LightbulbOff size={24} color={textPrimary} strokeWidth={1.5} />
-        </button>
+        <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '24px', minWidth: 0 }}>
+          <button onClick={onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }} aria-label="Go home">
+            <Home size={24} color={textPrimary} strokeWidth={1.5} />
+          </button>
+          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px', color: border, flexShrink: 0 }}>/</span>
+          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 500, lineHeight: 1.2, letterSpacing: '-0.18px', color: textSecondary, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>About me</span>
+        </div>
+        <div style={{ display: 'flex', flex: '1 0 0', justifyContent: 'flex-end', alignItems: 'center', minWidth: 0 }}>
+          <button onClick={onToggle} aria-label="Toggle theme" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
+            {dark ? <Sun size={24} color={textPrimary} strokeWidth={1.5} /> : <Moon size={24} color={textPrimary} strokeWidth={1.5} />}
+          </button>
+        </div>
       </div>
 
       {/* Body */}
@@ -63,7 +63,7 @@ export default function AboutPage({ dark, onBack, onToggle }) {
         {/* Sidebar */}
         <aside style={{
           width: '436px', flexShrink: 0,
-          padding: '30px', display: 'flex', flexDirection: 'column', gap: '24px',
+          padding: '30px', display: 'flex', flexDirection: 'column',
         }}>
           {TABS.map((tab) => {
             const isActive = tab === activeTab
@@ -73,14 +73,14 @@ export default function AboutPage({ dark, onBack, onToggle }) {
                 onClick={() => setActiveTab(tab)}
                 style={{
                   display: 'flex', alignItems: 'center', gap: '20px',
-                  padding: '16px', borderRadius: '8px', cursor: 'pointer',
+                  height: '72px', padding: '0 16px', borderRadius: '8px', cursor: 'pointer',
                   backgroundColor: isActive ? activeBg : 'transparent',
                   transition: 'background-color 0.2s',
                 }}
               >
                 <span style={{
                   fontFamily: 'Inter, system-ui, sans-serif',
-                  fontSize: '18px', fontWeight: 400, lineHeight: 1.2,
+                  fontSize: '18px', fontWeight: 500, lineHeight: 1.2,
                   letterSpacing: '-0.18px',
                   color: isActive ? (dark ? '#d0d2d0' : '#171717') : textSecondary,
                   whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
