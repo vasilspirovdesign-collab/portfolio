@@ -2,6 +2,16 @@ import { useState } from 'react'
 
 const profilePhoto = 'https://www.figma.com/api/mcp/asset/d322dc28-516f-4de8-9f41-fb597c7e6190'
 
+const CERTIFICATES = [
+  { title: 'Artificial Intelligence Specialization', issuer: 'IBM',                logo: 'https://www.figma.com/api/mcp/asset/ab9cfaab-2982-42f5-8a85-2c8bdc3f0d98', logoW: 81,  logoH: 44  },
+  { title: 'Web Accessibility',                      issuer: 'W3Cx',               logo: 'https://www.figma.com/api/mcp/asset/e41ac9bd-01c4-473d-a307-f44b37a8b0a9', logoW: 81,  logoH: 44  },
+  { title: 'Google UX Design Specialization',        issuer: 'Google',             logo: 'https://www.figma.com/api/mcp/asset/667dcfb4-1353-4ed1-8a0c-ae9c378e7f85', logoW: 50,  logoH: 50  },
+  { title: 'Masterclass 21st century Design',        issuer: 'IxDF',               logo: 'https://www.figma.com/api/mcp/asset/ed1bf4b3-960a-4dfa-8f91-98b2d354318e', logoW: 54,  logoH: 54, rounded: '64px' },
+  { title: 'UX/UI Upskill',                          issuer: 'Telerik Academy',    logo: 'https://www.figma.com/api/mcp/asset/6a524c8c-e559-4b3c-b12d-f903bf5315c5', logoW: 54,  logoH: 54  },
+  { title: 'Cursor Masterclass',                     issuer: 'Memorisely',         logo: 'https://www.figma.com/api/mcp/asset/8de4d62f-6b15-48b5-be95-4a48a32a8ad7', logoW: 54,  logoH: 54, rounded: '4px' },
+  { title: 'Claude Code in Action',                  issuer: 'Anthropic Academy',  logo: 'https://www.figma.com/api/mcp/asset/8177c409-9f06-4958-b78c-0e2424cddf39', logoW: 54,  logoH: 54  },
+]
+
 const TABS = ['Introduction', 'Certificates', 'Contacts']
 
 const BIO = [
@@ -128,9 +138,27 @@ export default function AboutPage({ dark, onBack }) {
           )}
 
           {activeTab === 'Certificates' && (
-            <p style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '20px', fontWeight: 500, color: textSecondary }}>
-              Certificates coming soon.
-            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '706px', width: '100%' }}>
+              {CERTIFICATES.map((cert, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', paddingRight: '16px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 600, lineHeight: '28px', color: textPrimary, whiteSpace: 'nowrap' }}>
+                      {cert.title}
+                    </span>
+                    <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '20px', fontWeight: 500, lineHeight: 1.35, color: '#253852' }}>
+                      {cert.issuer}
+                    </span>
+                  </div>
+                  <div style={{ width: `${cert.logoW}px`, height: `${cert.logoH}px`, flexShrink: 0, position: 'relative', borderRadius: cert.rounded || 0 }}>
+                    <img
+                      src={cert.logo}
+                      alt={cert.issuer}
+                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', borderRadius: cert.rounded || 0 }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
 
           {activeTab === 'Contacts' && (
