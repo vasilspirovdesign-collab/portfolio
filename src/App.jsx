@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import ProjectCard from './components/ProjectCard'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
+import AboutPage from './pages/AboutPage'
 
 const FEATURED = [
   { title: 'Opus Edu', description: 'Lorem ipsum dolor sit amet consectetur.' },
@@ -20,6 +21,10 @@ export default function App() {
   const openProject = (title) => {
     setSelectedProject(title)
     setPage('project-detail')
+  }
+
+  if (page === 'about-me') {
+    return <AboutPage dark={dark} onBack={() => setPage('home')} />
   }
 
   if (page === 'project-detail') {

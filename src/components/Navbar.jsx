@@ -54,7 +54,7 @@ export default function Navbar({ dark, onToggle, onNavigate, page }) {
         {NAV_LINKS.map((link) => (
           <button
             key={link}
-            onClick={() => onNavigate(link.toLowerCase().replace(' ', '-'))}
+            onClick={() => onNavigate(link.toLowerCase().replace(/\s+/g, '-'))}
             style={{
               cursor: 'pointer',
               border: 'none',
