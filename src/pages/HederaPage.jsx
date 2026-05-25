@@ -60,7 +60,17 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
-                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Content coming soon.</p>
+                <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                  <p style={{ margin: 0 }}>Designing for high-stakes operations where trust is the interface.</p>
+                  <p style={{ margin: 0 }}>A single product had to serve users with fundamentally different mental models:</p>
+                  <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <li><strong>Business Users</strong> — clarity and confidence when initiating or reviewing transactions without deep technical knowledge</li>
+                    <li><strong>Technical Power Users</strong> — full control over complex multi-party signing workflows, key management, and network-level operations</li>
+                    <li><strong>Admins</strong> — oversight of organisation members, permissions, and account associations</li>
+                  </ul>
+                  <p style={{ margin: 0 }}>The platform covered six interconnected capability areas: transaction creation and signing, account management, token operations, consensus service, file service, and contact management — with no prior design system and a security-critical domain that offered no consumer UX patterns to reference.</p>
+                  <p style={{ margin: 0 }}>The risk was a product that felt either too technical to trust or too simplified to be useful — at exactly the moments where operational errors are irreversible.</p>
+                </div>
               </div>
             </>
           )}
