@@ -8,7 +8,7 @@ const PROJECT = 'Rowan Carbon Chain'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
-  { label: 'Case Study', href: 'https://www.behance.net/vasilspirov' },
+  { label: 'Case Study', href: 'https://www.behance.net/gallery/242433013/The-Carbon-Chain' },
 ]
 
 export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
