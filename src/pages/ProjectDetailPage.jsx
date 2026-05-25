@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { SquareArrowOutUpRight } from 'lucide-react'
 import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
-import InnerHeader from '../components/InnerHeader'
-import SidebarNav from '../components/SidebarNav'
+import PageLayout from '../components/PageLayout'
 import opusEduChallenge from '../assets/opus-edu-challenge.jpg'
 import opusEduIntro from '../assets/opus-edu-intro.jpg'
 import opusEduRole from '../assets/opus-edu-role.jpg'
@@ -22,22 +21,18 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
   const [activeTab, setActiveTab] = useState('Introduction')
   useEffect(() => { document.title = `${project} - Vasil Spirov` }, [project])
 
-  const textPrimary = dark ? '#d0d2d0' : '#414141'
+  const textPrimary = t(dark, 'text')
 
   return (
-    <div className="transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
-      <InnerHeader
-        dark={dark}
-        onToggle={onToggle}
-        onHome={onHome || onBack}
-        crumbs={[{ label: 'Projects', onClick: onBack }, { label: project }]}
-      />
-
-      <div style={{ display: 'flex', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
-        <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
-
-        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', minHeight: 'calc(100vh - 64px)' }}>
-          <div key={activeTab} className="tab-enter" style={{ display: 'contents' }}>
+    <PageLayout
+      dark={dark}
+      onToggle={onToggle}
+      onHome={onHome || onBack}
+      crumbs={[{ label: 'Projects', onClick: onBack }, { label: project }]}
+      tabs={TABS}
+      activeTab={activeTab}
+      onTabChange={setActiveTab}
+    >
 
           {activeTab === 'Introduction' && (
             <>
@@ -210,9 +205,6 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
             </>
           )}
 
-          </div>
-        </main>
-      </div>
-    </div>
+    </PageLayout>
   )
 }

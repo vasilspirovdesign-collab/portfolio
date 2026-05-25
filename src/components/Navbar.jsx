@@ -37,7 +37,6 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
       <div style={{ display: 'flex', alignItems: 'center', gap: '58px', flexShrink: 0 }}>
         {NAV_LINKS.map((link) => {
           const key = link.toLowerCase().replace(/\s+/g, '-')
-          const isActive = page === key
           return (
             <button
               key={link}

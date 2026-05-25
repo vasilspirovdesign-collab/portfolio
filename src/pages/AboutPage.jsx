@@ -2,8 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Copy, Check } from 'lucide-react'
 import { t } from '../theme'
 import { heading, bodyText, photoCard, photoImg } from '../styles'
-import InnerHeader from '../components/InnerHeader'
-import SidebarNav from '../components/SidebarNav'
+import PageLayout from '../components/PageLayout'
 import profilePhoto from '../assets/smallerVasko.png'
 import resumePdf from '../assets/resume.pdf'
 
@@ -39,22 +38,19 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
     setTimeout(() => setCopied(null), 2000)
   }, [])
 
-  const textPrimary = dark ? '#d0d2d0' : '#414141'
+  const textPrimary = t(dark, 'text')
 
   return (
-    <div className="transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
-      <InnerHeader
-        dark={dark}
-        onToggle={onToggle}
-        onHome={onBack}
-        crumbs={[{ label: 'About me' }]}
-      />
-
-      <div style={{ display: 'flex', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
-        <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
-
-        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', maxWidth: '1004px', minHeight: 'calc(100vh - 64px)' }}>
-          <div key={activeTab} className="tab-enter" style={{ display: 'contents' }}>
+    <PageLayout
+      dark={dark}
+      onToggle={onToggle}
+      onHome={onBack}
+      crumbs={[{ label: 'About me' }]}
+      tabs={TABS}
+      activeTab={activeTab}
+      onTabChange={setActiveTab}
+      mainStyle={{ maxWidth: '1004px' }}
+    >
 
           {activeTab === 'Introduction' && (
             <>
@@ -172,9 +168,6 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
             </div>
           )}
 
-          </div>
-        </main>
-      </div>
-    </div>
+    </PageLayout>
   )
 }
