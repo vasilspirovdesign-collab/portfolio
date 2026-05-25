@@ -125,7 +125,14 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
-                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Content coming soon.</p>
+                <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
+                  <li><strong>Establishing an Initial Action Plan</strong> — Rather than designing by feature area, I mapped user journeys against operational risk and signing complexity. This directed early effort toward the flows with the highest consequence — transaction creation, multi-signature collection, and key setup — before any account management or secondary surfaces.</li>
+                  <li><strong>Discovery</strong> — Stakeholder sessions with the Limechain team surfaced the governance requirements behind the product: who signs what, in what order, and what constitutes a valid submission. This defined the constraints that shaped every subsequent design decision.</li>
+                  <li><strong>Competitive Analysis</strong> — Reviewed existing Hedera tooling alongside analogous multi-signature interfaces in hardware wallet and institutional custody products to identify gaps in clarity, signing transparency, and error recovery.</li>
+                  <li><strong>Information Architecture</strong> — Mapped the full IA for both admin and user roles before any UI work began. The two role structures shared navigation patterns but diverged significantly in available actions — surfacing these differences early prevented inconsistency at prototype stage.</li>
+                  <li><strong>Wireframes and Prototype</strong> — Maintained low fidelity through two rounds of structural feedback before moving to visual design. Pressure to progress to high fidelity came early; holding at lo-fi preserved the ability to restructure flows without compounding visual debt.</li>
+                  <li><strong>Style Guide and UI Design</strong> — Built a dark-mode component library anchored in the purple/near-black palette appropriate for a security-critical professional tool. Inter was selected for its technical legibility at small sizes across dense data views.</li>
+                </ol>
               </div>
             </>
           )}
