@@ -148,7 +148,11 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
-                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Content coming soon.</p>
+                <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                  <p style={{ margin: 0 }}>Design for the signer who has never signed before, not the one who does it daily. Multi-signature workflows are opaque by default — keys, thresholds, and confirmation states are invisible unless explicitly surfaced. I designed the signing flow to make each party&apos;s action visible in real time, with explicit confirmation states at every step. Power users lose no capability; first-time signers gain the context they need to act with confidence.</p>
+                  <p style={{ margin: 0 }}>One architecture, two role surfaces. Rather than building separate navigation structures for admin and user roles, I mapped both onto a shared IA and introduced role-specific visibility at the action level. This reduced cognitive overhead for users moving between roles and simplified developer implementation without sacrificing access control precision.</p>
+                  <p style={{ margin: 0 }}>Treat irreversibility as a design constraint, not a warning. Blockchain transactions cannot be undone. Rather than relying on confirmation dialogs as a catch-all, I introduced progressive disclosure throughout the transaction creation flow — surfacing fee estimates, recipient details, and signing requirements before any commitment point. The goal was informed action, not friction for friction&apos;s sake.</p>
+                </div>
               </div>
             </>
           )}
