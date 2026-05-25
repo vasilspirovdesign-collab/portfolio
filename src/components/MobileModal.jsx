@@ -88,7 +88,7 @@ export default function MobileModal() {
           <button
             onClick={copyLink}
             style={{
-              marginTop: '8px', width: '100%', height: '48px',
+              marginTop: '8px', width: '100%', height: '48px', flexShrink: 0,
               backgroundColor: copied ? '#3BAA6E' : '#005AFF',
               border: 'none', borderRadius: '5px', cursor: 'pointer',
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
