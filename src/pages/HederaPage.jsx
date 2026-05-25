@@ -162,7 +162,16 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
-                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Content coming soon.</p>
+                <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                  <p style={{ margin: 0 }}>Transactions · Accounts · Tokens · Consensus Service · File Service · Contact List</p>
+                  <p style={{ margin: 0 }}>The final solution was a desktop application covering six operational areas across two user roles, built on a shared component system with role-aware access controls.</p>
+                  <p style={{ margin: 0 }}><strong>Multi-Signature Transaction Workflow</strong> — A five-stage signing pipeline (Create → Review → Share → Sign → Execute) with real-time visibility into each collaborator&apos;s action and automatic collation and submission of completed signatures.</p>
+                  <p style={{ margin: 0 }}><strong>Secure Key and Identity Management</strong> — Local key generation and recovery phrase handling, wallet integration for signing, and configurable role-based permissions scoped to the organisation level.</p>
+                  <p style={{ margin: 0 }}><strong>Batch Transaction Support</strong> — Token transfers to multiple accounts and bulk account or topic updates executed within a single flow, reducing operational overhead for high-volume council actions.</p>
+                  <p style={{ margin: 0 }}><strong>Hedera Asset Management</strong> — Direct access to network files, preparation of upgrades for Testnet and Mainnet, and management of special network configuration files.</p>
+                  <p style={{ margin: 0 }}><strong>Time-Delayed Transaction Execution</strong> — Transactions built and staged for execution at a future timestamp, enabling scheduled mainnet updates and consensus-aligned governance actions.</p>
+                  <p style={{ margin: 0 }}><strong>Privacy-Aware Collaboration</strong> — Encrypted storage and sharing for security-related updates, NDA-bound transactions, and council-only operations.</p>
+                </div>
               </div>
             </>
           )}
