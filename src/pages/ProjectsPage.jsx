@@ -9,6 +9,7 @@ const CATEGORIES = [
     name: 'Crypto',
     projects: [
       { title: 'Opus Edu', description: 'OpusEdu is a platform where creators and learners connect to share and gain knowledge, powered by blockchain technology.' },
+      { title: 'Hedera Transaction Tool', description: 'A transaction tool built on the Hedera network, enabling fast and low-cost token transfers with a clean, accessible interface.' },
     ],
   },
 ]

@@ -2,6 +2,12 @@ import { useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { t } from '../theme'
 import opusEduCover from '../assets/opus-edu-cover.png'
+import hederaThumb from '../assets/hedera-thumb.png'
+
+const THUMBNAILS = {
+  'Opus Edu': opusEduCover,
+  'Hedera Transaction Tool': hederaThumb,
+}
 
 const checkerboard = {
   backgroundImage: `linear-gradient(45deg, #e8e8e8 25%, transparent 25%),
@@ -64,7 +70,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
     >
       {/* Image */}
       <div style={{ width: '100%', aspectRatio: '329 / 219', overflow: 'hidden' }}>
-        <img src={opusEduCover} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        <img src={THUMBNAILS[title] || opusEduCover} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
 
       {/* Text */}
@@ -92,7 +98,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
         )}
 
         {/* Arrow button — visible on hover */}
-        <div style={{
+        <div className={hovered ? 'icon-active' : ''} style={{
           position: 'absolute', left: '261px', top: '68px',
           width: '56px', height: '56px', borderRadius: '38.5px',
           backgroundColor: 'rgba(250, 250, 250, 0.88)',

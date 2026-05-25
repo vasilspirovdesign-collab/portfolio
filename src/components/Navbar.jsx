@@ -65,7 +65,7 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
         <button
           onClick={onToggle}
           aria-label="Toggle theme"
-          className="transition-opacity duration-200 hover:opacity-70"
+          className="icon-btn transition-opacity duration-200 hover:opacity-70"
           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}
         >
           {isDark ? <Sun size={24} color={t(isDark, 'text')} strokeWidth={1.5} /> : <Moon size={24} color={t(isDark, 'text')} strokeWidth={1.5} />}

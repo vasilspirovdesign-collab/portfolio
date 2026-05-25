@@ -134,6 +134,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 href="https://drive.google.com/drive/u/0/folders/1vKvEhL1Vl1Po8A_k6sdKo8XCUQq6VtgE"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="icon-btn"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', ...heading, color: '#005AFF', textDecoration: 'none' }}
               >
                 Research Data
