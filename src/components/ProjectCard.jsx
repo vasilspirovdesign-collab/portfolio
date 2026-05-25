@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { t } from '../theme'
 import opusEduCover from '../assets/opus-edu-cover.png'
 import hederaThumb from '../assets/hedera-thumb.png'
+import carbonchainThumb from '../assets/carbonchain-thumb.png'
 
 const THUMBNAILS = {
   'Opus Edu': opusEduCover,
   'Hedera Transaction Tool': hederaThumb,
-  'Rowan Carbon Chain': hederaThumb,
+  'Rowan Carbon Chain': carbonchainThumb,
 }
 
 const checkerboard = {
