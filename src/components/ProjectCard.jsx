@@ -98,7 +98,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
 
         {/* Arrow button — visible on hover */}
         <div style={{
-          position: 'absolute', left: '261px', top: '68px',
+          position: 'absolute', right: '12px', bottom: '12px',
           width: '40px', height: '40px', borderRadius: '38.5px',
           backgroundColor: isDark ? '#2e2e2e' : '#f0f0f0',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -106,15 +106,15 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
           transform: hovered ? 'scale(1)' : 'scale(0.8)',
           transition: 'opacity 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1)',
         }}>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <svg width="26.5" height="26.5" viewBox="0 0 24 24" fill="none">
             <defs>
-              <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#63CAFF" />
                 <stop offset="100%" stopColor="#1A5AFF" />
               </linearGradient>
             </defs>
-            <line x1="3" y1="11" x2="19" y2="11" stroke="url(#arrowGradient)" strokeWidth="1.5" strokeLinecap="round" />
-            <polyline points="12,4 19,11 12,18" stroke="url(#arrowGradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <line x1="4" y1="12" x2="20" y2="12" stroke="url(#arrowGradient)" strokeWidth="1.75" strokeLinecap="round" />
+            <polyline points="13,5 20,12 13,19" stroke="url(#arrowGradient)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>
