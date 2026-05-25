@@ -66,11 +66,11 @@ export default function WorkflowPage({ dark, onBack, onToggle }) {
                   <p style={{ margin: 0 }}>There&apos;s no universal playbook for UX Design - just a commitment to iteration, user understanding, and designing experiences that genuinely work for the people using them.</p>
                   <p style={{ margin: 0 }}>The best experiences aren&apos;t designed once - they&apos;re shaped through continuous iteration, deep user understanding, and the willingness to keep improving.</p>
                   <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc' }}>
-                    <li>Requirement Analysis</li>
-                    <li>Design</li>
-                    <li>Testing</li>
-                    <li>Implementation</li>
-                    <li>Maintance</li>
+                    <li><strong>Requirement Analysis</strong></li>
+                    <li><strong>Design</strong></li>
+                    <li><strong>Testing</strong></li>
+                    <li><strong>Implementation</strong></li>
+                    <li><strong>Maintance</strong></li>
                   </ul>
                 </div>
               </div>
