@@ -13,6 +13,7 @@ const PROJECT = 'Hedera Transaction Tool'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
+  { label: 'Case Study', href: 'https://www.behance.net/gallery/249567625/Transaction-Tool' },
 ]
 
 export default function HederaPage({ dark, onBack, onHome, onToggle }) {
