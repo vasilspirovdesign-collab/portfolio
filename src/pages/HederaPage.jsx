@@ -3,6 +3,7 @@ import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import InnerHeader from '../components/InnerHeader'
 import SidebarNav from '../components/SidebarNav'
+import hederaIntro from '../assets/hedera-intro.png'
 
 const PROJECT = 'Hedera Transaction Tool'
 
@@ -33,7 +34,9 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Introduction' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={hederaIntro} alt="Hedera Transaction Tool" loading="lazy" style={photoImg} />
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Hedera Transaction Tool</h1>
