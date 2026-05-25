@@ -99,7 +99,20 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
-                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Content coming soon.</p>
+                <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                  <p style={{ margin: 0 }}>Lead UX Designer — Full ownership from discovery through UI delivery and handoff.</p>
+                  <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <li><strong>Stakeholder interviews</strong> to define operational requirements and governance constraints</li>
+                    <li><strong>Competitive review</strong> of existing Hedera tooling and analogous signing interfaces</li>
+                    <li><strong>Information architecture</strong> for two distinct user roles across six capability areas</li>
+                    <li><strong>Low-fidelity and mid-fidelity wireframes</strong> across all core flows</li>
+                    <li><strong>Interactive Figma prototype</strong> for stakeholder validation</li>
+                    <li><strong>Style guide, component library, and design tokens</strong></li>
+                    <li><strong>High-fidelity UI delivery</strong> across all screens</li>
+                    <li><strong>Design QA and specification support</strong> during developer handoff</li>
+                  </ul>
+                  <p style={{ margin: 0 }}>Tools: Figma · FigJam · Notion</p>
+                </div>
               </div>
             </>
           )}
