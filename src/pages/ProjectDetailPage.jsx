@@ -11,6 +11,7 @@ import opusEduDecisions from '../assets/opus-edu-decisions.jpg'
 import opusEduProblem from '../assets/opus-edu-problem.jpg'
 import opusEduSolution from '../assets/opus-edu-solution.jpg'
 import opusEduProcessSs from '../assets/opus-edu-process-ss.png'
+import opusEduLearned from '../assets/opus-edu-learned.png'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
@@ -32,10 +33,10 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
         crumbs={[{ label: 'Projects', onClick: onBack }, { label: project }]}
       />
 
-      <div style={{ display: 'flex', minHeight: 'calc(100vh - 64px)', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
+      <div style={{ display: 'flex', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
 
-        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px' }}>
+        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', minHeight: 'calc(100vh - 64px)' }}>
           <div key={activeTab} className="tab-enter" style={{ display: 'contents' }}>
 
           {activeTab === 'Introduction' && (
@@ -71,9 +72,9 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                   <p style={{ margin: 0 }}>Designing a multi-stakeholder platform where complexity is the product.</p>
                   <p style={{ margin: 0 }}>A single product had to serve three user types with opposing needs:</p>
                   <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <li>Admins - oversight, control, and trust signals across all content and users</li>
-                    <li>Content Creators - a guided but flexible multi-step creation flow with real-time feedback and draft persistence</li>
-                    <li>Learners - clarity and confidence at every step, especially when encountering unfamiliar interaction patterns for the first time</li>
+                    <li><strong>Admins</strong> - oversight, control, and trust signals across all content and users</li>
+                    <li><strong>Content Creators</strong> - a guided but flexible multi-step creation flow with real-time feedback and draft persistence</li>
+                    <li><strong>Learners</strong> - clarity and confidence at every step, especially when encountering unfamiliar interaction patterns for the first time</li>
                   </ul>
                   <p style={{ margin: 0 }}>The platform covered seven interconnected use cases: course creation, video content upload, test configuration, certificate issuance, user onboarding, course discovery and purchase, and content moderation - with no pre-existing design system to build from.</p>
                   <p style={{ margin: 0 }}>The risk was a product that felt fragmented, technically intimidating, or cognitively overwhelming at exactly the moments users needed to feel most confident.</p>
@@ -109,15 +110,15 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Lead UX Designer — Full ownership from discovery through delivery and handoff QA.</p>
                   <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <li>Stakeholder interviews and user group sessions to define objectives, goals, and constraints</li>
-                    <li>Competitive benchmarking across six platforms</li>
-                    <li>Information architecture and user flow mapping for all three user types</li>
-                    <li>Low-fidelity and mid-fidelity wireframes</li>
-                    <li>Interactive Figma prototype for stakeholder validation</li>
-                    <li>Two rounds of moderated usability testing</li>
-                    <li>Component library and design tokens</li>
-                    <li>High-fidelity UI delivery across all core flows</li>
-                    <li>Design QA and specification support during developer handoff</li>
+                    <li><strong>Stakeholder interviews and user group sessions</strong> to define objectives, goals, and constraints</li>
+                    <li><strong>Competitive benchmarking</strong> across six platforms</li>
+                    <li><strong>Information architecture and user flow mapping</strong> for all three user types</li>
+                    <li><strong>Low-fidelity and mid-fidelity wireframes</strong></li>
+                    <li><strong>Interactive Figma prototype</strong> for stakeholder validation</li>
+                    <li><strong>Two rounds of moderated usability testing</strong></li>
+                    <li><strong>Component library and design tokens</strong></li>
+                    <li><strong>High-fidelity UI delivery</strong> across all core flows</li>
+                    <li><strong>Design QA and specification support</strong> during developer handoff</li>
                   </ul>
                   <p style={{ margin: 0 }}>Tools: Figma · FigJam · Maze · Notion</p>
                 </div>
@@ -143,13 +144,13 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
                 <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
-                  <li>Establishing an Initial Action Plan — Rather than designing top-to-bottom by product scope, I mapped user journeys against pain severity and business impact. This prioritisation directed early effort toward the highest-risk flows rather than the most visible pages.</li>
-                  <li>Discovery Stakeholder interviews surfaced competing priorities between business goals and user needs. User group sessions with prospective learners and instructors revealed a consistent pattern: both groups were willing to engage with unfamiliar interaction models — but only if the path felt guided rather than technical.</li>
-                  <li>Competitive Analysis Benchmarked against both conventional (Udemy, Teachable, Coursera) and Web3-native (Rabbithole, Mirror) platforms to identify gaps in onboarding clarity, content creation flow, and certificate management.</li>
-                  <li>Information Architecture Mapped the full IA for all three user types before any UI work began. This step surfaced flow conflicts between creator and learner journeys that would have been expensive to resolve at prototype stage.</li>
-                  <li>Wireframes and Prototype — Maintained low fidelity longer than stakeholders were comfortable with. Pressure to move to visual design came early. Holding at lo-fi through two additional structural feedback rounds prevented significant rework and kept the team focused on behaviour, not appearance.</li>
-                  <li>Usability Testing Two rounds: the first with a wireframe prototype targeting structural comprehension, the second with the high-fidelity prototype targeting confidence and error recovery at the highest-risk interactions - wallet connection, course creation step three, and certificate issuance.</li>
-                  <li>Dev Collaboration and QA Weekly design critique sessions with engineers were introduced mid-project. In four sessions, technically complex interactions were identified before they reached the spec stage. This became a standing practice for the remainder of the engagement and removed the most common source of late-stage rework.</li>
+                  <li><strong>Establishing an Initial Action Plan</strong> — Rather than designing top-to-bottom by product scope, I mapped user journeys against pain severity and business impact. This prioritisation directed early effort toward the highest-risk flows rather than the most visible pages.</li>
+                  <li><strong>Discovery</strong> Stakeholder interviews surfaced competing priorities between business goals and user needs. User group sessions with prospective learners and instructors revealed a consistent pattern: both groups were willing to engage with unfamiliar interaction models — but only if the path felt guided rather than technical.</li>
+                  <li><strong>Competitive Analysis</strong> Benchmarked against both conventional (Udemy, Teachable, Coursera) and Web3-native (Rabbithole, Mirror) platforms to identify gaps in onboarding clarity, content creation flow, and certificate management.</li>
+                  <li><strong>Information Architecture</strong> Mapped the full IA for all three user types before any UI work began. This step surfaced flow conflicts between creator and learner journeys that would have been expensive to resolve at prototype stage.</li>
+                  <li><strong>Wireframes and Prototype</strong> — Maintained low fidelity longer than stakeholders were comfortable with. Pressure to move to visual design came early. Holding at lo-fi through two additional structural feedback rounds prevented significant rework and kept the team focused on behaviour, not appearance.</li>
+                  <li><strong>Usability Testing</strong> Two rounds: the first with a wireframe prototype targeting structural comprehension, the second with the high-fidelity prototype targeting confidence and error recovery at the highest-risk interactions - wallet connection, course creation step three, and certificate issuance.</li>
+                  <li><strong>Dev Collaboration and QA</strong> Weekly design critique sessions with engineers were introduced mid-project. In four sessions, technically complex interactions were identified before they reached the spec stage. This became a standing practice for the remainder of the engagement and removed the most common source of late-stage rework.</li>
                 </ol>
               </div>
             </>
@@ -196,29 +197,14 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
           {activeTab === "Things I've learned.." && (
             <>
               <div style={photoCard(dark)}>
-                <svg viewBox="0 0 662 380" width="634" height="100%" style={{ borderRadius: '8px', display: 'block' }}>
-                  <rect width="662" height="380" rx="10" fill={dark ? '#3a3a3a' : '#f0f0f0'} />
-                  <rect x="24" y="24" width="160" height="14" rx="4" fill={dark ? '#555' : '#c8c8c8'} />
-                  <polyline points="24,110 60,95 96,105 132,88 168,100 204,92 240,108 276,118 312,130 348,142 384,150 420,155 456,158" fill="none" stroke="#E8841A" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
-                  <polyline points="384,158 420,165 440,170 456,162 476,172 496,155 516,165 532,150 548,158 568,144 590,148 614,135 638,140" fill="none" stroke="#3BAA6E" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
-                  <rect x="24" y="300" width="48" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="80" y="300" width="72" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="320" y="300" width="36" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="364" y="300" width="60" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="24" y="320" width="60" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="92" y="320" width="84" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="320" y="320" width="52" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="380" y="320" width="44" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <circle cx="456" cy="158" r="4" fill="#E8841A" />
-                  <circle cx="456" cy="162" r="4" fill="#3BAA6E" />
-                </svg>
+                <img src={opusEduLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
-                  <li>Think in connected strategies, not isolated screens. Early in the project I designed the course creation flow in isolation. When mapped against the learner&apos;s browsing experience, three creator-side fields emerged that were never surfaced to learners - wasted effort on both sides. Connected thinking across user types consistently saves time and prevents the kind of inconsistency that erodes trust in a product.</li>
-                  <li>Low fidelity longer than feels comfortable. Stakeholders consistently push for high-fidelity design too early - it feels more concrete, more finished. Holding at lo-fi through two structural feedback rounds on this project saved significant rework. Visual design is always reversible. Structure rarely is.</li>
-                  <li>Bring engineers in before the spec, not after. Weekly critique sessions with developers did not slow the project down - they accelerated handoff. Four interactions identified in those sessions were technically infeasible as designed. Catching them at whiteboard stage rather than build stage eliminated the most common and most expensive category of late-stage friction. Earlier involvement consistently produces fewer surprises and a better final product.</li>
+                  <li><strong>Think in connected strategies, not isolated screens.</strong> Early in the project I designed the course creation flow in isolation. When mapped against the learner&apos;s browsing experience, three creator-side fields emerged that were never surfaced to learners - wasted effort on both sides. Connected thinking across user types consistently saves time and prevents the kind of inconsistency that erodes trust in a product.</li>
+                  <li><strong>Low fidelity longer than feels comfortable.</strong> Stakeholders consistently push for high-fidelity design too early - it feels more concrete, more finished. Holding at lo-fi through two structural feedback rounds on this project saved significant rework. Visual design is always reversible. Structure rarely is.</li>
+                  <li><strong>Bring engineers in before the spec, not after.</strong> Weekly critique sessions with developers did not slow the project down - they accelerated handoff. Four interactions identified in those sessions were technically infeasible as designed. Catching them at whiteboard stage rather than build stage eliminated the most common and most expensive category of late-stage friction. Earlier involvement consistently produces fewer surprises and a better final product.</li>
                 </ul>
               </div>
             </>

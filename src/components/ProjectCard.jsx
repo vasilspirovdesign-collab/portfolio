@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { ArrowRight } from 'lucide-react'
 import { t } from '../theme'
 import opusEduCover from '../assets/opus-edu-cover.png'
 import hederaThumb from '../assets/hedera-thumb.png'
@@ -98,16 +97,24 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
         )}
 
         {/* Arrow button — visible on hover */}
-        <div className={hovered ? 'icon-active' : ''} style={{
-          position: 'absolute', left: '261px', top: '68px',
-          width: '56px', height: '56px', borderRadius: '38.5px',
-          backgroundColor: 'rgba(250, 250, 250, 0.88)',
+        <div style={{
+          position: 'absolute', right: '12px', bottom: '12px',
+          width: '40px', height: '40px', borderRadius: '38.5px',
+          backgroundColor: isDark ? '#2e2e2e' : '#f0f0f0',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           opacity: hovered ? 1 : 0,
           transform: hovered ? 'scale(1)' : 'scale(0.8)',
           transition: 'opacity 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1)',
         }}>
-          <ArrowRight size={26.5} color={t(isDark, 'text')} strokeWidth={1.5} />
+          <svg width="26.5" height="26.5" viewBox="0 0 26.5 26.5" fill="none" overflow="visible">
+            <defs>
+              <linearGradient id="cardArrow" x1="8.876" y1="12.634" x2="16.833" y2="15.833" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#00B5F1" />
+                <stop offset="1" stopColor="#0070F2" />
+              </linearGradient>
+            </defs>
+            <path d="M5.52083 13.25H20.9792M13.25 20.9792L20.9792 13.25L13.25 5.52083" stroke="url(#cardArrow)" strokeWidth="2.52381" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </div>
       </div>
     </div>
