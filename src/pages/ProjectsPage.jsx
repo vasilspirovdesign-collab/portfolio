@@ -9,18 +9,6 @@ const CATEGORIES = [
     name: 'Crypto',
     projects: [
       { title: 'Opus Edu', description: 'OpusEdu is a platform where creators and learners connect to share and gain knowledge, powered by blockchain technology.' },
-      { empty: true },
-      { empty: true },
-      { empty: true },
-    ],
-  },
-  {
-    name: 'Finance',
-    projects: [
-      { empty: true },
-      { empty: true },
-      { empty: true },
-      { empty: true },
     ],
   },
 ]

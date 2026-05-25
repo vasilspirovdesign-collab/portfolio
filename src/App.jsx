@@ -11,9 +11,6 @@ import WorkflowPage from './pages/WorkflowPage'
 
 const FEATURED = [
   { title: 'Opus Edu', description: 'OpusEdu is a platform where creators and learners connect to share and gain knowledge, powered by blockchain technology.' },
-  { empty: true },
-  { empty: true },
-  { empty: true },
 ]
 
 function parseHash() {
