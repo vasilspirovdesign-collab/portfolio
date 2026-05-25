@@ -4,4 +4,4 @@ export const PROJECTS = [
   { title: 'Rowan Carbon Chain', description: 'A blockchain-based platform for issuing, managing, and retiring carbon offset certificates via smart contracts.' },
 ]
 
-export const FEATURED = PROJECTS.slice(0, 2)
+export const FEATURED = PROJECTS
