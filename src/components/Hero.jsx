@@ -61,7 +61,7 @@ export default function Hero({ onGoResume }) {
             <span style={rowText}>+359878517684</span>
           </a>
           <div style={{ position: 'relative', width: '1px', height: '48px', backgroundColor: '#d0d2d0', flexShrink: 0 }} />
-          <a href="https://drive.google.com/file/d/1ZlRpfvm1xImduUqSnBE2k-Wq9W75dsbN/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', display: 'flex', width: '192px', alignItems: 'center', justifyContent: 'center', gap: '8px', textDecoration: 'none', ...rowText }}>
+          <a href="https://drive.google.com/file/d/1wNuYbZ1bbGMMaf4NZdFX7fS-e3YJtBN3/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', display: 'flex', width: '192px', alignItems: 'center', justifyContent: 'center', gap: '8px', textDecoration: 'none', ...rowText }}>
             <img src={downloadIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
             Resume
           </a>
