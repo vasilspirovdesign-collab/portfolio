@@ -80,7 +80,12 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
-                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Content coming soon.</p>
+                <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                  <p style={{ margin: 0 }}>The hardest problem wasn&apos;t the interface. It was designing confidence into irreversible actions.</p>
+                  <p style={{ margin: 0 }}>Existing tools available to Hedera council members provided insufficient coverage of transaction types and no support for multi-party signing workflows. Council operations — treasury transfers, network upgrades, software updates — required coordinated action across multiple keyholders, with no tooling built to support that process securely or legibly.</p>
+                  <p style={{ margin: 0 }}>The parallel challenge was user range. The same interface had to serve a business user signing a transaction for the first time and a developer managing key pairs and batch operations at scale. Designing for the least technical user without stripping capability from the most technical one required deliberate layering at every interaction point.</p>
+                  <p style={{ margin: 0 }}>Both problems shared a root: users needed to act with certainty in a context where certainty is structurally hard to provide. The design had to surface enough information — at the right moment — to make high-stakes decisions feel informed rather than blind.</p>
+                </div>
               </div>
             </>
           )}
