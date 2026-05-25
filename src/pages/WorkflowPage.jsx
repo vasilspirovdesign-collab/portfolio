@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { t } from '../theme'
 import { heading, bodyText, photoCard, photoImg, contentBlock } from '../styles'
-import InnerHeader from '../components/InnerHeader'
-import SidebarNav from '../components/SidebarNav'
+import PageLayout from '../components/PageLayout'
 import designApproachImg from '../assets/designApproach.png'
 import coreValuesImg from '../assets/coreValues.png'
 import whyUxImg from '../assets/whyUx.png'
@@ -25,19 +24,20 @@ const WHY_UX = [
 
 export default function WorkflowPage({ dark, onBack, onToggle }) {
   const [activeTab, setActiveTab] = useState('Core Values')
-  useEffect(() => { document.title = 'Workflow — Vasil Spirov' }, [])
+  useEffect(() => { document.title = 'Workflow - Vasil Spirov' }, [])
 
-  const textPrimary = dark ? '#d0d2d0' : '#414141'
+  const textPrimary = t(dark, 'text')
 
   return (
-    <div className="transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
-      <InnerHeader dark={dark} onToggle={onToggle} onHome={onBack} crumbs={[{ label: 'Workflow' }]} />
-
-      <div style={{ display: 'flex', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
-        <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
-
-        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', minHeight: 'calc(100vh - 64px)' }}>
-          <div key={activeTab} className="tab-enter" style={{ display: 'contents' }}>
+    <PageLayout
+      dark={dark}
+      onToggle={onToggle}
+      onHome={onBack}
+      crumbs={[{ label: 'Workflow' }]}
+      tabs={TABS}
+      activeTab={activeTab}
+      onTabChange={setActiveTab}
+    >
 
           {activeTab === 'Core Values' && (
             <>
@@ -93,9 +93,6 @@ export default function WorkflowPage({ dark, onBack, onToggle }) {
             </>
           )}
 
-          </div>
-        </main>
-      </div>
-    </div>
+    </PageLayout>
   )
 }
