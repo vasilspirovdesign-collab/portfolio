@@ -11,6 +11,21 @@ body {
   overflow-y: scroll;
 }
 
+.icon-btn:hover svg path,
+.icon-btn:hover svg line,
+.icon-btn:hover svg polyline,
+.icon-btn:hover svg circle,
+.icon-btn:hover svg rect {
+  stroke: url(#iconGradient);
+}
+
+.icon-active svg path,
+.icon-active svg line,
+.icon-active svg polyline,
+.icon-active svg circle {
+  stroke: url(#iconGradient);
+}
+
 @keyframes page-enter {
   from { opacity: 0; transform: translateY(16px) scale(0.985); }
   to   { opacity: 1; transform: translateY(0)    scale(1); }

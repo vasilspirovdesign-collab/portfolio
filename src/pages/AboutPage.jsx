@@ -160,6 +160,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
                   {row.copyable && (
                     <button
                       onClick={() => copyToClipboard(row.value)}
+                      className={copied === row.value ? '' : 'icon-btn'}
                       style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', display: 'flex', color: copied === row.value ? '#3BAA6E' : (dark ? '#a2a3a5' : '#757575'), transition: 'color 200ms', flexShrink: 0 }}
                     >
                       {copied === row.value ? <Check size={16} strokeWidth={2} /> : <Copy size={16} strokeWidth={1.75} />}

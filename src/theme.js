@@ -9,11 +9,11 @@ export const light = {
 }
 
 export const dark = {
-  bg:       '#414141',
-  navBg:    '#414141',
-  cardBg:   '#4d4d4d',
-  border:   '#555555',
-  activeBg: '#555555',
+  bg:       '#171717',
+  navBg:    '#171717',
+  cardBg:   '#242424',
+  border:   '#2e2e2e',
+  activeBg: '#2e2e2e',
   text:     '#d0d2d0',
   muted:    '#d0d2d0',
 }

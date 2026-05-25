@@ -34,7 +34,7 @@ function toHash(page, selectedProject) {
 
 export default function App() {
   const initial = parseHash()
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark')
   const [page, setPage] = useState(initial.page)
   const [selectedProject, setSelectedProject] = useState(initial.selectedProject)
   const [aboutInitialTab, setAboutInitialTab] = useState(undefined)
@@ -45,7 +45,11 @@ export default function App() {
     setPage('project-detail')
   }
 
-  const toggle = () => setDark((d) => !d)
+  const toggle = () => setDark((d) => {
+    const next = !d
+    localStorage.setItem('theme', next ? 'dark' : 'light')
+    return next
+  })
 
   useEffect(() => {
     const newHash = toHash(page, selectedProject)
@@ -114,6 +118,14 @@ export default function App() {
 
   return (
     <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), transition: 'background-color 0.3s' }}>
+      <svg width="0" height="0" style={{ position: 'absolute', overflow: 'hidden', pointerEvents: 'none' }} aria-hidden="true">
+        <defs>
+          <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#63CAFF" />
+            <stop offset="100%" stopColor="#1A5AFF" />
+          </linearGradient>
+        </defs>
+      </svg>
       <Navbar dark={dark} onToggle={() => setDark((d) => !d)} onNavigate={setPage} page={page} />
 
       <main style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '30px', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>

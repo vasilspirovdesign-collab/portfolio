@@ -9,6 +9,15 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
   const border = t(dark, 'border')
 
   return (
+    <>
+    <svg width="0" height="0" style={{ position: 'absolute', overflow: 'hidden', pointerEvents: 'none' }} aria-hidden="true">
+      <defs>
+        <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#63CAFF" />
+          <stop offset="100%" stopColor="#1A5AFF" />
+        </linearGradient>
+      </defs>
+    </svg>
     <header
       className="transition-[background-color,border-color] duration-300"
       style={{
@@ -20,7 +29,7 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
       }}
     >
       <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '16px', minWidth: 0 }}>
-        <button onClick={onHome} aria-label="Go home" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
+        <button onClick={onHome} aria-label="Go home" className="icon-btn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
           <Home size={24} color={textSecondary} strokeWidth={1.5} />
         </button>
         {crumbs.map((crumb, i) => {
@@ -46,10 +55,11 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
         })}
       </div>
       <div style={{ display: 'flex', flex: '1 0 0', justifyContent: 'flex-end', alignItems: 'center', minWidth: 0 }}>
-        <button onClick={onToggle} aria-label="Toggle theme" className="transition-opacity duration-200 hover:opacity-70" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
+        <button onClick={onToggle} aria-label="Toggle theme" className="icon-btn transition-opacity duration-200 hover:opacity-70" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
           {dark ? <Sun size={24} color={textPrimary} strokeWidth={1.5} /> : <Moon size={24} color={textPrimary} strokeWidth={1.5} />}
         </button>
       </div>
     </header>
+    </>
   )
 }
