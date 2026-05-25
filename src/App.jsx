@@ -6,8 +6,10 @@ import ProjectCard from './components/ProjectCard'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import HederaPage from './pages/HederaPage'
+import CarbonChainPage from './pages/CarbonChainPage'
 import AboutPage from './pages/AboutPage'
 import WorkflowPage from './pages/WorkflowPage'
+import MobileModal from './components/MobileModal'
 
 const FEATURED = [
   { title: 'Opus Edu', description: 'OpusEdu is a platform where creators and learners connect to share and gain knowledge, powered by blockchain technology.' },
@@ -76,47 +78,58 @@ export default function App() {
   }, [page])
 
   if (page === 'about-me') {
-    return <AboutPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} initialTab={aboutInitialTab} />
+    return <><MobileModal /><AboutPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} initialTab={aboutInitialTab} /></>
   }
 
   if (page === 'workflow') {
-    return <WorkflowPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} />
+    return <><MobileModal /><WorkflowPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} /></>
   }
 
   if (page === 'project-detail') {
     if (selectedProject === 'Hedera Transaction Tool') {
       return (
-        <HederaPage
+        <><MobileModal /><HederaPage
           dark={dark}
           onHome={() => setPage('home')}
           onBack={() => setPage('projects')}
           onToggle={toggle}
-        />
+        /></>
+      )
+    }
+    if (selectedProject === 'Rowan Carbon Chain') {
+      return (
+        <><MobileModal /><CarbonChainPage
+          dark={dark}
+          onHome={() => setPage('home')}
+          onBack={() => setPage('projects')}
+          onToggle={toggle}
+        /></>
       )
     }
     return (
-      <ProjectDetailPage
+      <><MobileModal /><ProjectDetailPage
         dark={dark}
         project={selectedProject}
         onHome={() => setPage('home')}
         onBack={() => setPage('projects')}
         onToggle={toggle}
-      />
+      /></>
     )
   }
 
   if (page === 'projects') {
     return (
-      <ProjectsPage
+      <><MobileModal /><ProjectsPage
         dark={dark}
         onBack={() => setPage('home')}
         onOpenProject={openProject}
         onToggle={toggle}
-      />
+      /></>
     )
   }
 
   return (
+    <><MobileModal />
     <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), transition: 'background-color 0.3s' }}>
       <svg width="0" height="0" style={{ position: 'absolute', overflow: 'hidden', pointerEvents: 'none' }} aria-hidden="true">
         <defs>
@@ -153,5 +166,6 @@ export default function App() {
         </section>
       </main>
     </div>
+    </>
   )
 }
