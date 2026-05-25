@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { ArrowRight } from 'lucide-react'
 import { t } from '../theme'
 import opusEduCover from '../assets/opus-edu-cover.png'
 import hederaThumb from '../assets/hedera-thumb.png'
@@ -107,7 +106,10 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
           transform: hovered ? 'scale(1)' : 'scale(0.8)',
           transition: 'opacity 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1)',
         }}>
-          <ArrowRight size={26.5} color={t(isDark, 'text')} strokeWidth={1.5} />
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <line x1="3" y1="11" x2="19" y2="11" stroke={hovered ? 'url(#iconGradient)' : t(isDark, 'text')} strokeWidth="1.5" strokeLinecap="round" />
+            <polyline points="12,4 19,11 12,18" stroke={hovered ? 'url(#iconGradient)' : t(isDark, 'text')} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </div>
       </div>
     </div>

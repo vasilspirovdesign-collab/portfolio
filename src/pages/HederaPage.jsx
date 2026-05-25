@@ -4,6 +4,7 @@ import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import InnerHeader from '../components/InnerHeader'
 import SidebarNav from '../components/SidebarNav'
 import hederaIntro from '../assets/hedera-intro.png'
+import hederaProblem from '../assets/hedera-problem.png'
 
 const PROJECT = 'Hedera Transaction Tool'
 
@@ -77,7 +78,10 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Problem' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={hederaProblem} alt="Outdated Designs" loading="lazy" style={photoImg} />
+              </div>
+              <p style={{ margin: 0, fontFamily: 'Geist, system-ui, sans-serif', fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: dark ? '#a2a3a5' : '#757575' }}>Outdated Designs</p>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
