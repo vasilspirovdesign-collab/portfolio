@@ -6,7 +6,7 @@ import ProjectCard from './components/ProjectCard'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import HederaPage from './pages/HederaPage'
-import Rowan Carbon ChainPage from './pages/Rowan Carbon ChainPage'
+import CarbonChainPage from './pages/CarbonChainPage'
 import AboutPage from './pages/AboutPage'
 import WorkflowPage from './pages/WorkflowPage'
 
@@ -98,7 +98,7 @@ export default function App() {
     }
     if (selectedProject === 'Rowan Carbon Chain') {
       return (
-        <Rowan Carbon ChainPage
+        <CarbonChainPage
           dark={dark}
           onHome={() => setPage('home')}
           onBack={() => setPage('projects')}
