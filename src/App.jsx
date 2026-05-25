@@ -6,6 +6,7 @@ import ProjectCard from './components/ProjectCard'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import AboutPage from './pages/AboutPage'
+import WorkflowPage from './pages/WorkflowPage'
 
 const FEATURED = [
   { title: 'Opus Edu', description: 'OpusEdu is a platform where creators and learners connect to share and gain knowledge, powered by blockchain technology.' },
@@ -19,6 +20,7 @@ function parseHash() {
   if (!hash || hash === 'home') return { page: 'home', selectedProject: null }
   if (hash === 'projects') return { page: 'projects', selectedProject: null }
   if (hash === 'about') return { page: 'about-me', selectedProject: null }
+  if (hash === 'workflow') return { page: 'workflow', selectedProject: null }
   if (hash.startsWith('project/')) return { page: 'project-detail', selectedProject: decodeURIComponent(hash.slice(8)) }
   return { page: 'home', selectedProject: null }
 }
@@ -26,6 +28,7 @@ function parseHash() {
 function toHash(page, selectedProject) {
   if (page === 'projects') return '#projects'
   if (page === 'about-me') return '#about'
+  if (page === 'workflow') return '#workflow'
   if (page === 'project-detail' && selectedProject) return `#project/${encodeURIComponent(selectedProject)}`
   return '#home'
 }
@@ -73,6 +76,10 @@ export default function App() {
     return <AboutPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} initialTab={aboutInitialTab} />
   }
 
+  if (page === 'workflow') {
+    return <WorkflowPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} />
+  }
+
   if (page === 'project-detail') {
     return (
       <ProjectDetailPage
@@ -100,7 +107,7 @@ export default function App() {
     <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), transition: 'background-color 0.3s' }}>
       <Navbar dark={dark} onToggle={() => setDark((d) => !d)} onNavigate={setPage} page={page} />
 
-      <main style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '30px' }}>
+      <main style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '30px', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <Hero onGoResume={() => { setAboutInitialTab('Resume'); setPage('about-me') }} />
 
         <section>

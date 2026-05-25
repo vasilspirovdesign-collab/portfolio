@@ -8,8 +8,8 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
     <nav
       className="transition-[background-color,border-color] duration-300"
       style={{
-        display: 'flex', height: '94px', alignItems: 'center',
-        justifyContent: 'space-between', padding: '31px 30px',
+        display: 'flex', height: '64px', alignItems: 'center',
+        justifyContent: 'space-between', padding: '0 30px',
         borderBottom: `1px solid ${t(isDark, 'border')}`,
         backgroundColor: t(isDark, 'navBg'),
       }}

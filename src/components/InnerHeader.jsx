@@ -13,8 +13,8 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
       className="transition-[background-color,border-color] duration-300"
       style={{
         position: 'sticky', top: 0, zIndex: 10,
-        display: 'flex', height: '94px', alignItems: 'center',
-        padding: '31px 30px', gap: '24px',
+        display: 'flex', height: '64px', alignItems: 'center',
+        padding: '0 30px', gap: '24px',
         borderBottom: `1px solid ${border}`,
         backgroundColor: t(dark, 'bg'),
       }}

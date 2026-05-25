@@ -36,7 +36,7 @@ export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) 
         onHome={onBack}
         crumbs={[{ label: 'Projects' }]}
       />
-      <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         {CATEGORIES.map((category) => (
           <section key={category.name}>
             <h2 style={{ margin: '0 0 24px', ...navLabel, color: dark ? '#a2a3a5' : '#414141' }}>
