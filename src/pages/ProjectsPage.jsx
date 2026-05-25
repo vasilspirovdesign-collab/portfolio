@@ -10,7 +10,7 @@ const PROJECTS = [
 ]
 
 export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) {
-  useEffect(() => { document.title = 'Projects — Vasil Spirov' }, [])
+  useEffect(() => { document.title = 'Projects - Vasil Spirov' }, [])
 
   return (
     <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg') }}>

@@ -25,7 +25,7 @@ const WHY_UX = [
 
 export default function WorkflowPage({ dark, onBack, onToggle }) {
   const [activeTab, setActiveTab] = useState('Core Values')
-  useEffect(() => { document.title = 'Workflow — Vasil Spirov' }, [])
+  useEffect(() => { document.title = 'Workflow - Vasil Spirov' }, [])
 
   const textPrimary = dark ? '#d0d2d0' : '#414141'
 

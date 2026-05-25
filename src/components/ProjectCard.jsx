@@ -98,7 +98,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
           </p>
         )}
 
-        {/* Arrow button — visible on hover */}
+        {/* Arrow button - visible on hover */}
         <div style={{
           position: 'absolute', right: '12px', bottom: '12px',
           width: '40px', height: '40px', borderRadius: '38.5px',

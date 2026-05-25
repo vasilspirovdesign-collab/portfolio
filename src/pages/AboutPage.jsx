@@ -31,7 +31,7 @@ const BIO = [
 export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
   const [activeTab, setActiveTab] = useState(initialTab || 'Introduction')
   const [copied, setCopied] = useState(null)
-  useEffect(() => { document.title = 'About — Vasil Spirov' }, [])
+  useEffect(() => { document.title = 'About - Vasil Spirov' }, [])
 
   const copyToClipboard = useCallback((value) => {
     navigator.clipboard.writeText(value)

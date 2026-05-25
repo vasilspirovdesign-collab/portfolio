@@ -20,7 +20,7 @@ const TABS = [
 
 export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, project = 'Opus Edu' }) {
   const [activeTab, setActiveTab] = useState('Introduction')
-  useEffect(() => { document.title = `${project} — Vasil Spirov` }, [project])
+  useEffect(() => { document.title = `${project} - Vasil Spirov` }, [project])
 
   const textPrimary = dark ? '#d0d2d0' : '#414141'
 
@@ -54,8 +54,8 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', ...bodyText, color: textPrimary }}>
                   <p style={{ margin: 0 }}>Role: Senior UX Designer · End-to-End Product Design</p>
                   <p style={{ margin: 0 }}>OpusEdu is a scalable learning platform where instructors create and publish courses, learners discover and purchase them, and blockchain-verified certificates serve as tamper-proof proof of completion.</p>
-                  <p style={{ margin: 0 }}>The platform serves three distinct user types — admins, content creators, and learners — each with fundamentally different goals, mental models, and levels of technical fluency.</p>
-                  <p style={{ margin: 0 }}>The engagement required designing a cohesive product from the ground up: information architecture, interaction patterns, a shared component library, and high-fidelity screens across six core user journeys — with no prior design system and a technically novel domain that offered no established UX conventions to reference.</p>
+                  <p style={{ margin: 0 }}>The platform serves three distinct user types - admins, content creators, and learners - each with fundamentally different goals, mental models, and levels of technical fluency.</p>
+                  <p style={{ margin: 0 }}>The engagement required designing a cohesive product from the ground up: information architecture, interaction patterns, a shared component library, and high-fidelity screens across six core user journeys - with no prior design system and a technically novel domain that offered no established UX conventions to reference.</p>
                 </div>
               </div>
             </>
@@ -108,7 +108,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My role</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                  <p style={{ margin: 0 }}>Lead UX Designer — Full ownership from discovery through delivery and handoff QA.</p>
+                  <p style={{ margin: 0 }}>Lead UX Designer - Full ownership from discovery through delivery and handoff QA.</p>
                   <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <li><strong>Stakeholder interviews and user group sessions</strong> to define objectives, goals, and constraints</li>
                     <li><strong>Competitive benchmarking</strong> across six platforms</li>
@@ -144,11 +144,11 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
                 <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
-                  <li><strong>Establishing an Initial Action Plan</strong> — Rather than designing top-to-bottom by product scope, I mapped user journeys against pain severity and business impact. This prioritisation directed early effort toward the highest-risk flows rather than the most visible pages.</li>
-                  <li><strong>Discovery</strong> Stakeholder interviews surfaced competing priorities between business goals and user needs. User group sessions with prospective learners and instructors revealed a consistent pattern: both groups were willing to engage with unfamiliar interaction models — but only if the path felt guided rather than technical.</li>
+                  <li><strong>Establishing an Initial Action Plan</strong> - Rather than designing top-to-bottom by product scope, I mapped user journeys against pain severity and business impact. This prioritisation directed early effort toward the highest-risk flows rather than the most visible pages.</li>
+                  <li><strong>Discovery</strong> Stakeholder interviews surfaced competing priorities between business goals and user needs. User group sessions with prospective learners and instructors revealed a consistent pattern: both groups were willing to engage with unfamiliar interaction models - but only if the path felt guided rather than technical.</li>
                   <li><strong>Competitive Analysis</strong> Benchmarked against both conventional (Udemy, Teachable, Coursera) and Web3-native (Rabbithole, Mirror) platforms to identify gaps in onboarding clarity, content creation flow, and certificate management.</li>
                   <li><strong>Information Architecture</strong> Mapped the full IA for all three user types before any UI work began. This step surfaced flow conflicts between creator and learner journeys that would have been expensive to resolve at prototype stage.</li>
-                  <li><strong>Wireframes and Prototype</strong> — Maintained low fidelity longer than stakeholders were comfortable with. Pressure to move to visual design came early. Holding at lo-fi through two additional structural feedback rounds prevented significant rework and kept the team focused on behaviour, not appearance.</li>
+                  <li><strong>Wireframes and Prototype</strong> - Maintained low fidelity longer than stakeholders were comfortable with. Pressure to move to visual design came early. Holding at lo-fi through two additional structural feedback rounds prevented significant rework and kept the team focused on behaviour, not appearance.</li>
                   <li><strong>Usability Testing</strong> Two rounds: the first with a wireframe prototype targeting structural comprehension, the second with the high-fidelity prototype targeting confidence and error recovery at the highest-risk interactions - wallet connection, course creation step three, and certificate issuance.</li>
                   <li><strong>Dev Collaboration and QA</strong> Weekly design critique sessions with engineers were introduced mid-project. In four sessions, technically complex interactions were identified before they reached the spec stage. This became a standing practice for the remainder of the engagement and removed the most common source of late-stage rework.</li>
                 </ol>
