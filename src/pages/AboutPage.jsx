@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Download } from 'lucide-react'
 import { t } from '../theme'
 import { heading, bodyText } from '../styles'
 import InnerHeader from '../components/InnerHeader'
@@ -42,7 +41,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
         crumbs={[{ label: 'About me' }]}
       />
 
-      <div style={{ display: 'flex', minHeight: 'calc(100vh - 94px)', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
+      <div style={{ display: 'flex', minHeight: 'calc(100vh - 64px)', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
 
         <main style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1004px' }}>
@@ -112,17 +111,6 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
                 title="Resume"
                 style={{ width: '100%', flex: 1, minHeight: 'calc(100vh - 220px)', border: 'none', borderRadius: '8px', display: 'block' }}
               />
-              <a
-                href={resumePdf}
-                download="Vasil Spirov Resume.pdf"
-                style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '8px',
-                  textDecoration: 'none', color: textPrimary, ...bodyText,
-                }}
-              >
-                <Download size={24} strokeWidth={1.5} />
-                <span>Save PDF</span>
-              </a>
             </div>
           )}
 
