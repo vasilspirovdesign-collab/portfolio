@@ -8,6 +8,7 @@ import hederaChallenge from '../assets/hedera-challenge.png'
 import hederaProblem from '../assets/hedera-problem.png'
 import hederaRole from '../assets/hedera-role.png'
 import hederaProcess from '../assets/hedera-process.png'
+import hederaSolution from '../assets/hedera-solution.png'
 
 const PROJECT = 'Hedera Transaction Tool'
 
@@ -160,7 +161,9 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Solution' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={hederaSolution} alt="Solution" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
