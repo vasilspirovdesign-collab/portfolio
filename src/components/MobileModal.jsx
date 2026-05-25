@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Check } from 'lucide-react'
-import shape1 from '../assets/mobile-shape-1.png'
-import shape2 from '../assets/mobile-shape-2.png'
-import shape3 from '../assets/mobile-shape-3.png'
-import shape4 from '../assets/mobile-shape-4.png'
+import mobileBg from '../assets/mobile-bg.png'
+import shape1 from '../assets/mobile-shape-1.svg'
+import shape2 from '../assets/mobile-shape-2.svg'
+import shape3 from '../assets/mobile-shape-3.svg'
+import shape4 from '../assets/mobile-shape-4.svg'
 
 export default function MobileModal() {
   const [visible, setVisible] = useState(false)
@@ -35,28 +36,39 @@ export default function MobileModal() {
       <div style={{
         width: '329px', borderRadius: '8px', overflow: 'hidden',
         backgroundColor: '#ffffff',
-        boxShadow: '0 8px 40px rgba(0,0,0,0.12)',
-        display: 'flex', flexDirection: 'column',
+        border: '1px solid #d0d2d0',
+        display: 'flex', flexDirection: 'column', gap: '8px',
       }}>
         {/* Image area */}
         <div style={{
-          width: '329px', height: '219px', position: 'relative',
-          backgroundColor: '#ffffff',
-          borderBottom: '1px solid #d0d2d0',
-          overflow: 'hidden',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          width: '100%', aspectRatio: '329 / 219', position: 'relative',
+          borderBottom: '1px solid #d0d2d0', overflow: 'hidden', flexShrink: 0,
         }}>
-          {/* 3D shape — 4 overlapping group images, rotated as in Figma */}
-          <div style={{ position: 'relative', width: '191px', height: '172px', transform: 'rotate(175.63deg)' }}>
-            <img src={shape1} alt="" style={{ position: 'absolute', top: '4%', left: 0, right: '14%', bottom: 0, width: '86%', height: '96%', objectFit: 'contain' }} />
-            <img src={shape2} alt="" style={{ position: 'absolute', top: '33%', left: '29%', right: 0, bottom: '3%', width: '71%', height: '64%', objectFit: 'contain' }} />
-            <img src={shape3} alt="" style={{ position: 'absolute', top: 0, left: '13%', right: '56%', bottom: '3%', width: '32%', height: '97%', objectFit: 'contain' }} />
-            <img src={shape4} alt="" style={{ position: 'absolute', top: 0, left: '27%', right: 0, bottom: '50%', width: '73%', height: '50%', objectFit: 'contain' }} />
+          <img src={mobileBg} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', backgroundColor: '#ffffff', height: '234px', left: 0, top: 0, width: '329px', borderRadius: '8px' }} />
+          {/* 3D shape */}
+          <div style={{ position: 'absolute', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '185.569px', left: '50px', top: '17px', width: '203.996px' }}>
+            <div style={{ flexShrink: 0, transform: 'rotate(175.63deg)' }}>
+              <div style={{ height: '171.487px', position: 'relative', width: '191.496px' }}>
+                <div style={{ position: 'absolute', inset: '4.44% 13.91% 0 0' }}>
+                  <img src={shape1} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+                </div>
+                <div style={{ position: 'absolute', inset: '33.4% 0 3.06% 29.15%' }}>
+                  <img src={shape2} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+                </div>
+                <div style={{ position: 'absolute', inset: '0 55.67% 3.06% 12.68%' }}>
+                  <img src={shape3} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+                </div>
+                <div style={{ position: 'absolute', inset: '0 0 49.64% 26.63%' }}>
+                  <img src={shape4} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Text + button */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px', height: '136px', flexShrink: 0 }}>
           <div style={{ height: '38px', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
             <p style={{
               margin: 0, fontFamily: 'Questrial, sans-serif',
