@@ -13,12 +13,6 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
         const isExternal = typeof tab === 'object' && tab.href
         const label = isExternal ? tab.label : tab
         const isActive = !isExternal && tab === activeTab
-        const isHovered = hovered === i
-        const bg = isActive
-          ? t(dark, 'border')
-          : isHovered
-            ? (dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.05)')
-            : 'transparent'
 
         const handleClick = () => {
           if (isExternal) {
@@ -27,6 +21,8 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
             onTabChange?.(tab)
           }
         }
+
+        const isHovered = hovered === i
 
         return (
           <div
@@ -38,14 +34,14 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
             style={{
               display: 'flex', alignItems: 'center', gap: '20px',
               height: '72px', padding: '0 16px', borderRadius: '8px',
-              cursor: 'pointer', backgroundColor: bg,
+              cursor: 'pointer', backgroundColor: isActive ? t(dark, 'border') : 'transparent',
             }}
           >
             <span
               className="transition-colors duration-200"
               style={{
                 ...navLabel,
-                color: isExternal ? '#005AFF' : (isActive ? (dark ? '#d0d2d0' : '#171717') : textSecondary),
+                color: isExternal ? '#005AFF' : (isActive ? (dark ? '#d0d2d0' : '#171717') : (isHovered ? (dark ? '#d0d2d0' : '#171717') : textSecondary)),
                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                 width: '279px',
                 display: 'flex', alignItems: 'center', gap: '8px',

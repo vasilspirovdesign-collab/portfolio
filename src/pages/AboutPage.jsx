@@ -3,8 +3,7 @@ import { t } from '../theme'
 import { heading, bodyText } from '../styles'
 import InnerHeader from '../components/InnerHeader'
 import SidebarNav from '../components/SidebarNav'
-import profilePhoto from '../assets/profile-new.jpg'
-import aboutBg from '../assets/about-bg.png'
+import profilePhoto from '../assets/smallerVasko.png'
 import resumePdf from '../assets/resume.pdf'
 
 
@@ -33,7 +32,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
   const textPrimary = dark ? '#d0d2d0' : '#414141'
 
   return (
-    <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
       <InnerHeader
         dark={dark}
         onToggle={onToggle}
@@ -49,46 +48,15 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
 
           {activeTab === 'Introduction' && (
             <>
-              {/* 694×462 white image card */}
-              <div style={{
-                width: '694px', height: '462px', borderRadius: '16px',
-                overflow: 'hidden', position: 'relative', flexShrink: 0,
-                backgroundColor: t(dark, 'cardBg'),
-              }}>
-                {/* Decorative background — large negative insets, rotated+flipped */}
-                <div style={{
-                  position: 'absolute',
-                  top: '-74.46%', right: '-29.99%', bottom: '-58.69%', left: '-24.5%',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                }}>
-                  <img
-                    src={aboutBg}
-                    alt=""
-                    style={{ width: '100%', height: '100%', transform: 'rotate(180deg) scaleX(-1)', display: 'block' }}
-                  />
-                </div>
-
-                {/* Profile photo — centered, 442×387 frame */}
-                <div style={{
-                  position: 'absolute',
-                  left: '50%', top: 'calc(50% + 0.5px)',
-                  transform: 'translate(-50%, -50%)',
-                  width: '442px', height: '387px',
-                  overflow: 'hidden', pointerEvents: 'none',
-                }}>
-                  <img
-                    src={profilePhoto}
-                    alt="Vasil Spirov"
-                    loading="lazy"
-                    style={{
-                      position: 'absolute',
-                      width: '100.15%', height: '171.58%',
-                      left: '-0.08%', top: '-22.22%',
-                      maxWidth: 'none',
-                    }}
-                  />
-                </div>
-              </div>
+              <img
+                src={profilePhoto}
+                alt="Vasil Spirov"
+                loading="lazy"
+                style={{
+                  width: '100%', maxWidth: '694px', height: 'auto',
+                  display: 'block', borderRadius: '16px', flexShrink: 0,
+                }}
+              />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '694px' }}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>
                   Hi, I&apos;m Vasil
@@ -146,7 +114,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
 
           {activeTab === 'Contacts' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '694px', width: '100%' }}>
-              <p style={{ margin: 0, fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px', color: textPrimary }}>
+              <p style={{ margin: 0, fontFamily: 'Questrial, sans-serif', fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px', color: textPrimary }}>
                 Contacts
               </p>
               {[
@@ -155,10 +123,10 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
                 { label: 'Behance',  value: 'http://behance.net/vasilspirov',             href: 'http://behance.net/vasilspirov' },
                 { label: 'Linkedin', value: 'https://www.linkedin.com/in/vasil-spirov/',  href: 'https://www.linkedin.com/in/vasil-spirov/' },
               ].flatMap((row, i, arr) => [
-                <div key={row.label} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 400, lineHeight: 1.35, color: textPrimary }}>
+                <div key={row.label} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', ...bodyText, color: textPrimary }}>
                   <span style={{ width: '84px', flexShrink: 0 }}>{row.label}</span>
                   {row.href ? (
-                    <a href={row.href} target="_blank" rel="noopener noreferrer" style={{ color: textPrimary, textDecoration: 'underline', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    <a href={row.href} target="_blank" rel="noopener noreferrer" style={{ color: '#005AFF', textDecoration: 'underline', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                       {row.value}
                     </a>
                   ) : (

@@ -8,6 +8,7 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
     <nav
       className="transition-[background-color,border-color] duration-300"
       style={{
+        position: 'sticky', top: 0, zIndex: 100,
         display: 'flex', height: '64px', alignItems: 'center',
         justifyContent: 'space-between', padding: '0 30px',
         borderBottom: `1px solid ${t(isDark, 'border')}`,
@@ -44,14 +45,14 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
               className="transition-colors duration-200"
               style={{
                 background: 'none', border: 'none', padding: 0, cursor: 'pointer',
-                fontFamily: 'Inter, system-ui, sans-serif',
-                fontSize: '18px', fontWeight: 500,
+                fontFamily: 'Questrial, sans-serif',
+                fontSize: '18px', fontWeight: 400,
                 lineHeight: 1.2, letterSpacing: '-0.18px',
-                color: isActive ? t(isDark, 'text') : t(isDark, 'muted'),
+                color: t(isDark, 'muted'),
                 whiteSpace: 'nowrap',
               }}
               onMouseEnter={e => e.currentTarget.style.color = t(isDark, 'text')}
-              onMouseLeave={e => { if (!isActive) e.currentTarget.style.color = t(isDark, 'muted') }}
+              onMouseLeave={e => e.currentTarget.style.color = t(isDark, 'muted')}
             >
               {link}
             </button>
