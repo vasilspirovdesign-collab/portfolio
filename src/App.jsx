@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 import { t } from './theme'
-import { navLabel } from './styles'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProjectCard from './components/ProjectCard'
@@ -110,7 +109,7 @@ export default function App() {
 
         <section>
           <h2 style={{
-            margin: '0 0 24px', ...navLabel, color: t(dark, 'muted'), whiteSpace: 'nowrap',
+            margin: '0 0 24px', fontFamily: 'Questrial, sans-serif', fontSize: '18px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0px', color: t(dark, 'muted'), whiteSpace: 'nowrap',
             overflow: 'hidden', textOverflow: 'ellipsis', transition: 'color 0.3s',
           }}>
             Projects I&apos;m Proud Of
