@@ -32,7 +32,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
   const textPrimary = dark ? '#d0d2d0' : '#414141'
 
   return (
-    <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
+    <div className="transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
       <InnerHeader
         dark={dark}
         onToggle={onToggle}
@@ -43,20 +43,14 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
       <div style={{ display: 'flex', minHeight: 'calc(100vh - 64px)', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
 
-        <main style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1004px' }}>
+        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', maxWidth: '1004px' }}>
           <div key={activeTab} className="tab-enter" style={{ display: 'contents' }}>
 
           {activeTab === 'Introduction' && (
             <>
-              <img
-                src={profilePhoto}
-                alt="Vasil Spirov"
-                loading="lazy"
-                style={{
-                  width: '100%', maxWidth: '694px', height: 'auto',
-                  display: 'block', borderRadius: '16px', flexShrink: 0,
-                }}
-              />
+              <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+                <img src={profilePhoto} alt="Vasil Spirov" loading="lazy" style={{ width: '623px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '694px' }}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>
                   Hi, I&apos;m Vasil
@@ -73,11 +67,11 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
           )}
 
           {activeTab === 'Resume' && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '694px', maxWidth: '694px', flex: 1 }}>
               <iframe
                 src={resumePdf}
                 title="Resume"
-                style={{ width: '100%', flex: 1, minHeight: 'calc(100vh - 220px)', border: 'none', borderRadius: '8px', display: 'block' }}
+                style={{ width: '100%', height: '700px', border: 'none', borderRadius: '8px', display: 'block' }}
               />
             </div>
           )}

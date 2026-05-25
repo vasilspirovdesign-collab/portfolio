@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #F9F9F9;
+  overflow-y: scroll;
 }
 
 @keyframes page-enter {

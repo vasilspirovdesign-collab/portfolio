@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { t } from './theme'
+import { navLabel } from './styles'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProjectCard from './components/ProjectCard'
@@ -69,7 +70,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    if (page === 'home') document.title = 'Vasil Spirov — UX Designer'
+    if (page === 'home') document.title = 'Vasil Spirov - Portfolio'
   }, [page])
 
   if (page === 'about-me') {
@@ -112,8 +113,7 @@ export default function App() {
 
         <section>
           <h2 style={{
-            margin: '0 0 24px', fontSize: '18px', fontWeight: 500, lineHeight: 'normal',
-            letterSpacing: '-0.18px', color: t(dark, 'muted'), whiteSpace: 'nowrap',
+            margin: '0 0 24px', ...navLabel, color: t(dark, 'muted'), whiteSpace: 'nowrap',
             overflow: 'hidden', textOverflow: 'ellipsis', transition: 'color 0.3s',
           }}>
             Projects I&apos;m Proud Of

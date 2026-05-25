@@ -12,8 +12,7 @@ import opusEduDecisions from '../assets/opus-edu-decisions.jpg'
 import opusEduProblem from '../assets/opus-edu-problem.jpg'
 import opusEduSolution from '../assets/opus-edu-solution.jpg'
 import opusEduRoleSs1 from '../assets/opus-edu-role-ss1.jpg'
-import opusEduRoleSs2 from '../assets/opus-edu-role-ss2.jpg'
-import opusEduRoleSs3 from '../assets/opus-edu-role-ss3.jpg'
+import opusEduProcessSs from '../assets/opus-edu-process-ss.png'
 
 
 
@@ -29,7 +28,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
   const textPrimary = dark ? '#d0d2d0' : '#414141'
 
   return (
-    <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
+    <div className="transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
       <InnerHeader
         dark={dark}
         onToggle={onToggle}
@@ -40,17 +39,14 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
       <div style={{ display: 'flex', minHeight: 'calc(100vh - 64px)', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
 
-        <main style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px' }}>
           <div key={activeTab} className="tab-enter" style={{ display: 'contents' }}>
 
           {activeTab === 'Introduction' && (
             <>
-              <img
-                src={opusEduIntro}
-                alt="OpusEdu intro"
-                loading="lazy"
-                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '8px' }}
-              />
+              <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+                <img src={opusEduIntro} alt="OpusEdu intro" loading="lazy" style={{ width: '623px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   <h1 style={{ margin: 0, ...heading, color: textPrimary }}>
@@ -85,12 +81,9 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
 
           {activeTab === 'Challenge' && (
             <>
-              <img
-                src={opusEduChallenge}
-                alt={`${project} challenge`}
-                loading="lazy"
-                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '8px' }}
-              />
+              <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+                <img src={opusEduChallenge} alt={`${project} challenge`} loading="lazy" style={{ width: '623px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>
                   Challenge
@@ -120,12 +113,9 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
 
           {activeTab === 'Problem' && (
             <>
-              <img
-                src={opusEduProblem}
-                alt="Problem"
-                loading="lazy"
-                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '8px' }}
-              />
+              <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+                <img src={opusEduProblem} alt="Problem" loading="lazy" style={{ width: '623px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+              </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
               <h1 style={{ margin: 0, ...heading, color: textPrimary }}>
                 Problem
@@ -150,12 +140,9 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
 
           {activeTab === 'My Role' && (
             <>
-              <img
-                src={opusEduRole}
-                alt="My role"
-                loading="lazy"
-                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '8px' }}
-              />
+              <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+                <img src={opusEduRole} alt="My role" loading="lazy" style={{ width: '623px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+              </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
               <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My role</h1>
               <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -179,25 +166,8 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
 
           {activeTab === 'Process' && (
             <>
-              <div style={{
-                width: '694px', maxWidth: '694px', height: '462px',
-                borderRadius: '22px', overflow: 'hidden',
-                position: 'relative', flexShrink: 0,
-                backgroundColor: t(dark, 'cardBg'),
-              }}>
-                <div style={{
-                  position: 'absolute',
-                  left: '50%', top: '61px',
-                  transform: 'translateX(-50%)',
-                  width: '664px', overflow: 'hidden',
-                }}>
-                  <img
-                    src={opusEduRoleSs1}
-                    alt="Research summary"
-                    loading="lazy"
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
-                  />
-                </div>
+              <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+                <img src={opusEduProcessSs} alt="Research summary" loading="lazy" style={{ width: '623px', height: 'auto', borderRadius: '8px', display: 'block' }} />
               </div>
 
               <a
@@ -246,12 +216,9 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
 
           {activeTab === 'Key Decisions' && (
             <>
-              <img
-                src={opusEduDecisions}
-                alt="Key decisions"
-                loading="lazy"
-                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '8px' }}
-              />
+              <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+                <img src={opusEduDecisions} alt="Key decisions" loading="lazy" style={{ width: '623px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+              </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
               <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
               <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -277,12 +244,9 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
 
           {activeTab === 'Solution' && (
             <>
-              <img
-                src={opusEduSolution}
-                alt="Solution"
-                loading="lazy"
-                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '8px' }}
-              />
+              <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+                <img src={opusEduSolution} alt="Solution" loading="lazy" style={{ width: '623px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -316,6 +280,44 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
           )}
 
           {activeTab === "Things I've learned.." && (
+            <>
+            <div style={{ width: '694px', height: '462px', backgroundColor: t(dark, 'cardBg'), borderRadius: '16px', padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxSizing: 'border-box' }}>
+              <svg viewBox="0 0 662 380" width="634" height="100%" style={{ borderRadius: '8px', display: 'block' }}>
+                {/* Background */}
+                <rect width="662" height="380" rx="10" fill={dark ? '#3a3a3a' : '#f0f0f0'} />
+
+                {/* Title placeholder */}
+                <rect x="24" y="24" width="160" height="14" rx="4" fill={dark ? '#555' : '#c8c8c8'} />
+
+                {/* Orange line — starts high, trends down then flat */}
+                <polyline
+                  points="24,110 60,95 96,105 132,88 168,100 204,92 240,108 276,118 312,130 348,142 384,150 420,155 456,158"
+                  fill="none" stroke="#E8841A" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round"
+                />
+                {/* Green line — starts at low, rises */}
+                <polyline
+                  points="384,158 420,165 440,170 456,162 476,172 496,155 516,165 532,150 548,158 568,144 590,148 614,135 638,140"
+                  fill="none" stroke="#3BAA6E" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round"
+                />
+
+                {/* Legend row 1 */}
+                <rect x="24" y="300" width="48" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
+                <rect x="80" y="300" width="72" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
+                <rect x="320" y="300" width="36" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
+                <rect x="364" y="300" width="60" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
+
+                {/* Legend row 2 */}
+                <rect x="24" y="320" width="60" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
+                <rect x="92" y="320" width="84" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
+                <rect x="320" y="320" width="52" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
+                <rect x="380" y="320" width="44" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
+
+                {/* Orange dot at junction */}
+                <circle cx="456" cy="158" r="4" fill="#E8841A" />
+                {/* Green dot at junction */}
+                <circle cx="456" cy="162" r="4" fill="#3BAA6E" />
+              </svg>
+            </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
               <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
               <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
@@ -330,6 +332,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 </li>
               </ul>
             </div>
+            </>
           )}
 
           </div>
