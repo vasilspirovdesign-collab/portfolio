@@ -107,14 +107,8 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
           transition: 'opacity 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1)',
         }}>
           <svg width="26.5" height="26.5" viewBox="0 0 24 24" fill="none">
-            <defs>
-              <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#63CAFF" />
-                <stop offset="100%" stopColor="#1A5AFF" />
-              </linearGradient>
-            </defs>
-            <line x1="4" y1="12" x2="20" y2="12" stroke="url(#arrowGradient)" strokeWidth="1.75" strokeLinecap="round" />
-            <polyline points="13,5 20,12 13,19" stroke="url(#arrowGradient)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+            <line x1="4" y1="12" x2="20" y2="12" stroke="url(#iconGradient)" strokeWidth="1.75" strokeLinecap="round" />
+            <polyline points="13,5 20,12 13,19" stroke="url(#iconGradient)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>
