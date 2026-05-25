@@ -8,19 +8,19 @@ const CATEGORIES = [
   {
     name: 'Crypto',
     projects: [
-      { title: 'Opus Edu', description: 'Lorem ipsum dolor sit amet consectetur.' },
-      { title: 'Hedera Transaction Tool' },
-      { title: 'ORDx Trading' },
-      { title: 'Opus Edu' },
+      { title: 'Opus Edu', description: 'OpusEdu is a platform where creators and learners connect to share and gain knowledge, powered by blockchain technology.' },
+      { empty: true },
+      { empty: true },
+      { empty: true },
     ],
   },
   {
     name: 'Finance',
     projects: [
-      { title: 'Opus Edu', description: 'Lorem ipsum dolor sit amet consectetur.' },
-      { title: 'Hedera Transaction Tool' },
-      { title: 'ORDx Trading' },
-      { title: 'Opus Edu' },
+      { empty: true },
+      { empty: true },
+      { empty: true },
+      { empty: true },
     ],
   },
 ]
@@ -29,7 +29,7 @@ export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) 
   useEffect(() => { document.title = 'Projects — Vasil Spirov' }, [])
 
   return (
-    <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), transition: 'background-color 0.3s' }}>
+    <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg') }}>
       <InnerHeader
         dark={dark}
         onToggle={onToggle}
@@ -49,7 +49,8 @@ export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) 
                   dark={dark}
                   title={project.title}
                   description={project.description}
-                  onClick={() => onOpenProject?.(project.title)}
+                  empty={project.empty}
+                  onClick={project.empty ? undefined : () => onOpenProject?.(project.title)}
                 />
               ))}
             </div>

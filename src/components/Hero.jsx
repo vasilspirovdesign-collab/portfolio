@@ -23,7 +23,8 @@ export default function Hero({ onGoResume }) {
         alt="Vasil Spirov"
         fetchpriority="high"
         onClick={onGoResume}
-        style={{ width: '100%', height: 'auto', display: 'block', cursor: 'pointer' }}
+        className="transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.02] cursor-pointer"
+        style={{ width: '100%', height: 'auto', display: 'block' }}
       />
 
       {/* Contact card — 874/1440 = 60.69% left, 232/431 = 53.83% top */}

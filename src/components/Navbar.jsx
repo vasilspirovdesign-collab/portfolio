@@ -5,25 +5,28 @@ const NAV_LINKS = ['Projects', 'Workflow', 'About Me']
 
 export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
   return (
-    <nav style={{
-      display: 'flex', height: '94px', alignItems: 'center',
-      justifyContent: 'space-between', padding: '31px 30px',
-      borderBottom: `1px solid ${t(isDark, 'border')}`,
-      backgroundColor: t(isDark, 'navBg'),
-      transition: 'background-color 0.3s, border-color 0.3s',
-    }}>
-
+    <nav
+      className="transition-[background-color,border-color] duration-300"
+      style={{
+        display: 'flex', height: '94px', alignItems: 'center',
+        justifyContent: 'space-between', padding: '31px 30px',
+        borderBottom: `1px solid ${t(isDark, 'border')}`,
+        backgroundColor: t(isDark, 'navBg'),
+      }}
+    >
       {/* Left: name */}
       <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '8px', minWidth: 0 }}>
         <button onClick={() => onNavigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-          <span style={{
-            fontFamily: 'Questrial, sans-serif',
-            fontSize: '22px', fontWeight: 400, lineHeight: '28px',
-            color: t(isDark, 'text'),
-            fontFeatureSettings: "'liga' 0",
-            whiteSpace: 'nowrap',
-            transition: 'color 0.3s',
-          }}>
+          <span
+            className="transition-colors duration-300"
+            style={{
+              fontFamily: 'Questrial, sans-serif',
+              fontSize: '22px', fontWeight: 400, lineHeight: '28px',
+              color: t(isDark, 'text'),
+              fontFeatureSettings: "'liga' 0",
+              whiteSpace: 'nowrap',
+            }}
+          >
             Vasil Spirov
           </span>
         </button>
@@ -38,13 +41,13 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
             <button
               key={link}
               onClick={() => onNavigate(key)}
+              className="transition-colors duration-200"
               style={{
                 background: 'none', border: 'none', padding: 0, cursor: 'pointer',
                 fontFamily: 'Inter, system-ui, sans-serif',
                 fontSize: '18px', fontWeight: 500,
                 lineHeight: 1.2, letterSpacing: '-0.18px',
                 color: isActive ? t(isDark, 'text') : t(isDark, 'muted'),
-                transition: 'color 0.2s',
                 whiteSpace: 'nowrap',
               }}
               onMouseEnter={e => e.currentTarget.style.color = t(isDark, 'text')}
@@ -58,7 +61,12 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
 
       {/* Right: theme toggle */}
       <div style={{ display: 'flex', flex: '1 0 0', justifyContent: 'flex-end', alignItems: 'center', minWidth: 0 }}>
-        <button onClick={onToggle} aria-label="Toggle theme" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
+        <button
+          onClick={onToggle}
+          aria-label="Toggle theme"
+          className="transition-opacity duration-200 hover:opacity-70"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}
+        >
           {isDark ? <Sun size={24} color={t(isDark, 'text')} strokeWidth={1.5} /> : <Moon size={24} color={t(isDark, 'text')} strokeWidth={1.5} />}
         </button>
       </div>

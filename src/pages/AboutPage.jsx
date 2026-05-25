@@ -34,7 +34,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
   const textPrimary = dark ? '#d0d2d0' : '#414141'
 
   return (
-    <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), transition: 'background-color 0.3s', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Inter, system-ui, sans-serif' }}>
       <InnerHeader
         dark={dark}
         onToggle={onToggle}
@@ -42,10 +42,11 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
         crumbs={[{ label: 'About me' }]}
       />
 
-      <div style={{ display: 'flex', height: 'calc(100vh - 94px)' }}>
+      <div style={{ display: 'flex', minHeight: 'calc(100vh - 94px)' }}>
         <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
 
-        <main style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1004px', overflow: 'auto' }}>
+        <main style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1004px' }}>
+          <div key={activeTab} className="tab-enter" style={{ display: 'contents' }}>
 
           {activeTab === 'Introduction' && (
             <>
@@ -181,6 +182,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
             </div>
           )}
 
+          </div>
         </main>
       </div>
     </div>
