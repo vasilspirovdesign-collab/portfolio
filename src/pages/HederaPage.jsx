@@ -35,12 +35,18 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
             <>
               <div style={photoCard(dark)} />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Hedera Transaction Tool</h1>
+                  <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Role: UX Designer</p>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', ...bodyText, color: textPrimary }}>
-                  <p style={{ margin: 0 }}>Role: UX Designer</p>
-                  <p style={{ margin: 0 }}>Content coming soon.</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  {[
+                    'Transaction Tool is a desktop application built for Hedera council members to execute critical network operations — including treasury management, file updates, token transfers, and software upgrades — through a secure, collaborative signing environment.',
+                    'The platform serves two distinct user types — business users and technical power users — each operating with different levels of blockchain fluency but sharing the same need for auditability and operational confidence.',
+                    'The engagement required designing a tool from the ground up for a domain with no established UX conventions: multi-signature blockchain workflows where a single misstep carries real financial and governance consequences.',
+                  ].map((para, i) => (
+                    <p key={i} style={{ margin: 0, ...bodyText, color: textPrimary }}>{para}</p>
+                  ))}
                 </div>
               </div>
             </>
