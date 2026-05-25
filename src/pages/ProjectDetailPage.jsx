@@ -11,6 +11,7 @@ import opusEduDecisions from '../assets/opus-edu-decisions.jpg'
 import opusEduProblem from '../assets/opus-edu-problem.jpg'
 import opusEduSolution from '../assets/opus-edu-solution.jpg'
 import opusEduProcessSs from '../assets/opus-edu-process-ss.png'
+import opusEduLearned from '../assets/opus-edu-learned.png'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
@@ -196,22 +197,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
           {activeTab === "Things I've learned.." && (
             <>
               <div style={photoCard(dark)}>
-                <svg viewBox="0 0 662 380" width="634" height="100%" style={{ borderRadius: '8px', display: 'block' }}>
-                  <rect width="662" height="380" rx="10" fill={dark ? '#3a3a3a' : '#f0f0f0'} />
-                  <rect x="24" y="24" width="160" height="14" rx="4" fill={dark ? '#555' : '#c8c8c8'} />
-                  <polyline points="24,110 60,95 96,105 132,88 168,100 204,92 240,108 276,118 312,130 348,142 384,150 420,155 456,158" fill="none" stroke="#E8841A" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
-                  <polyline points="384,158 420,165 440,170 456,162 476,172 496,155 516,165 532,150 548,158 568,144 590,148 614,135 638,140" fill="none" stroke="#3BAA6E" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
-                  <rect x="24" y="300" width="48" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="80" y="300" width="72" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="320" y="300" width="36" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="364" y="300" width="60" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="24" y="320" width="60" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="92" y="320" width="84" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="320" y="320" width="52" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <rect x="380" y="320" width="44" height="10" rx="3" fill={dark ? '#555' : '#c8c8c8'} />
-                  <circle cx="456" cy="158" r="4" fill="#E8841A" />
-                  <circle cx="456" cy="162" r="4" fill="#3BAA6E" />
-                </svg>
+                <img src={opusEduLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
