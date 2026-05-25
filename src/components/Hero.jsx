@@ -8,7 +8,7 @@ const cardShadow  = '1px 1px 12px 0px rgba(65,65,65,0.07), -2px -2px 20px 0px rg
 const innerShadow = 'inset 1px -1px 10px 0px rgba(255,255,255,0.15), inset 0px 1px 6px 0px rgba(240,240,240,0.06)'
 
 const rowText = {
-  fontFamily: 'Inter, system-ui, sans-serif',
+  fontFamily: 'Geist, system-ui, sans-serif',
   fontSize: '18px', fontWeight: 400,
   lineHeight: 'normal', letterSpacing: '-0.18px',
   color: '#414141',

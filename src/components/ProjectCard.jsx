@@ -70,8 +70,8 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       {/* Text */}
       <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px', height: '136px' }}>
         <p style={{
-          margin: 0, fontFamily: 'Inter, system-ui, sans-serif',
-          fontSize: '18px', fontWeight: 500, lineHeight: 1.2,
+          margin: 0, fontFamily: 'Questrial, sans-serif',
+          fontSize: '18px', fontWeight: 400, lineHeight: 1.2,
           letterSpacing: '-0.18px',
           color: t(isDark, 'text'),
           overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
@@ -80,7 +80,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
         </p>
         {description && (
           <p style={{
-            margin: 0, fontFamily: 'Inter, system-ui, sans-serif',
+            margin: 0, fontFamily: 'Geist, system-ui, sans-serif',
             fontSize: '14px', fontWeight: 400, lineHeight: 1.2,
             color: t(isDark, 'muted'),
             height: '70px', overflow: 'hidden',

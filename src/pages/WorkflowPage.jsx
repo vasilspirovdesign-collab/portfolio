@@ -3,6 +3,9 @@ import { t } from '../theme'
 import { heading, bodyText } from '../styles'
 import InnerHeader from '../components/InnerHeader'
 import SidebarNav from '../components/SidebarNav'
+import designApproachImg from '../assets/designApproach.png'
+import coreValuesImg from '../assets/coreValues.png'
+import whyUxImg from '../assets/whyUx.png'
 
 const TABS = ['Core Values', 'Design Approach', 'Why UX']
 
@@ -28,7 +31,7 @@ export default function WorkflowPage({ dark, onBack, onToggle }) {
   const textPrimary = dark ? '#d0d2d0' : '#414141'
 
   return (
-    <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div className="page-enter transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
       <InnerHeader
         dark={dark}
         onToggle={onToggle}
@@ -44,12 +47,12 @@ export default function WorkflowPage({ dark, onBack, onToggle }) {
 
           {activeTab === 'Core Values' && (
             <>
-              {/* Image card — placeholder until images are imported */}
-              <div style={{
-                width: '694px', height: '462px', borderRadius: '16px',
-                overflow: 'hidden', flexShrink: 0,
-                backgroundColor: t(dark, 'cardBg'),
-              }} />
+              <img
+                src={coreValuesImg}
+                alt="Core values"
+                loading="lazy"
+                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '16px', flexShrink: 0 }}
+              />
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
                 {CORE_VALUES.map((item) => (
@@ -64,12 +67,12 @@ export default function WorkflowPage({ dark, onBack, onToggle }) {
 
           {activeTab === 'Design Approach' && (
             <>
-              {/* Image card placeholder */}
-              <div style={{
-                width: '694px', height: '462px', borderRadius: '16px',
-                overflow: 'hidden', flexShrink: 0,
-                backgroundColor: t(dark, 'cardBg'),
-              }} />
+              <img
+                src={designApproachImg}
+                alt="Design approach"
+                loading="lazy"
+                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '16px', flexShrink: 0 }}
+              />
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Design Approach</h1>
@@ -94,12 +97,12 @@ export default function WorkflowPage({ dark, onBack, onToggle }) {
 
           {activeTab === 'Why UX' && (
             <>
-              {/* Image card placeholder */}
-              <div style={{
-                width: '694px', height: '462px', borderRadius: '16px',
-                overflow: 'hidden', flexShrink: 0,
-                backgroundColor: t(dark, 'cardBg'),
-              }} />
+              <img
+                src={whyUxImg}
+                alt="Why UX"
+                loading="lazy"
+                style={{ width: '100%', maxWidth: '694px', height: 'auto', display: 'block', borderRadius: '16px', flexShrink: 0 }}
+              />
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
                 {[

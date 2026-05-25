@@ -1,9 +1,9 @@
 export const light = {
-  bg:       '#f0f0f0',
-  navBg:    '#f0f0f0',
+  bg:       '#F9F9F9',
+  navBg:    '#F9F9F9',
   cardBg:   '#ffffff',
-  border:   '#d0d2d0',
-  activeBg: '#d0d2d0',
+  border:   '#EBEBEB',
+  activeBg: '#EBEBEB',
   text:     '#414141',
   muted:    '#757575',
 }
