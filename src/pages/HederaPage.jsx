@@ -26,10 +26,10 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
         crumbs={[{ label: 'Projects', onClick: onBack }, { label: PROJECT }]}
       />
 
-      <div style={{ display: 'flex', minHeight: 'calc(100vh - 64px)', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
+      <div style={{ display: 'flex', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
 
-        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px' }}>
+        <main className="page-enter" style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', minHeight: 'calc(100vh - 64px)' }}>
           <div key={activeTab} className="tab-enter" style={{ display: 'contents' }}>
 
           {activeTab === 'Introduction' && (

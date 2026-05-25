@@ -8,7 +8,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
   const textSecondary = dark ? '#a2a3a5' : '#757575'
 
   return (
-    <aside style={{ width: '436px', flexShrink: 0, padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', boxSizing: 'border-box' }}>
+    <aside style={{ width: '436px', flexShrink: 0, padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', boxSizing: 'border-box', position: 'sticky', top: '64px', height: 'calc(100vh - 64px)', alignSelf: 'flex-start', overflowY: 'auto' }}>
       {tabs.map((tab, i) => {
         const isExternal = typeof tab === 'object' && tab.href
         const label = isExternal ? tab.label : tab
