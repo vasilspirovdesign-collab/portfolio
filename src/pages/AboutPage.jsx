@@ -42,7 +42,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
         crumbs={[{ label: 'About me' }]}
       />
 
-      <div style={{ display: 'flex', minHeight: 'calc(100vh - 94px)' }}>
+      <div style={{ display: 'flex', minHeight: 'calc(100vh - 94px)', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
 
         <main style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1004px' }}>

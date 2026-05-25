@@ -8,6 +8,7 @@ import opusEduChallenge from '../assets/opus-edu-challenge.jpg'
 import opusEduIntro from '../assets/opus-edu-intro.jpg'
 import opusEduRole from '../assets/opus-edu-role.jpg'
 import opusEduDecisions from '../assets/opus-edu-decisions.jpg'
+import opusEduProblem from '../assets/opus-edu-problem.jpg'
 import opusEduSolution from '../assets/opus-edu-solution.jpg'
 import opusEduRoleSs1 from '../assets/opus-edu-role-ss1.jpg'
 import opusEduRoleSs2 from '../assets/opus-edu-role-ss2.jpg'
@@ -35,7 +36,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
         crumbs={[{ label: 'Projects', onClick: onBack }, { label: project }]}
       />
 
-      <div style={{ display: 'flex', minHeight: 'calc(100vh - 94px)' }}>
+      <div style={{ display: 'flex', minHeight: 'calc(100vh - 94px)', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} onTabChange={setActiveTab} />
 
         <main style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -117,6 +118,13 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
           )}
 
           {activeTab === 'Problem' && (
+            <>
+              <img
+                src={opusEduProblem}
+                alt="Problem"
+                loading="lazy"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }}
+              />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '694px' }}>
               <h1 style={{ margin: 0, ...heading, color: textPrimary }}>
                 Problem
@@ -136,6 +144,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 </p>
               </div>
             </div>
+            </>
           )}
 
           {activeTab === 'My Role' && (

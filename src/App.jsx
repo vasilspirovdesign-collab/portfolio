@@ -100,7 +100,7 @@ export default function App() {
     <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), transition: 'background-color 0.3s' }}>
       <Navbar dark={dark} onToggle={() => setDark((d) => !d)} onNavigate={setPage} page={page} />
 
-      <main style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '30px' }}>
+      <main style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '30px', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <Hero onGoResume={() => { setAboutInitialTab('Resume'); setPage('about-me') }} />
 
         <section>
