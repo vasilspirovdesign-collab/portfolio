@@ -6,7 +6,7 @@ import hederaThumb from '../assets/hedera-thumb.png'
 const THUMBNAILS = {
   'Opus Edu': opusEduCover,
   'Hedera Transaction Tool': hederaThumb,
-  'CarbonChain': hederaThumb,
+  'Rowan Carbon Chain': hederaThumb,
 }
 
 const checkerboard = {

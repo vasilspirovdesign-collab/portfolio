@@ -4,7 +4,7 @@ import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import InnerHeader from '../components/InnerHeader'
 import SidebarNav from '../components/SidebarNav'
 
-const PROJECT = 'CarbonChain'
+const PROJECT = 'Rowan Carbon Chain'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
@@ -37,12 +37,12 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)} />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  <h1 style={{ margin: 0, ...heading, color: textPrimary }}>CarbonChain</h1>
+                  <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Rowan Carbon Chain</h1>
                   <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Role: Researcher · UX/UI Designer · 6 Months</p>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {[
-                    'CarbonChain is a blockchain-based platform for issuing, managing, and retiring carbon offset certificates — enabling energy producers to tokenize verified offset data via smart contracts and transfer certificates to organisations looking to offset their carbon footprint.',
+                    'Rowan Carbon Chain is a blockchain-based platform for issuing, managing, and retiring carbon offset certificates — enabling energy producers to tokenize verified offset data via smart contracts and transfer certificates to organisations looking to offset their carbon footprint.',
                     'The platform serves two distinct organisational contexts — producers and customers — each with multiple user roles ranging from financial directors approving certificate transfers to data entry operators submitting manual readings from physical devices on-site.',
                     'The engagement required designing a data-dense operational product from scratch: full information architecture across five user roles, structured onboarding flows, a device and readings management system, and a certificate lifecycle from raw sensor data through to blockchain-issued ERC-721 token — with no prior design system and a regulatory domain that offered no established UX conventions to reference.',
                   ].map((para, i) => (

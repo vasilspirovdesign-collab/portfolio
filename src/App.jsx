@@ -6,14 +6,14 @@ import ProjectCard from './components/ProjectCard'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import HederaPage from './pages/HederaPage'
-import CarbonChainPage from './pages/CarbonChainPage'
+import Rowan Carbon ChainPage from './pages/Rowan Carbon ChainPage'
 import AboutPage from './pages/AboutPage'
 import WorkflowPage from './pages/WorkflowPage'
 
 const FEATURED = [
   { title: 'Opus Edu', description: 'OpusEdu is a platform where creators and learners connect to share and gain knowledge, powered by blockchain technology.' },
   { title: 'Hedera Transaction Tool', description: 'A transaction tool built on the Hedera network, enabling fast and low-cost token transfers with a clean, accessible interface.' },
-  { title: 'CarbonChain', description: 'A blockchain-based platform for issuing, managing, and retiring carbon offset certificates via smart contracts.' },
+  { title: 'Rowan Carbon Chain', description: 'A blockchain-based platform for issuing, managing, and retiring carbon offset certificates via smart contracts.' },
 ]
 
 function parseHash() {
@@ -96,9 +96,9 @@ export default function App() {
         />
       )
     }
-    if (selectedProject === 'CarbonChain') {
+    if (selectedProject === 'Rowan Carbon Chain') {
       return (
-        <CarbonChainPage
+        <Rowan Carbon ChainPage
           dark={dark}
           onHome={() => setPage('home')}
           onBack={() => setPage('projects')}
