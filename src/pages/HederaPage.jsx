@@ -181,7 +181,11 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
-                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Content coming soon.</p>
+                <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
+                  <li><strong>Security-critical products require trust to be designed, not assumed.</strong> Early in the project I treated confirmation states as a final-step concern. When mapped against the full signing journey, it became clear that trust had to be established at every handoff point — not just before submission. Retrofitting trust signals into a flow that wasn&apos;t built around them is significantly more expensive than designing for them from the start.</li>
+                  <li><strong>Role-based design debt compounds faster than visual debt.</strong> The decision to share a single IA across admin and user roles required careful discipline throughout. Every component, every action, every empty state needed to be considered from both perspectives simultaneously. Documenting role logic in the IA before any UI work began was the single decision that made the rest of the project tractable.</li>
+                  <li><strong>Domain expertise from the client is a design input, not just a brief.</strong> The Hedera governance model — thresholds, key types, transaction categories — had no accessible analogues in consumer product design. Regular working sessions with the technical team to pressure-test interaction assumptions prevented several flows that would have been technically invalid from reaching prototype stage.</li>
+                </ul>
               </div>
             </>
           )}
