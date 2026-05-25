@@ -10,6 +10,7 @@ import hederaRole from '../assets/hedera-role.png'
 import hederaProcess from '../assets/hedera-process.png'
 import hederaSolution from '../assets/hedera-solution.png'
 import hederaDecisions from '../assets/hedera-decisions.png'
+import hederaLearned from '../assets/hedera-learned.png'
 
 const PROJECT = 'Hedera Transaction Tool'
 
@@ -185,7 +186,9 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === "Things I've learned.." && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={hederaLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
