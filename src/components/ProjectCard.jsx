@@ -106,9 +106,14 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
           transform: hovered ? 'scale(1)' : 'scale(0.8)',
           transition: 'opacity 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1)',
         }}>
-          <svg width="26.5" height="26.5" viewBox="0 0 24 24" fill="none">
-            <line x1="4" y1="12" x2="20" y2="12" stroke="url(#iconGradient)" strokeWidth="1.75" strokeLinecap="round" />
-            <polyline points="13,5 20,12 13,19" stroke="url(#iconGradient)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+          <svg width="26.5" height="26.5" viewBox="0 0 26.5 26.5" fill="none" overflow="visible">
+            <defs>
+              <linearGradient id="cardArrow" x1="8.876" y1="12.634" x2="16.833" y2="15.833" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#00B5F1" />
+                <stop offset="1" stopColor="#0070F2" />
+              </linearGradient>
+            </defs>
+            <path d="M5.52083 13.25H20.9792M13.25 20.9792L20.9792 13.25L13.25 5.52083" stroke="url(#cardArrow)" strokeWidth="2.52381" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>
