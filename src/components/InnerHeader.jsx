@@ -21,7 +21,7 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
     >
       <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '16px', minWidth: 0 }}>
         <button onClick={onHome} aria-label="Go home" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
-          <Home size={24} color={textPrimary} strokeWidth={1.5} />
+          <Home size={24} color={textSecondary} strokeWidth={1.5} />
         </button>
         {crumbs.map((crumb, i) => {
           const isActiveLast = !crumb.onClick && i === crumbs.length - 1 && crumbs.length > 1

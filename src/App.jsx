@@ -10,9 +10,6 @@ import WorkflowPage from './pages/WorkflowPage'
 
 const FEATURED = [
   { title: 'Opus Edu', description: 'OpusEdu is a platform where creators and learners connect to share and gain knowledge, powered by blockchain technology.' },
-  { empty: true },
-  { empty: true },
-  { empty: true },
 ]
 
 function parseHash() {
@@ -69,7 +66,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    if (page === 'home') document.title = 'Vasil Spirov — UX Designer'
+    if (page === 'home') document.title = 'Vasil Spirov - Portfolio'
   }, [page])
 
   if (page === 'about-me') {
@@ -112,8 +109,7 @@ export default function App() {
 
         <section>
           <h2 style={{
-            margin: '0 0 24px', fontSize: '18px', fontWeight: 500, lineHeight: 'normal',
-            letterSpacing: '-0.18px', color: t(dark, 'muted'), whiteSpace: 'nowrap',
+            margin: '0 0 24px', fontFamily: 'Questrial, sans-serif', fontSize: '18px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0px', color: t(dark, 'muted'), whiteSpace: 'nowrap',
             overflow: 'hidden', textOverflow: 'ellipsis', transition: 'color 0.3s',
           }}>
             Projects I&apos;m Proud Of

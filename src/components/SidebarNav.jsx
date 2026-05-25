@@ -8,7 +8,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
   const textSecondary = dark ? '#a2a3a5' : '#757575'
 
   return (
-    <aside style={{ width: '436px', flexShrink: 0, padding: '30px', display: 'flex', flexDirection: 'column' }}>
+    <aside style={{ width: '436px', flexShrink: 0, padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', boxSizing: 'border-box' }}>
       {tabs.map((tab, i) => {
         const isExternal = typeof tab === 'object' && tab.href
         const label = isExternal ? tab.label : tab
@@ -30,21 +30,22 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
             onClick={handleClick}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
-            className="transition-colors duration-200"
             style={{
               display: 'flex', alignItems: 'center', gap: '20px',
-              height: '72px', padding: '0 16px', borderRadius: '8px',
+              width: '376px', height: '72px', padding: '0 16px', borderRadius: '8px',
               cursor: 'pointer', backgroundColor: isActive ? t(dark, 'border') : 'transparent',
+              boxSizing: 'border-box', flexShrink: 0,
+              transition: 'background-color 400ms cubic-bezier(0.22, 1, 0.36, 1)',
             }}
           >
             <span
-              className="transition-colors duration-200"
               style={{
                 ...navLabel,
                 color: isExternal ? '#005AFF' : (isActive ? (dark ? '#d0d2d0' : '#171717') : (isHovered ? (dark ? '#d0d2d0' : '#171717') : textSecondary)),
                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                width: '279px',
+                flex: 1,
                 display: 'flex', alignItems: 'center', gap: '8px',
+                transition: 'color 400ms cubic-bezier(0.22, 1, 0.36, 1)',
               }}
             >
               {label}

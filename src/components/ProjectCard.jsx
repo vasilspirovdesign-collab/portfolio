@@ -69,15 +69,17 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
 
       {/* Text */}
       <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px', height: '136px' }}>
-        <p style={{
-          margin: 0, fontFamily: 'Questrial, sans-serif',
-          fontSize: '18px', fontWeight: 400, lineHeight: 1.2,
-          letterSpacing: '-0.18px',
-          color: t(isDark, 'text'),
-          overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-        }}>
-          {title}
-        </p>
+        <div style={{ height: '38px', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+          <p style={{
+            margin: 0, fontFamily: 'Questrial, sans-serif',
+            fontSize: '18px', fontWeight: 400, lineHeight: 1.2,
+            letterSpacing: '-0.18px',
+            color: t(isDark, 'text'),
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%',
+          }}>
+            {title}
+          </p>
+        </div>
         {description && (
           <p style={{
             margin: 0, fontFamily: 'Geist, system-ui, sans-serif',
@@ -93,7 +95,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
         <div style={{
           position: 'absolute', left: '261px', top: '68px',
           width: '56px', height: '56px', borderRadius: '38.5px',
-          backgroundColor: t(isDark, 'bg'),
+          backgroundColor: 'rgba(250, 250, 250, 0.88)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           opacity: hovered ? 1 : 0,
           transform: hovered ? 'scale(1)' : 'scale(0.8)',

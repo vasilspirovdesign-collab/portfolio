@@ -27,9 +27,9 @@ export default function Hero({ onGoResume }) {
         style={{ width: '100%', height: 'auto', display: 'block' }}
       />
 
-      {/* Contact card — 874/1440 = 60.69% left, 232/431 = 53.83% top */}
+      {/* Contact card */}
       <div style={{
-        position: 'absolute', left: '60.69%', top: '53.83%',
+        position: 'absolute', right: '24px', bottom: '24px',
         width: '484px', borderRadius: '7px', overflow: 'hidden',
         boxShadow: cardShadow,
       }}>
