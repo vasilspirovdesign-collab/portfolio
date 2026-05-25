@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { t } from './theme'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -18,6 +18,7 @@ export default function App() {
   const [dark, setDark] = useState(false)
   const [page, setPage] = useState('home')
   const [selectedProject, setSelectedProject] = useState(null)
+  const [aboutInitialTab, setAboutInitialTab] = useState(undefined)
 
   const openProject = (title) => {
     setSelectedProject(title)
@@ -26,8 +27,12 @@ export default function App() {
 
   const toggle = () => setDark((d) => !d)
 
+  useEffect(() => {
+    if (page === 'home') document.title = 'Vasil Spirov — UX Designer'
+  }, [page])
+
   if (page === 'about-me') {
-    return <AboutPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} />
+    return <AboutPage dark={dark} onBack={() => setPage('home')} onToggle={toggle} initialTab={aboutInitialTab} />
   }
 
   if (page === 'project-detail') {
@@ -58,7 +63,7 @@ export default function App() {
       <Navbar dark={dark} onToggle={() => setDark((d) => !d)} onNavigate={setPage} page={page} />
 
       <main style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '30px' }}>
-        <Hero />
+        <Hero onGoResume={() => { setAboutInitialTab('Resume'); setPage('about-me') }} />
 
         <section>
           <h2 style={{

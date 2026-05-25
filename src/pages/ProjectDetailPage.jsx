@@ -1,118 +1,49 @@
-import { Home, Moon, Sun } from 'lucide-react'
+import { useEffect } from 'react'
 import { t } from '../theme'
+import { heading, bodyText } from '../styles'
+import InnerHeader from '../components/InnerHeader'
+import SidebarNav from '../components/SidebarNav'
+import ImageContainer from '../components/ImageContainer'
 
-const projectScreenshot = 'https://www.figma.com/api/mcp/asset/627d18d0-1990-44d7-b04c-59023a5bde89'
+import projectScreenshot from '../assets/opus-edu-screenshot.jpg'
 
-const imgShadow = '1px 1px 12px 2px rgba(65,65,65,0.07), -2px -2px 20px 8px rgba(117,117,117,0.08), 5px -3px 30px 20px rgba(117,117,117,0.1)'
 
 const TABS = ['The Solution', 'Challenge', 'Feature', 'Feature', 'Feature', 'Feature']
 
 export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, project = 'Opus Edu' }) {
   const activeTab = 'Challenge'
+  useEffect(() => { document.title = `${project} — Vasil Spirov` }, [project])
 
-  const bg = t(dark, 'bg')
-  const border = t(dark, 'border')
   const textPrimary = dark ? '#d0d2d0' : '#414141'
-  const textSecondary = dark ? '#a2a3a5' : '#757575'
-  const activeBg = t(dark, 'border')
 
   return (
-    <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: bg, transition: 'background-color 0.3s', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div className="page-enter" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), transition: 'background-color 0.3s', fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <InnerHeader
+        dark={dark}
+        onToggle={onToggle}
+        onHome={onHome || onBack}
+        crumbs={[{ label: 'Projects', onClick: onBack }, { label: project }]}
+      />
 
-      {/* Header — breadcrumbs */}
-      <div style={{
-        position: 'sticky', top: 0, zIndex: 10,
-        display: 'flex', height: '94px', alignItems: 'center',
-        padding: '31px 30px', borderBottom: `1px solid ${border}`,
-        backgroundColor: bg, gap: '24px',
-        transition: 'background-color 0.3s',
-      }}>
-        <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '16px', minWidth: 0 }}>
-          <button onClick={onHome || onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }} aria-label="Go home">
-            <Home size={24} color={textPrimary} strokeWidth={1.5} />
-          </button>
-          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px', color: border, flexShrink: 0 }}>/</span>
-          <button onClick={onBack} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 500, lineHeight: 1.2, letterSpacing: '-0.18px', color: textSecondary, whiteSpace: 'nowrap', flexShrink: 0 }}>
-            Projects
-          </button>
-          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px', color: border, flexShrink: 0 }}>/</span>
-          <span style={{ fontFamily: 'Inter, system-ui, sans-serif', fontSize: '18px', fontWeight: 500, lineHeight: 1.2, letterSpacing: '-0.18px', color: dark ? '#d0d2d0' : '#171717', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-            {project}
-          </span>
-        </div>
-        <button onClick={onToggle} aria-label="Toggle theme" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
-          {dark ? <Sun size={24} color={textPrimary} strokeWidth={1.5} /> : <Moon size={24} color={textPrimary} strokeWidth={1.5} />}
-        </button>
-      </div>
-
-      {/* Body: sidebar + content */}
       <div style={{ display: 'flex', minHeight: 'calc(100vh - 94px)' }}>
+        <SidebarNav dark={dark} tabs={TABS} activeTab={activeTab} />
 
-        {/* Left sidebar nav */}
-        <aside style={{
-          width: '436px', flexShrink: 0,
-          padding: '30px', display: 'flex', flexDirection: 'column',
-        }}>
-          {TABS.map((tab, i) => {
-            const isActive = tab === activeTab
-            return (
-              <div
-                key={i}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '20px',
-                  height: '72px', padding: '0 16px', borderRadius: '8px', cursor: 'pointer',
-                  backgroundColor: isActive ? activeBg : 'transparent',
-                  transition: 'background-color 0.2s',
-                }}
-              >
-                <span style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
-                  fontSize: '18px', fontWeight: 500, lineHeight: 1.2,
-                  letterSpacing: '-0.18px',
-                  color: isActive ? (dark ? '#d0d2d0' : '#171717') : textSecondary,
-                  whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                  width: '279px',
-                }}>
-                  {tab}
-                </span>
-              </div>
-            )
-          })}
-        </aside>
+        <main style={{ flex: 1, padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1004px' }}>
 
-        {/* Main content */}
-        <main style={{ flex: 1, padding: '32px 32px 32px 32px', display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1004px' }}>
+          <ImageContainer dark={dark}>
+            <img
+              src={projectScreenshot}
+              alt={`${project} screenshot`}
+              loading="lazy"
+              style={{ position: 'absolute', top: '-13.25%', bottom: '-11.75%', left: '-7.1%', right: '-8.68%', width: 'auto', height: 'auto', maxWidth: 'none' }}
+            />
+          </ImageContainer>
 
-          {/* Screenshot card */}
-          <div style={{
-            backgroundColor: t(dark, 'cardBg'),
-            borderRadius: '16px', height: '462px', width: '694px',
-            overflow: 'hidden', position: 'relative', flexShrink: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>
-            <div style={{
-              width: '634px', height: '400px', borderRadius: '8px',
-              overflow: 'hidden', boxShadow: imgShadow, flexShrink: 0,
-            }}>
-              <img
-                src={projectScreenshot}
-                alt="Project screenshot"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100.01%', height: '169.93%', maxWidth: 'none', objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-
-          {/* Challenge heading */}
-          <h1 style={{
-            margin: 0, fontFamily: 'Inter, system-ui, sans-serif',
-            fontSize: '22px', fontWeight: 600, lineHeight: '28px',
-            letterSpacing: '0.22px', color: textPrimary,
-          }}>
+          <h1 style={{ margin: 0, ...heading, color: textPrimary }}>
             Challenge
           </h1>
 
-          {/* Body text */}
-          <div style={{ fontSize: '18px', fontWeight: 400, lineHeight: 1.35, color: textPrimary, maxWidth: '694px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ ...bodyText, color: textPrimary, maxWidth: '694px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <p style={{ margin: 0 }}>
               Designing a <strong>multi-stakeholder platform</strong> where <strong>complexity is the product.</strong>
             </p>

@@ -15,10 +15,16 @@ const rowText = {
   whiteSpace: 'nowrap',
 }
 
-export default function Hero() {
+export default function Hero({ onGoResume }) {
   return (
     <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', flexShrink: 0 }}>
-      <img src={heroImage} alt="Vasil Spirov" style={{ width: '100%', height: 'auto', display: 'block' }} />
+      <img
+        src={heroImage}
+        alt="Vasil Spirov"
+        fetchpriority="high"
+        onClick={onGoResume}
+        style={{ width: '100%', height: 'auto', display: 'block', cursor: 'pointer' }}
+      />
 
       {/* Contact card — 874/1440 = 60.69% left, 232/431 = 53.83% top */}
       <div style={{
