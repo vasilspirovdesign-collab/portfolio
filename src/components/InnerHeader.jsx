@@ -9,14 +9,16 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
   const border = t(dark, 'border')
 
   return (
-    <header style={{
-      position: 'sticky', top: 0, zIndex: 10,
-      display: 'flex', height: '94px', alignItems: 'center',
-      padding: '31px 30px', gap: '24px',
-      borderBottom: `1px solid ${border}`,
-      backgroundColor: t(dark, 'bg'),
-      transition: 'background-color 0.3s',
-    }}>
+    <header
+      className="transition-[background-color,border-color] duration-300"
+      style={{
+        position: 'sticky', top: 0, zIndex: 10,
+        display: 'flex', height: '94px', alignItems: 'center',
+        padding: '31px 30px', gap: '24px',
+        borderBottom: `1px solid ${border}`,
+        backgroundColor: t(dark, 'bg'),
+      }}
+    >
       <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '16px', minWidth: 0 }}>
         <button onClick={onHome} aria-label="Go home" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
           <Home size={24} color={textPrimary} strokeWidth={1.5} />
@@ -44,7 +46,7 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
         })}
       </div>
       <div style={{ display: 'flex', flex: '1 0 0', justifyContent: 'flex-end', alignItems: 'center', minWidth: 0 }}>
-        <button onClick={onToggle} aria-label="Toggle theme" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
+        <button onClick={onToggle} aria-label="Toggle theme" className="transition-opacity duration-200 hover:opacity-70" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
           {dark ? <Sun size={24} color={textPrimary} strokeWidth={1.5} /> : <Moon size={24} color={textPrimary} strokeWidth={1.5} />}
         </button>
       </div>
