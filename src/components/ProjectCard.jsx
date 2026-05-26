@@ -7,6 +7,7 @@ import carbonchainThumb from '../assets/carbonchain-thumb.png'
 import abuDhabiThumb from '../assets/abu-dhabi-thumb.png'
 import bnbThumb from '../assets/bnb-thumb.png'
 import metawinThumb from '../assets/metawin-thumb.png'
+import limechainThumb from '../assets/limechain-thumb.png'
 
 const THUMBNAILS = {
   'Opus Edu': opusEduCover,
@@ -16,6 +17,7 @@ const THUMBNAILS = {
   'Explore Abu Dhabi': abuDhabiThumb,
   'Binomial': bnbThumb,
   'Metawin': metawinThumb,
+  'Limechain Design System': limechainThumb,
 }
 
 const checkerboard = {

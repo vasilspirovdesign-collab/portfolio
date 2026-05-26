@@ -11,6 +11,7 @@ import OpusAIPage from './pages/OpusAIPage'
 import AbuDhabiPage from './pages/AbuDhabiPage'
 import BinomialPage from './pages/BinomialPage'
 import MetawinPage from './pages/MetawinPage'
+import LimechainDSPage from './pages/LimechainDSPage'
 import AboutPage from './pages/AboutPage'
 import WorkflowPage from './pages/WorkflowPage'
 import MobileModal from './components/MobileModal'
@@ -141,6 +142,16 @@ export default function App() {
     if (selectedProject === 'Binomial') {
       return (
         <><MobileModal /><BinomialPage
+          dark={dark}
+          onHome={() => setPage('home')}
+          onBack={() => setPage('projects')}
+          onToggle={toggle}
+        /></>
+      )
+    }
+    if (selectedProject === 'Limechain Design System') {
+      return (
+        <><MobileModal /><LimechainDSPage
           dark={dark}
           onHome={() => setPage('home')}
           onBack={() => setPage('projects')}
