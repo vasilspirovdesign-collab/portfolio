@@ -7,6 +7,8 @@ import opusAIChallenge from '../assets/opus-ai-challenge.png'
 import opusAIRole from '../assets/opus-ai-role.png'
 import opusAIProcess from '../assets/opus-ai-process.png'
 import opusAISolution from '../assets/opus-ai-solution.png'
+import opusAIDecisions from '../assets/opus-ai-decisions.png'
+import opusAILearned from '../assets/opus-ai-learned.png'
 
 const PROJECT = 'Opus Edu AI'
 
@@ -136,6 +138,9 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
 
       {activeTab === 'Key Decisions' && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={opusAIDecisions} alt="Key Decisions" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -170,7 +175,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
       {activeTab === "Things I've learned.." && (
         <>
           <div style={photoCard(dark)}>
-            <img src={opusAISolution} alt="Things I've learned" loading="lazy" style={photoImg} />
+            <img src={opusAILearned} alt="Things I've learned" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>

@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Check } from 'lucide-react'
 import mobileBg from '../assets/mobile-bg.png'
 import shape1 from '../assets/mobile-shape-1.svg'
 import shape2 from '../assets/mobile-shape-2.svg'
@@ -9,9 +8,10 @@ import shape4 from '../assets/mobile-shape-4.svg'
 export default function MobileModal() {
   const [visible, setVisible] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [pressed, setPressed] = useState(false)
 
   useEffect(() => {
-    const check = () => setVisible(window.innerWidth < 768)
+    const check = () => setVisible(window.innerWidth < 1200)
     check()
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
@@ -68,7 +68,7 @@ export default function MobileModal() {
         </div>
 
         {/* Text + button */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px', height: '136px', flexShrink: 0 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px', flexShrink: 0 }}>
           <div style={{ height: '38px', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
             <p style={{
               margin: 0, fontFamily: 'Questrial, sans-serif',
@@ -81,23 +81,29 @@ export default function MobileModal() {
           <p style={{
             margin: 0, fontFamily: 'Geist, system-ui, sans-serif',
             fontSize: '14px', fontWeight: 400, lineHeight: 1.4,
-            color: '#757575', height: '70px', overflow: 'hidden',
+            color: '#757575',
           }}>
             Some tools need room to breathe. Open this on your desktop for the full experience.
           </p>
           <button
             onClick={copyLink}
+            onMouseDown={() => setPressed(true)}
+            onMouseUp={() => setPressed(false)}
+            onMouseLeave={() => setPressed(false)}
+            onTouchStart={() => setPressed(true)}
+            onTouchEnd={() => setPressed(false)}
             style={{
               marginTop: '8px', width: '100%', height: '48px', flexShrink: 0,
-              backgroundColor: copied ? '#3BAA6E' : '#005AFF',
+              backgroundColor: pressed ? '#0044CC' : '#005AFF',
               border: 'none', borderRadius: '5px', cursor: 'pointer',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontFamily: 'Questrial, sans-serif', fontSize: '18px', fontWeight: 400,
               lineHeight: 1.2, letterSpacing: '-0.18px', color: '#ffffff',
-              transition: 'background-color 200ms',
+              transition: 'background-color 150ms, transform 150ms',
+              transform: pressed ? 'scale(0.97)' : 'scale(1)',
             }}
           >
-            {copied ? <><Check size={18} strokeWidth={2} /> Copied!</> : 'Copy Link'}
+            {copied ? 'Copied!' : 'Copy Link'}
           </button>
         </div>
       </div>

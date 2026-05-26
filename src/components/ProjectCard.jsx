@@ -4,12 +4,14 @@ import opusEduCover from '../assets/opus-edu-cover.png'
 import opusAICover from '../assets/opus-ai-cover.png'
 import hederaThumb from '../assets/hedera-thumb.png'
 import carbonchainThumb from '../assets/carbonchain-thumb.png'
+import abuDhabiThumb from '../assets/abu-dhabi-thumb.png'
 
 const THUMBNAILS = {
   'Opus Edu': opusEduCover,
   'Opus Edu AI': opusAICover,
   'Hedera Transaction Tool': hederaThumb,
   'Rowan Carbon Chain': carbonchainThumb,
+  'Explore Abu Dhabi': abuDhabiThumb,
 }
 
 const checkerboard = {
@@ -31,7 +33,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       <div
         className="transition-colors duration-300"
         style={{
-          width: '329px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
+          width: '100%', borderRadius: '8px', overflow: 'hidden',
           backgroundColor: t(isDark, 'cardBg'),
           display: 'flex', flexDirection: 'column', gap: '8px',
         }}
@@ -46,10 +48,10 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
 
         {/* Skeleton text */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px', height: '136px' }}>
-          <div style={{ height: '38px', borderRadius: '4px', backgroundColor: skeletonColor, width: '305px' }} />
-          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '305px' }} />
-          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '266px' }} />
-          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '266px' }} />
+          <div style={{ height: '38px', borderRadius: '4px', backgroundColor: skeletonColor, width: '93%' }} />
+          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '93%' }} />
+          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '81%' }} />
+          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '81%' }} />
         </div>
       </div>
     )
@@ -62,7 +64,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       onMouseLeave={() => setHovered(false)}
       className="transition-[transform,box-shadow,background-color] duration-[260ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={{
-        width: '329px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
+        width: '100%', borderRadius: '8px', overflow: 'hidden',
         backgroundColor: t(isDark, 'cardBg'),
         cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '8px',
         boxShadow: hovered

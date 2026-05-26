@@ -8,10 +8,11 @@ import ProjectDetailPage from './pages/ProjectDetailPage'
 import HederaPage from './pages/HederaPage'
 import CarbonChainPage from './pages/CarbonChainPage'
 import OpusAIPage from './pages/OpusAIPage'
+import AbuDhabiPage from './pages/AbuDhabiPage'
 import AboutPage from './pages/AboutPage'
 import WorkflowPage from './pages/WorkflowPage'
 import MobileModal from './components/MobileModal'
-import { FEATURED } from './data/projects'
+import { PROJECTS, FEATURED } from './data/projects'
 
 function parseHash() {
   const hash = window.location.hash.slice(1)
@@ -37,7 +38,18 @@ export default function App() {
   const [page, setPage] = useState(initial.page)
   const [selectedProject, setSelectedProject] = useState(initial.selectedProject)
   const [aboutInitialTab, setAboutInitialTab] = useState(undefined)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const isMount = useRef(true)
+
+  useEffect(() => {
+    const onResize = () => setWindowWidth(window.innerWidth)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  const featuredProjects = windowWidth > 1920
+    ? [...PROJECTS, { empty: true }]
+    : FEATURED
 
   const openProject = (title) => {
     setSelectedProject(title)
@@ -114,6 +126,16 @@ export default function App() {
         /></>
       )
     }
+    if (selectedProject === 'Explore Abu Dhabi') {
+      return (
+        <><MobileModal /><AbuDhabiPage
+          dark={dark}
+          onHome={() => setPage('home')}
+          onBack={() => setPage('projects')}
+          onToggle={toggle}
+        /></>
+      )
+    }
     return (
       <><MobileModal /><ProjectDetailPage
         dark={dark}
@@ -159,8 +181,8 @@ export default function App() {
           }}>
             Projects I&apos;m Proud Of
           </h2>
-          <div style={{ display: 'flex', gap: '24px' }}>
-            {FEATURED.map((project, i) => (
+          <div style={{ display: 'grid', gridTemplateColumns: `repeat(${featuredProjects.length}, 1fr)`, gap: '24px', width: '100%' }}>
+            {featuredProjects.map((project, i) => (
               <ProjectCard
                 key={i}
                 dark={dark}
