@@ -3,6 +3,7 @@ import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
 import opusAIIntro from '../assets/opus-ai-cover.png'
+import opusAIChallenge from '../assets/opus-ai-challenge.png'
 
 const PROJECT = 'Opus Edu AI'
 
@@ -52,7 +53,9 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Challenge' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={opusAIChallenge} alt="Challenge" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
