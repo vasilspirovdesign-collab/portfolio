@@ -9,4 +9,5 @@ export const PROJECTS = [
   { title: 'Limechain Design System', description: 'An open-source Web3 component library built on shadcn/ui and Tailwind CSS, covering wallet states, token display, transaction flows, and address patterns.' },
 ]
 
-export const FEATURED = PROJECTS.slice(0, 4)
+export const FEATURED = ['Opus Edu', 'Hedera Transaction Tool', 'Limechain Design System', 'Opus Edu AI']
+  .map(title => PROJECTS.find(p => p.title === title))
