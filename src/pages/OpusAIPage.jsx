@@ -4,6 +4,7 @@ import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
 import opusAIIntro from '../assets/opus-ai-cover.png'
 import opusAIChallenge from '../assets/opus-ai-challenge.png'
+import opusAIRole from '../assets/opus-ai-role.png'
 
 const PROJECT = 'Opus Edu AI'
 
@@ -90,7 +91,9 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'My Role' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={opusAIRole} alt="My Role" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
