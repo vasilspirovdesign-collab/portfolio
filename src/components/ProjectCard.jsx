@@ -7,6 +7,7 @@ import carbonchainThumb from '../assets/carbonchain-thumb.png'
 import abuDhabiThumb from '../assets/abu-dhabi-thumb.png'
 import bnbThumb from '../assets/bnb-thumb.png'
 import metawinThumb from '../assets/metawin-thumb.png'
+import limechainThumb from '../assets/limechain-thumb.png'
 
 const THUMBNAILS = {
   'Opus Edu': opusEduCover,
@@ -16,6 +17,7 @@ const THUMBNAILS = {
   'Explore Abu Dhabi': abuDhabiThumb,
   'Binomial': bnbThumb,
   'Metawin': metawinThumb,
+  'Limechain Design System': limechainThumb,
 }
 
 const checkerboard = {
@@ -101,7 +103,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
         </div>
         {description && (
           <p style={{
-            margin: 0, fontFamily: 'Geist, system-ui, sans-serif',
+            margin: 0, fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
             fontSize: '14px', fontWeight: 400, lineHeight: 1.4,
             color: t(isDark, 'muted'),
             display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden',

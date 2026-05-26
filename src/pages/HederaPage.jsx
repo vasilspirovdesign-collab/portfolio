@@ -85,7 +85,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={photoCard(dark)}>
                 <img src={hederaProblem} alt="Outdated Designs" loading="lazy" style={photoImg} />
               </div>
-              <p style={{ margin: 0, fontFamily: 'Geist, system-ui, sans-serif', fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: dark ? '#a2a3a5' : '#757575' }}>Outdated Designs</p>
+              <p style={{ margin: 0, fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: dark ? '#a2a3a5' : '#757575' }}>Outdated Designs</p>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
