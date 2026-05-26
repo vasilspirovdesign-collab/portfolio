@@ -149,6 +149,9 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
 
       {activeTab === 'Solution' && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={opusAISolution} alt="Solution" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
