@@ -28,7 +28,7 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
         backgroundColor: t(dark, 'bg'),
       }}
     >
-      <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '16px', minWidth: 0 }}>
+      <nav aria-label="Breadcrumb" style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '16px', minWidth: 0 }}>
         <button onClick={onHome} aria-label="Go home" className="icon-btn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', flexShrink: 0 }}>
           <Home size={24} color={textSecondary} strokeWidth={1.5} />
         </button>
@@ -37,7 +37,7 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
           const color = crumb.onClick ? textSecondary : (isActiveLast ? (dark ? '#d0d2d0' : '#171717') : textSecondary)
           return (
             <Fragment key={i}>
-              <span style={{ ...breadcrumbSep, color: border, flexShrink: 0 }}>/</span>
+              <span aria-hidden="true" style={{ ...breadcrumbSep, color: border, flexShrink: 0 }}>/</span>
               {crumb.onClick ? (
                 <button
                   onClick={crumb.onClick}
@@ -53,7 +53,7 @@ export default function InnerHeader({ dark, onToggle, onHome, crumbs }) {
             </Fragment>
           )
         })}
-      </div>
+      </nav>
       <div style={{ display: 'flex', flex: '1 0 0', justifyContent: 'flex-end', alignItems: 'center', minWidth: 0 }}>
         <button onClick={onToggle} aria-label="Toggle theme" className="icon-btn transition-opacity duration-200 hover:opacity-70" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
           {dark ? <Sun size={24} color={textPrimary} strokeWidth={1.5} /> : <Moon size={24} color={textPrimary} strokeWidth={1.5} />}

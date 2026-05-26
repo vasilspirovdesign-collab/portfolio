@@ -6,6 +6,7 @@ const NAV_LINKS = ['Projects', 'Workflow', 'About Me']
 export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
   return (
     <nav
+      aria-label="Main navigation"
       className="transition-[background-color,border-color] duration-300"
       style={{
         position: 'sticky', top: 0, zIndex: 100,
@@ -41,6 +42,7 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
             <button
               key={link}
               onClick={() => onNavigate(key)}
+              aria-current={page === key ? 'page' : undefined}
               className="transition-colors duration-200"
               style={{
                 background: 'none', border: 'none', padding: 0, cursor: 'pointer',

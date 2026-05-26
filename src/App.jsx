@@ -9,6 +9,8 @@ import HederaPage from './pages/HederaPage'
 import CarbonChainPage from './pages/CarbonChainPage'
 import OpusAIPage from './pages/OpusAIPage'
 import AbuDhabiPage from './pages/AbuDhabiPage'
+import BinomialPage from './pages/BinomialPage'
+import MetawinPage from './pages/MetawinPage'
 import AboutPage from './pages/AboutPage'
 import WorkflowPage from './pages/WorkflowPage'
 import MobileModal from './components/MobileModal'
@@ -126,6 +128,26 @@ export default function App() {
         /></>
       )
     }
+    if (selectedProject === 'Metawin') {
+      return (
+        <><MobileModal /><MetawinPage
+          dark={dark}
+          onHome={() => setPage('home')}
+          onBack={() => setPage('projects')}
+          onToggle={toggle}
+        /></>
+      )
+    }
+    if (selectedProject === 'Binomial') {
+      return (
+        <><MobileModal /><BinomialPage
+          dark={dark}
+          onHome={() => setPage('home')}
+          onBack={() => setPage('projects')}
+          onToggle={toggle}
+        /></>
+      )
+    }
     if (selectedProject === 'Explore Abu Dhabi') {
       return (
         <><MobileModal /><AbuDhabiPage
@@ -181,7 +203,7 @@ export default function App() {
           }}>
             Projects I&apos;m Proud Of
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 329px)', gap: '24px', width: '100%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 340px)', gap: '24px', width: '100%' }}>
             {featuredProjects.map((project, i) => (
               <ProjectCard
                 key={i}
