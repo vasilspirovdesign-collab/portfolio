@@ -7,6 +7,7 @@ import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import HederaPage from './pages/HederaPage'
 import CarbonChainPage from './pages/CarbonChainPage'
+import OpusAIPage from './pages/OpusAIPage'
 import AboutPage from './pages/AboutPage'
 import WorkflowPage from './pages/WorkflowPage'
 import MobileModal from './components/MobileModal'
@@ -102,14 +103,14 @@ export default function App() {
         /></>
       )
     }
-    if (selectedProject === 'Rowan Carbon Chain') {
+    if (selectedProject === 'Opus Edu AI') {
       return (
-        <CarbonChainPage
+        <><MobileModal /><OpusAIPage
           dark={dark}
           onHome={() => setPage('home')}
           onBack={() => setPage('projects')}
           onToggle={toggle}
-        />
+        /></>
       )
     }
     return (
