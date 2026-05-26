@@ -90,7 +90,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
         {description && (
           <p style={{
             margin: 0, fontFamily: 'Geist, system-ui, sans-serif',
-            fontSize: '14px', fontWeight: 400, lineHeight: 1.2,
+            fontSize: '14px', fontWeight: 400, lineHeight: 1.4,
             color: t(isDark, 'muted'),
             height: '70px', overflow: 'hidden',
           }}>
