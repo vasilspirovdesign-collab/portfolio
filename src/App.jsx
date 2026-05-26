@@ -110,6 +110,7 @@ export default function App() {
           onHome={() => setPage('home')}
           onBack={() => setPage('projects')}
           onToggle={toggle}
+          onOpenProject={openProject}
         /></>
       )
     }

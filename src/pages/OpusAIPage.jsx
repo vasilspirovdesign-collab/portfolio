@@ -10,11 +10,12 @@ import opusAISolution from '../assets/opus-ai-solution.png'
 
 const PROJECT = 'Opus Edu AI'
 
-const TABS = [
+const getTabs = (onOpenProject) => [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
+  { label: 'Opus Edu', onClick: () => onOpenProject?.('Opus Edu') },
 ]
 
-export default function OpusAIPage({ dark, onBack, onHome, onToggle }) {
+export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProject }) {
   const [activeTab, setActiveTab] = useState('Introduction')
   useEffect(() => { document.title = `${PROJECT} - Vasil Spirov` }, [])
 
@@ -26,7 +27,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle }) {
       onToggle={onToggle}
       onHome={onHome || onBack}
       crumbs={[{ label: 'Projects', onClick: onBack }, { label: PROJECT }]}
-      tabs={TABS}
+      tabs={getTabs(onOpenProject)}
       activeTab={activeTab}
       onTabChange={setActiveTab}
     >
@@ -78,7 +79,6 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Problem' && (
         <>
-          <div style={photoCard(dark)} />
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -136,7 +136,6 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Key Decisions' && (
         <>
-          <div style={photoCard(dark)} />
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -170,7 +169,6 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === "Things I've learned.." && (
         <>
-          <div style={photoCard(dark)} />
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
