@@ -6,7 +6,7 @@ export const navLabel = {
 }
 
 export const bodyText = {
-  fontFamily: 'Geist, system-ui, sans-serif',
+  fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif',
   fontSize: '18px', fontWeight: 300, lineHeight: '28.8px', letterSpacing: '0px',
 }
 

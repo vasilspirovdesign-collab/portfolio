@@ -8,7 +8,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
   const textSecondary = dark ? '#a2a3a5' : '#757575'
 
   return (
-    <aside style={{ width: '436px', flexShrink: 0, padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', boxSizing: 'border-box', position: 'sticky', top: '64px', height: 'calc(100vh - 64px)', alignSelf: 'flex-start', overflowY: 'auto' }}>
+    <aside aria-label="Page sections" style={{ width: '436px', flexShrink: 0, padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', boxSizing: 'border-box', position: 'sticky', top: '64px', height: 'calc(100vh - 64px)', alignSelf: 'flex-start', overflowY: 'auto' }}>
       {tabs.map((tab, i) => {
         const isExternal = typeof tab === 'object' && tab.href
         const isNavLink = typeof tab === 'object' && tab.onClick
@@ -28,17 +28,20 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
         const isHovered = hovered === i
 
         return (
-          <div
+          <button
             key={`${label}-${i}`}
             onClick={handleClick}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
+            aria-current={isActive ? 'page' : undefined}
             style={{
               display: 'flex', alignItems: 'center', gap: '20px',
               width: '376px', height: '72px', padding: '0 16px', borderRadius: '8px',
               cursor: 'pointer', backgroundColor: isActive ? t(dark, 'border') : 'transparent',
               boxSizing: 'border-box', flexShrink: 0,
+              border: 'none', background: isActive ? t(dark, 'border') : 'transparent',
               transition: 'background-color 400ms cubic-bezier(0.22, 1, 0.36, 1)',
+              textAlign: 'left',
             }}
           >
             <span
@@ -54,7 +57,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
               {label}
               {(isExternal || isNavLink) && <SquareArrowOutUpRight size={18} strokeWidth={1.75} style={{ flexShrink: 0 }} />}
             </span>
-          </div>
+          </button>
         )
       })}
     </aside>

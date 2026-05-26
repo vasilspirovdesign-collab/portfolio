@@ -5,8 +5,9 @@ import PageLayout from '../components/PageLayout'
 import designApproachImg from '../assets/designApproach.png'
 import coreValuesImg from '../assets/coreValues.png'
 import whyUxImg from '../assets/whyUx.png'
+import aiWorkflowImg from '../assets/ai-workflow.png'
 
-const TABS = ['Core Values', 'Design Approach', 'Why UX']
+const TABS = ['Core Values', 'Design Approach', 'Why UX', 'AI powered']
 
 const CORE_VALUES = [
   { title: 'User - Centered design', body: 'Every design decision starts with the user - understanding how they think, what they need, and how they behave.' },
@@ -89,6 +90,28 @@ export default function WorkflowPage({ dark, onBack, onToggle }) {
                     <p style={{ margin: 0, ...bodyText, color: textPrimary }}>{item.body}</p>
                   </div>
                 ))}
+              </div>
+            </>
+          )}
+
+          {activeTab === 'AI powered' && (
+            <>
+              <div style={photoCard(dark)}>
+                <img src={aiWorkflowImg} alt="AI-augmented workflow" loading="lazy" style={photoImg} />
+              </div>
+              <div style={contentBlock}>
+                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>AI tools are part of my design process - not as a replacement for thinking, but as a way to think better.</p>
+                {[
+                  { title: 'Claude & Gemini', body: 'I use them to explore UX concepts, write and refine microcopy, map user journeys, and pressure-test design decisions before they reach a screen.' },
+                  { title: 'Claude Code', body: 'Means I can build interactive prototypes independently - real components, real states, real edge cases - which changes what I can bring to usability testing.' },
+                  { title: 'NotebookLM', body: 'Helps me stay on top of research without losing the threads that matter.' },
+                ].map((item) => (
+                  <div key={item.title} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <h2 style={{ margin: 0, ...heading, color: textPrimary }}>{item.title}</h2>
+                    <p style={{ margin: 0, ...bodyText, color: textPrimary }}>{item.body}</p>
+                  </div>
+                ))}
+                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>What I&apos;ve found is that the designers who use these tools well aren&apos;t doing less design work - they&apos;re doing it at a level of depth and speed that wasn&apos;t possible before.</p>
               </div>
             </>
           )}

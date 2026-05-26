@@ -26,13 +26,17 @@ export default function MobileModal() {
   if (!visible) return null
 
   return (
-    <div style={{
-      position: 'fixed', inset: 0, zIndex: 1000,
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
-      backgroundColor: 'rgba(255,255,255,0.4)',
-      padding: '24px',
-    }}>
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobile-modal-title"
+      style={{
+        position: 'fixed', inset: 0, zIndex: 1000,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
+        backgroundColor: 'rgba(255,255,255,0.4)',
+        padding: '24px',
+      }}>
       <div style={{
         width: '329px', borderRadius: '8px', overflow: 'hidden',
         backgroundColor: '#ffffff',
@@ -73,7 +77,7 @@ export default function MobileModal() {
             <p style={{
               margin: 0, fontFamily: 'Questrial, sans-serif',
               fontSize: '18px', fontWeight: 400, lineHeight: 1.2, letterSpacing: '-0.18px',
-              color: '#414141', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+              color: '#414141', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', id: 'mobile-modal-title',
             }}>
               Built for the big screen.
             </p>

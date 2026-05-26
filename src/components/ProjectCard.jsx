@@ -5,6 +5,8 @@ import opusAICover from '../assets/opus-ai-cover.png'
 import hederaThumb from '../assets/hedera-thumb.png'
 import carbonchainThumb from '../assets/carbonchain-thumb.png'
 import abuDhabiThumb from '../assets/abu-dhabi-thumb.png'
+import bnbThumb from '../assets/bnb-thumb.png'
+import metawinThumb from '../assets/metawin-thumb.png'
 
 const THUMBNAILS = {
   'Opus Edu': opusEduCover,
@@ -12,6 +14,8 @@ const THUMBNAILS = {
   'Hedera Transaction Tool': hederaThumb,
   'Rowan Carbon Chain': carbonchainThumb,
   'Explore Abu Dhabi': abuDhabiThumb,
+  'Binomial': bnbThumb,
+  'Metawin': metawinThumb,
 }
 
 const checkerboard = {
@@ -33,7 +37,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       <div
         className="transition-colors duration-300"
         style={{
-          width: '329px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
+          width: '340px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
           backgroundColor: t(isDark, 'cardBg'),
           display: 'flex', flexDirection: 'column', gap: '8px',
         }}
@@ -58,13 +62,17 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
   }
 
   return (
-    <div
+    <article
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick?.() } }}
+      tabIndex={onClick ? 0 : undefined}
+      role={onClick ? 'button' : undefined}
+      aria-label={onClick ? `View ${title} project` : undefined}
       className="transition-[transform,box-shadow,background-color] duration-[260ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={{
-        width: '329px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
+        width: '340px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
         backgroundColor: t(isDark, 'cardBg'),
         cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '8px',
         boxShadow: hovered
@@ -112,7 +120,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
           transform: hovered ? 'scale(1)' : 'scale(0.8)',
           transition: 'opacity 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1)',
         }}>
-          <svg width="26.5" height="26.5" viewBox="0 0 26.5 26.5" fill="none" overflow="visible">
+          <svg width="26.5" height="26.5" viewBox="0 0 26.5 26.5" fill="none" overflow="visible" aria-hidden="true">
             <defs>
               <linearGradient id="cardArrow" x1="8.876" y1="12.634" x2="16.833" y2="15.833" gradientUnits="userSpaceOnUse">
                 <stop stopColor="#00B5F1" />
@@ -123,6 +131,6 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
           </svg>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
