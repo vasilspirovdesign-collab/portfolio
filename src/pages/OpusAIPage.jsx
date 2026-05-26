@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
+import opusAIIntro from '../assets/opus-ai-cover.png'
 
 const PROJECT = 'Opus Edu AI'
 
@@ -28,7 +29,9 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Introduction' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={opusAIIntro} alt="Opus Edu AI" loading="lazy" style={photoImg} />
+          </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
               <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Opus Edu AI</h1>
