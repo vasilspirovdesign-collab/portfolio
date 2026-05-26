@@ -181,7 +181,7 @@ export default function App() {
           }}>
             Projects I&apos;m Proud Of
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: `repeat(${featuredProjects.length}, 1fr)`, gap: '24px', width: '100%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 329px)', gap: '24px', width: '100%' }}>
             {featuredProjects.map((project, i) => (
               <ProjectCard
                 key={i}

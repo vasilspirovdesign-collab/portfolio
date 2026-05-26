@@ -33,7 +33,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       <div
         className="transition-colors duration-300"
         style={{
-          width: '100%', borderRadius: '8px', overflow: 'hidden',
+          width: '329px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
           backgroundColor: t(isDark, 'cardBg'),
           display: 'flex', flexDirection: 'column', gap: '8px',
         }}
@@ -64,7 +64,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       onMouseLeave={() => setHovered(false)}
       className="transition-[transform,box-shadow,background-color] duration-[260ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={{
-        width: '100%', borderRadius: '8px', overflow: 'hidden',
+        width: '329px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
         backgroundColor: t(isDark, 'cardBg'),
         cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '8px',
         boxShadow: hovered
