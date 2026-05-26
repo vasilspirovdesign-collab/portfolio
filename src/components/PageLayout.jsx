@@ -4,7 +4,7 @@ import SidebarNav from './SidebarNav'
 
 export default function PageLayout({ dark, onToggle, onHome, crumbs, tabs, activeTab, onTabChange, mainStyle, children }) {
   return (
-    <div className="transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: 'Geist, system-ui, sans-serif' }}>
+    <div className="transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
       <InnerHeader dark={dark} onToggle={onToggle} onHome={onHome} crumbs={crumbs} />
       <div style={{ display: 'flex', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <SidebarNav dark={dark} tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} />

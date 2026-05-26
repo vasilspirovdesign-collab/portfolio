@@ -197,12 +197,24 @@ export default function App() {
         <Hero onGoResume={() => { setAboutInitialTab('Resume'); setPage('about-me') }} />
 
         <section>
-          <h2 style={{
-            margin: '0 0 24px', fontFamily: 'Questrial, sans-serif', fontSize: '18px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0px', color: t(dark, 'muted'), whiteSpace: 'nowrap',
-            overflow: 'hidden', textOverflow: 'ellipsis', transition: 'color 0.3s',
-          }}>
-            Projects I&apos;m Proud Of
-          </h2>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
+            <h2 style={{
+              margin: 0, fontFamily: 'Questrial, sans-serif', fontSize: '18px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0px', color: t(dark, 'muted'), whiteSpace: 'nowrap',
+              overflow: 'hidden', textOverflow: 'ellipsis', transition: 'color 0.3s',
+            }}>
+              Projects I&apos;m Proud Of
+            </h2>
+            <button
+              onClick={() => setPage('projects')}
+              style={{
+                background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+                fontFamily: 'Questrial, sans-serif', fontSize: '18px', fontWeight: 400,
+                lineHeight: '28px', color: '#005AFF', whiteSpace: 'nowrap', flexShrink: 0,
+              }}
+            >
+              See all
+            </button>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 340px)', gap: '24px', width: '100%' }}>
             {featuredProjects.map((project, i) => (
               <ProjectCard

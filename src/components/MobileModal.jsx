@@ -83,7 +83,7 @@ export default function MobileModal() {
             </p>
           </div>
           <p style={{
-            margin: 0, fontFamily: 'Geist, system-ui, sans-serif',
+            margin: 0, fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
             fontSize: '14px', fontWeight: 400, lineHeight: 1.4,
             color: '#757575',
           }}>

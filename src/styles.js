@@ -6,7 +6,7 @@ export const navLabel = {
 }
 
 export const bodyText = {
-  fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif',
+  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
   fontSize: '18px', fontWeight: 300, lineHeight: '28.8px', letterSpacing: '0px',
 }
 
@@ -16,7 +16,7 @@ export const heading = {
 }
 
 export const breadcrumbSep = {
-  fontFamily: 'Geist, system-ui, sans-serif',
+  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
   fontSize: '22px', fontWeight: 400, lineHeight: '28px', letterSpacing: '0.22px',
 }
 
