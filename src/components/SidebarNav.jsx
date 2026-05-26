@@ -11,12 +11,15 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
     <aside style={{ width: '436px', flexShrink: 0, padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', boxSizing: 'border-box', position: 'sticky', top: '64px', height: 'calc(100vh - 64px)', alignSelf: 'flex-start', overflowY: 'auto' }}>
       {tabs.map((tab, i) => {
         const isExternal = typeof tab === 'object' && tab.href
-        const label = isExternal ? tab.label : tab
-        const isActive = !isExternal && tab === activeTab
+        const isNavLink = typeof tab === 'object' && tab.onClick
+        const label = (isExternal || isNavLink) ? tab.label : tab
+        const isActive = !isExternal && !isNavLink && tab === activeTab
 
         const handleClick = () => {
           if (isExternal) {
             window.open(tab.href, '_blank', 'noopener,noreferrer')
+          } else if (isNavLink) {
+            tab.onClick()
           } else {
             onTabChange?.(tab)
           }
@@ -41,7 +44,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
             <span
               style={{
                 ...navLabel,
-                color: isExternal ? '#005AFF' : (isActive ? (dark ? '#d0d2d0' : '#171717') : (isHovered ? (dark ? '#d0d2d0' : '#171717') : textSecondary)),
+                color: (isExternal || isNavLink) ? '#005AFF' : (isActive ? (dark ? '#d0d2d0' : '#171717') : (isHovered ? (dark ? '#d0d2d0' : '#171717') : textSecondary)),
                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                 flex: 1,
                 display: 'flex', alignItems: 'center', gap: '8px',
@@ -49,7 +52,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
               }}
             >
               {label}
-              {isExternal && <SquareArrowOutUpRight size={18} strokeWidth={1.75} style={{ flexShrink: 0 }} />}
+              {(isExternal || isNavLink) && <SquareArrowOutUpRight size={18} strokeWidth={1.75} style={{ flexShrink: 0 }} />}
             </span>
           </div>
         )
