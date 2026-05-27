@@ -3,6 +3,7 @@ import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
 import metawinRole from '../assets/metawin-role.png'
+import metawinChallenge from '../assets/metawin-challenge.png'
 import metawinIntro from '../assets/metawin-intro.png'
 import metawinProcess from '../assets/metawin-process.png'
 import metawinKeyDecisions from '../assets/metawin-keydecisions.png'
@@ -57,6 +58,9 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Challenge' && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={metawinChallenge} alt="Challenge" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
