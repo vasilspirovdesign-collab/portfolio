@@ -74,10 +74,10 @@ export default function MobileModal() {
         {/* Text + button */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px', flexShrink: 0 }}>
           <div style={{ height: '38px', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-            <p style={{
+            <p id="mobile-modal-title" style={{
               margin: 0, fontFamily: 'Questrial, sans-serif',
               fontSize: '18px', fontWeight: 400, lineHeight: 1.2, letterSpacing: '-0.18px',
-              color: '#414141', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', id: 'mobile-modal-title',
+              color: '#414141', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
             }}>
               Built for the big screen.
             </p>

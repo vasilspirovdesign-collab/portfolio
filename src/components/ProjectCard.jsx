@@ -20,22 +20,11 @@ const THUMBNAILS = {
   'Limechain Design System': limechainThumb,
 }
 
-const checkerboard = {
-  backgroundImage: `linear-gradient(45deg, #e8e8e8 25%, transparent 25%),
-    linear-gradient(-45deg, #e8e8e8 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #e8e8e8 75%),
-    linear-gradient(-45deg, transparent 75%, #e8e8e8 75%)`,
-  backgroundSize: '20px 20px',
-  backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-  backgroundColor: '#f5f5f5',
-}
-
 export default function ProjectCard({ title = 'Opus Edu', description, dark: isDark, onClick, empty }) {
   const [hovered, setHovered] = useState(false)
-  const skeletonColor = isDark ? '#555555' : '#e0e0e0'
 
   if (empty) {
-    return <div style={{ width: '340px', flexShrink: 0 }} />
+    return <div aria-hidden="true" style={{ width: '340px', flexShrink: 0 }} />
   }
 
   return (

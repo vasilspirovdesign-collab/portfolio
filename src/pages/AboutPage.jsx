@@ -1,10 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Copy, Check } from 'lucide-react'
+import { Copy, Check, Download, ExternalLink } from 'lucide-react'
 import { t } from '../theme'
 import { heading, bodyText, photoCard, photoImg } from '../styles'
 import PageLayout from '../components/PageLayout'
 import profilePhoto from '../assets/smallerVasko.png'
 import resumePdf from '../assets/resume.pdf'
+
+const RESUME_VIEW = 'https://drive.google.com/file/d/1-WYoSnZLRGWSLbxg94zymQg0IVdhaKx7/view?usp=sharing'
 
 
 const CERTIFICATES = [
@@ -17,9 +19,7 @@ const CERTIFICATES = [
   { title: 'Claude Code in Action',                  issuer: 'Anthropic Academy',  logo: 'https://www.figma.com/api/mcp/asset/8177c409-9f06-4958-b78c-0e2424cddf39', logoW: 54,  logoH: 54, invert: true  },
 ]
 
-const RECOMMENDATIONS = []
-
-const TABS = ['Introduction', 'Resume', 'Certificates', 'Recommendations', 'Contacts']
+const TABS = ['Introduction', 'Resume', 'Certificates', 'Contacts']
 
 const BIO = [
   'Dedicated and experienced UX Designer with a proven impact in DeFi and Blockchain start-ups. Thriving as a holistic practitioner, I seamlessly blend product and business processes, and systems.',
@@ -73,11 +73,32 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
           )}
 
           {activeTab === 'Resume' && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '694px', maxWidth: '694px', flex: 1 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '694px', maxWidth: '694px', flex: 1 }}>
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                <a
+                  href={RESUME_VIEW}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="icon-btn"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', ...bodyText, color: textPrimary, textDecoration: 'none' }}
+                >
+                  <ExternalLink size={16} strokeWidth={1.75} />
+                  Open
+                </a>
+                <a
+                  href={resumePdf}
+                  download="Vasil Spirov Resume.pdf"
+                  className="icon-btn"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', ...bodyText, color: textPrimary, textDecoration: 'none' }}
+                >
+                  <Download size={16} strokeWidth={1.75} />
+                  Download
+                </a>
+              </div>
               <iframe
                 src={resumePdf}
                 title="Resume"
-                style={{ width: '100%', height: '700px', border: 'none', borderRadius: '8px', display: 'block' }}
+                style={{ width: '100%', height: '900px', border: 'none', borderRadius: '8px', display: 'block' }}
               />
             </div>
           )}

@@ -15,7 +15,7 @@ export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) 
         onHome={onBack}
         crumbs={[{ label: 'Projects' }]}
       />
-      <div style={{ padding: '30px', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
+      <main id="main-content" style={{ padding: '30px', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
         <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
           {PROJECTS.map((project, i) => (
             <ProjectCard
@@ -27,7 +27,7 @@ export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) 
             />
           ))}
         </div>
-      </div>
+      </main>
     </div>
   )
 }
