@@ -39,7 +39,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
                   {[
                     'Rowan Carbon Chain is a blockchain-based platform for issuing, managing, and retiring carbon offset certificates - enabling energy producers to tokenize verified offset data via smart contracts and transfer certificates to organisations looking to offset their carbon footprint.',
                     'The platform serves two distinct organisational contexts - producers and customers - each with multiple user roles ranging from financial directors approving certificate transfers to data entry operators submitting manual readings from physical devices on-site.',
-                    'The engagement required designing a data-dense operational product from scratch: full information architecture across five user roles, structured onboarding flows, a device and readings management system, and a certificate lifecycle from raw sensor data through to blockchain-issued ERC-721 token - with no prior design system and a regulatory domain that offered no established UX conventions to reference.',
+                    'Five user roles, two organisational contexts, a certificate lifecycle spanning raw sensor readings to blockchain-issued ERC-721 tokens - and a regulatory audit trail as the core product value, not a feature.',
                   ].map((para, i) => (
                     <p key={i} style={{ margin: 0, ...bodyText, color: textPrimary }}>{para}</p>
                   ))}
@@ -76,7 +76,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                  <p style={{ margin: 0 }}>The hardest problem wasn&apos;t the dashboard. It was making an invisible process legible.</p>
+                  <p style={{ margin: 0 }}>A carbon certificate is only as credible as the data trail behind it - and that trail spans devices, operators, process stages, and blockchain transactions that most users never see and can&apos;t interpret. The design problem was making that trail legible without making it overwhelming.</p>
                   <p style={{ margin: 0 }}>Carbon offset certificates derive their value entirely from the integrity of the data behind them. The platform&apos;s blockchain foundation introduced a class of UX problems that conventional data management patterns do not solve. Users needed to trace a certificate back through readings, devices, operators, and process stages - and trust what they found at every step.</p>
                   <p style={{ margin: 0 }}>The parallel challenge on the producer side was structural: the same interface had to support both automated SmartMiner device inputs and manual spreadsheet-based data entry from on-site operators, with each input type carrying different validation requirements, error states, and operator accountability.</p>
                   <p style={{ margin: 0 }}>Both problems were versions of the same root issue - a system where trust is earned through transparency, but transparency requires deliberate design decisions at every layer of the data model. The design had to surface provenance without overwhelming the users whose primary job is not data management.</p>

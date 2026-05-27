@@ -35,32 +35,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
   const skeletonColor = isDark ? '#555555' : '#e0e0e0'
 
   if (empty) {
-    return (
-      <div
-        className="transition-colors duration-300"
-        style={{
-          width: '340px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
-          backgroundColor: t(isDark, 'cardBg'),
-          display: 'flex', flexDirection: 'column', gap: '8px',
-        }}
-      >
-        {/* Empty image area */}
-        <div style={{ position: 'relative', width: '100%', aspectRatio: '329 / 219', ...checkerboard }}>
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: `linear-gradient(to bottom, ${t(isDark, 'cardBg')}, transparent)`,
-          }} />
-        </div>
-
-        {/* Skeleton text */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px', height: '136px' }}>
-          <div style={{ height: '38px', borderRadius: '4px', backgroundColor: skeletonColor, width: '93%' }} />
-          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '93%' }} />
-          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '81%' }} />
-          <div style={{ height: '16px', borderRadius: '4px', backgroundColor: skeletonColor, width: '81%' }} />
-        </div>
-      </div>
-    )
+    return <div style={{ width: '340px', flexShrink: 0 }} />
   }
 
   return (
