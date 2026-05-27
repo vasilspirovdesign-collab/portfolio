@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react'
 import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
+import carbonChainProcess from '../assets/carbonchain-process.png'
+import carbonChainIntro from '../assets/carbonchain-intro.png'
+import carbonChainChallenge from '../assets/carbonchain-challenge.png'
+import carbonChainProblem from '../assets/carbonchain-problem.png'
+import carbonChainSolution from '../assets/carbonchain-solution.png'
+import carbonChainRole from '../assets/carbonchain-role.png'
 
 const PROJECT = 'Rowan Carbon Chain'
 
@@ -29,7 +35,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Introduction' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainIntro} alt="Rowan Carbon Chain" loading="lazy" style={photoImg} />
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Rowan Carbon Chain</h1>
@@ -50,7 +58,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Challenge' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainChallenge} alt="Challenge" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -72,7 +82,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Problem' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainProblem} alt="Problem" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -87,7 +99,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'My Role' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainRole} alt="My Role" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -110,7 +124,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Process' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainProcess} alt="Process" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
                 <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
@@ -126,7 +142,6 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Key Decisions' && (
             <>
-              <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -140,7 +155,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Solution' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainSolution} alt="Solution" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -158,7 +175,6 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === "Things I've learned.." && (
             <>
-              <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>

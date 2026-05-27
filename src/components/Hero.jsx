@@ -32,11 +32,18 @@ export default function Hero({ onGoResume }) {
       />
 
       {/* Resume preview */}
-      <div style={{
-        position: 'absolute', left: '30px', top: '30px', bottom: '0px',
-        width: '612px', borderRadius: '4px', overflow: 'hidden',
-        backgroundColor: '#ffffff',
-      }}>
+      <div
+        onClick={onGoResume}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onGoResume?.() } }}
+        role="button"
+        tabIndex={0}
+        aria-label="View resume"
+        style={{
+          position: 'absolute', left: '30px', top: '30px', bottom: '0px',
+          width: '612px', borderRadius: '4px', overflow: 'hidden',
+          backgroundColor: '#ffffff', cursor: 'pointer',
+        }}
+      >
         <img src={resumeImg} alt="Resume" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
       </div>
 
