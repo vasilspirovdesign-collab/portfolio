@@ -17,7 +17,7 @@ const THUMBNAILS = {
   'Explore Abu Dhabi': abuDhabiThumb,
   'Binomial': bnbThumb,
   'Metawin': metawinThumb,
-  'Limechain Design System': limechainThumb,
+  'LimeCN Web3 Design System': limechainThumb,
 }
 
 export default function ProjectCard({ title = 'Opus Edu', description, dark: isDark, onClick, empty }) {

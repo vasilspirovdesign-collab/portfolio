@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react'
 import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
+import metawinRole from '../assets/metawin-role.png'
+import metawinIntro from '../assets/metawin-intro.png'
+import metawinProcess from '../assets/metawin-process.png'
+import metawinKeyDecisions from '../assets/metawin-keydecisions.png'
+import metawinSolution from '../assets/metawin-solution.png'
 
 const PROJECT = 'Metawin'
 
@@ -29,15 +34,17 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Introduction' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={metawinIntro} alt="Metawin" loading="lazy" style={photoImg} />
+          </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <h1 style={{ margin: 0, ...heading, color: textPrimary }}>MetaWin - Metamarkets</h1>
+              <h1 style={{ margin: 0, ...heading, color: textPrimary }}>MetaWin - Metamarket</h1>
               <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Role: Senior UX Designer · UX Audit · Web App Design · Design System</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {[
-                'Metamarkets is a predictive markets platform built within the MetaWin ecosystem, where users bet on the probability of real-life event outcomes - from US elections and Bitcoin price targets to NBA champions and Champions League winners - resolved through a decentralised Oracle service in a transparent, on-chain manner.',
+                'Metamarket is a predictive markets platform built within the MetaWin ecosystem, where users bet on the probability of real-life event outcomes - from US elections and Bitcoin price targets to NBA champions and Champions League winners - resolved through a decentralised Oracle service in a transparent, on-chain manner.',
                 'The platform was designed to function both as a standalone product and as an embeddable plugin within the main MetaWin website - serving an existing user base already familiar with MetaWin\'s prizes and instant win products, while being accessible enough to onboard users encountering prediction markets for the first time.',
                 'The engagement covered the full design lifecycle across five sprints: a UX audit of the existing platform, sitemap and wireframe design, style guide creation, full UI delivery across desktop and mobile, and a final implementation audit - delivering a coherent, extensible product on a structured timeline with clearly scoped deliverables at each phase.',
               ].map((para, i) => (
@@ -50,7 +57,6 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Challenge' && (
         <>
-          <div style={photoCard(dark)} />
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -84,14 +90,16 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'My Role' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={metawinRole} alt="My Role" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Lead UX Designer - Full ownership across all five project sprints from audit through implementation review.</p>
               <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <li><strong>UX audit and analysis</strong> of the existing Metamarkets platform</li>
-                <li><strong>Sitemap mapping and information architecture</strong> for the full Metamarkets section within MetaWin</li>
+                <li><strong>UX audit and analysis</strong> of the existing Metamarket platform</li>
+                <li><strong>Sitemap mapping and information architecture</strong> for the full Metamarket section within MetaWin</li>
                 <li><strong>Wireframe design</strong> across all core flows: market browsing, market detail, portfolio, and wallet</li>
                 <li><strong>Style guide creation</strong> including colour palette, typography, and full component library</li>
                 <li><strong>High-fidelity UI delivery</strong> across desktop and mobile</li>
@@ -105,12 +113,14 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Process' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={metawinProcess} alt="Process" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
             <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>UX Audit Before Any New Design</strong> - Sprint 1 was dedicated entirely to auditing the existing platform before producing a single new wireframe. This surfaced a set of recurring structural issues - inconsistent filter behaviour, unclear market state communication, and a portfolio view that conflated active positions with resolved history - that shaped the entire redesign direction. Skipping the audit would have reproduced the same problems in higher fidelity.</li>
-              <li><strong>Sitemap and IA</strong> - Mapped the full Metamarkets information architecture within the broader MetaWin navigation context, covering Categories, Highlighted Items, Specific Filters, Market Overview, Details, All Markets Page, Recent Activity, and Portfolio. Resolving the relationship between the Metamarkets section and the host MetaWin navigation was the most structurally significant decision of the project - it determined how the plugin mode would work at every subsequent level.</li>
+              <li><strong>Sitemap and IA</strong> - Mapped the full Metamarket information architecture within the broader MetaWin navigation context, covering Categories, Highlighted Items, Specific Filters, Market Overview, Details, All Markets Page, Recent Activity, and Portfolio. Resolving the relationship between the Metamarket section and the host MetaWin navigation was the most structurally significant decision of the project - it determined how the plugin mode would work at every subsequent level.</li>
               <li><strong>Wireframes</strong> - Delivered sitemap and wireframes across Sprint 2 at 60 hours - the largest single sprint - covering the full market browsing experience, individual market detail view, portfolio management, and wallet integration. The filter and sort system received particular attention: All, New, Ended, Volume, and Liquidity tabs combined with category filters required a browsing model that degraded gracefully across both standalone and embedded contexts.</li>
               <li><strong>Style Guide</strong> - Sprint 3 produced a complete style guide anchored in a cobalt/midnight/aqua palette - high-contrast and dark-native, appropriate for a betting platform used across time zones and screen conditions. Play and Inter were selected as the typographic pairing: Play for display weight and brand presence, Inter for data legibility across dense market tables and probability readouts.</li>
               <li><strong>UI Design and Implementation Audit</strong> - Sprint 4 delivered full high-fidelity UI across desktop and mobile at 80 hours. Sprint 5 closed with an implementation audit - reviewing the built product against design specifications, flagging deviations, and ensuring component behaviour matched intent before public release.</li>
@@ -121,6 +131,9 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Key Decisions' && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={metawinKeyDecisions} alt="Key Decisions" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -135,7 +148,9 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Solution' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={metawinSolution} alt="Solution" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
