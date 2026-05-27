@@ -2,8 +2,13 @@ import { useState, useEffect } from 'react'
 import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
+import limechainIntro from '../assets/limechain-intro.png'
+import limechainChallenge from '../assets/limechain-challenge.png'
+import limechainRole from '../assets/limechain-role.png'
+import limechainProcess from '../assets/limechain-process.png'
+import limechainSolution from '../assets/limechain-solution.png'
 
-const PROJECT = 'Limechain Design System'
+const PROJECT = 'LimeCN Web3 Design System'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
@@ -28,10 +33,12 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Introduction' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainIntro} alt="LimeCN Web3 Design System" loading="lazy" style={photoImg} />
+          </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Web3 Component Library</h1>
+              <h1 style={{ margin: 0, ...heading, color: textPrimary }}>LimeCN Web3 Design System</h1>
               <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Role: Lead Designer · Design Systems · Component Architecture · Open Source</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -49,7 +56,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Challenge' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainChallenge} alt="Challenge" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -84,7 +93,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'My Role' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainRole} alt="My Role" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -107,7 +118,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Process' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainProcess} alt="Process" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
             <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
@@ -138,7 +151,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Solution' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainSolution} alt="Solution" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>

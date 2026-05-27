@@ -6,8 +6,8 @@ export const PROJECTS = [
   { title: 'Explore Abu Dhabi', description: 'A blockchain-powered tourism app for Solana Breakpoint 2025 - letting users claim NFT badges at landmarks, climb a leaderboard, and redeem points for real-world rewards.' },
   { title: 'Binomial', description: 'A shared security platform on BNB enabling restaking of native tokens and LSTs to provide economic security for Actively Validated Services.' },
   { title: 'Metawin', description: 'A predictive markets platform within the MetaWin ecosystem - bet on real-life event outcomes across sports, politics, and crypto, resolved on-chain.' },
-  { title: 'Limechain Design System', description: 'An open-source Web3 component library built on shadcn/ui and Tailwind CSS, covering wallet states, token display, transaction flows, and address patterns.' },
+  { title: 'LimeCN Web3 Design System', description: 'An open-source Web3 component library built on shadcn/ui and Tailwind CSS, covering wallet states, token display, transaction flows, and address patterns.' },
 ]
 
-export const FEATURED = ['Opus Edu', 'Hedera Transaction Tool', 'Limechain Design System', 'Opus Edu AI']
+export const FEATURED = ['Opus Edu', 'Hedera Transaction Tool', 'LimeCN Web3 Design System', 'Opus Edu AI']
   .map(title => PROJECTS.find(p => p.title === title))
