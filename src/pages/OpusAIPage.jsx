@@ -84,10 +84,10 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-              <p style={{ margin: 0 }}>The hardest problem wasn&apos;t the chatbot. It was making AI guidance feel like part of the product, not an interruption to it.</p>
-              <p style={{ margin: 0 }}>Web3 onboarding fails most users before they experience any product value. The friction is structural: wallet creation, seed phrase management, and blockchain transactions are concepts with no consumer analogue, and most platforms address them with static tooltips or help documentation that requires users to self-identify as confused before seeking help.</p>
-              <p style={{ margin: 0 }}>The challenge on the design side was positional: an AI assistant that appears too early feels intrusive; one that appears too late has already lost the user. Context-awareness - surfacing guidance at the right interaction point, with the right scope, without forcing the user to formulate a question - was the core design problem, not the conversation UI itself.</p>
-              <p style={{ margin: 0 }}>Both dimensions shared a root issue: users needed help that felt like part of the flow, not a detour from it. The design had to make the assistant invisible when not needed and immediately useful when it was.</p>
+              <p style={{ margin: 0 }}>The issue was making AI guidance feel seamlessly integrated into the product experience, rather than something users had to step outside their flow to engage with.</p>
+              <p style={{ margin: 0 }}>Web3 onboarding causes most users to drop off before reaching any real value. Wallet creation, seed phrase management, and blockchain transactions introduce unfamiliar concepts with no clear consumer equivalents. Existing solutions rely heavily on static tooltips or help documentation, placing the burden on users to recognize when they need assistance and to seek it out themselves.</p>
+              <p style={{ margin: 0 }}>A key difficulty lay in delivering guidance at the right moment. Support appearing too early disrupted the experience, while support arriving too late failed to prevent confusion or abandonment. Providing relevant, timely assistance without requiring users to explicitly ask for it became critical.</p>
+              <p style={{ margin: 0 }}>At the core, the problem was designing support that fit naturally within the user journey — present when needed, unobtrusive when not, and always aligned with the user&apos;s immediate context.</p>
             </div>
           </div>
         </>

@@ -89,10 +89,10 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                  <p style={{ margin: 0 }}>The hardest problem wasn&apos;t the interface. It was designing confidence into irreversible actions.</p>
-                  <p style={{ margin: 0 }}>Existing tools available to Hedera council members provided insufficient coverage of transaction types and no support for multi-party signing workflows. Council operations - treasury transfers, network upgrades, software updates - required coordinated action across multiple keyholders, with no tooling built to support that process securely or legibly.</p>
-                  <p style={{ margin: 0 }}>The parallel challenge was user range. The same interface had to serve a business user signing a transaction for the first time and a developer managing key pairs and batch operations at scale. Designing for the least technical user without stripping capability from the most technical one required deliberate layering at every interaction point.</p>
-                  <p style={{ margin: 0 }}>Both problems shared a root: users needed to act with certainty in a context where certainty is structurally hard to provide. The design had to surface enough information - at the right moment - to make high-stakes decisions feel informed rather than blind.</p>
+                  <p style={{ margin: 0 }}>The challenge was not the interface itself, but designing confidence into irreversible actions.</p>
+                  <p style={{ margin: 0 }}>Existing tools available to Hedera council members provided insufficient coverage of transaction types and lacked support for multi-party signing workflows. Council operations — treasury transfers, network upgrades, software updates — required coordinated action across multiple keyholders, yet no tooling existed to support that process in a secure or legible way.</p>
+                  <p style={{ margin: 0 }}>Another constraint was the breadth of users. The same interface needed to serve both a business user signing a transaction for the first time and a developer managing key pairs and batch operations at scale. Designing for the least technical user without limiting the most advanced one required careful layering at every interaction point.</p>
+                  <p style={{ margin: 0 }}>At the core, both challenges reflected the same issue: users needed to act with certainty in environments where certainty is inherently difficult. The design had to surface the right information at the right moment, so high-stakes decisions felt informed rather than blind.</p>
                 </div>
               </div>
             </>

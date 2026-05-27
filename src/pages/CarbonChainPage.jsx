@@ -76,10 +76,10 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                  <p style={{ margin: 0 }}>The hardest problem wasn&apos;t the dashboard. It was making an invisible process legible.</p>
-                  <p style={{ margin: 0 }}>Carbon offset certificates derive their value entirely from the integrity of the data behind them. The platform&apos;s blockchain foundation introduced a class of UX problems that conventional data management patterns do not solve. Users needed to trace a certificate back through readings, devices, operators, and process stages - and trust what they found at every step.</p>
-                  <p style={{ margin: 0 }}>The parallel challenge on the producer side was structural: the same interface had to support both automated SmartMiner device inputs and manual spreadsheet-based data entry from on-site operators, with each input type carrying different validation requirements, error states, and operator accountability.</p>
-                  <p style={{ margin: 0 }}>Both problems were versions of the same root issue - a system where trust is earned through transparency, but transparency requires deliberate design decisions at every layer of the data model. The design had to surface provenance without overwhelming the users whose primary job is not data management.</p>
+                  <p style={{ margin: 0 }}>What needed solving was not the dashboard itself, but how to make an invisible process understandable.</p>
+                  <p style={{ margin: 0 }}>Carbon offset certificates derive their value from the integrity of the data behind them. The platform&apos;s blockchain foundation introduced UX challenges that conventional data systems don&apos;t account for. Users needed to follow a certificate across readings, devices, operators, and process stages — and feel confident in what they were seeing at every step.</p>
+                  <p style={{ margin: 0 }}>On the production side, complexity came from the inputs. The system had to accommodate both automated SmartMiner device data and manual spreadsheet uploads from on-site operators, each bringing different validation rules, error conditions, and expectations around accountability.</p>
+                  <p style={{ margin: 0 }}>This all pointed to a deeper tension: trust depends on visibility, yet visibility can easily become overwhelming. The design needed to expose the full data lineage in a way that remained usable for people whose primary role is not managing data.</p>
                 </div>
               </div>
             </>

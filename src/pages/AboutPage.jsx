@@ -19,7 +19,7 @@ const CERTIFICATES = [
 
 const RECOMMENDATIONS = []
 
-const TABS = ['Introduction', 'Resume', 'Certificates', 'Recommendations', 'Contacts']
+const TABS = ['Introduction', 'Resume', 'Certificates', 'Contacts']
 
 const BIO = [
   'Dedicated and experienced UX Designer with a proven impact in DeFi and Blockchain start-ups. Thriving as a holistic practitioner, I seamlessly blend product and business processes, and systems.',

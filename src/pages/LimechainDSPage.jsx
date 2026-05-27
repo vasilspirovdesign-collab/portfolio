@@ -2,6 +2,13 @@ import { useState, useEffect } from 'react'
 import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
+import limechainIntro from '../assets/limechain-intro.png'
+import limechainDecisions from '../assets/limechain-decisions.png'
+import limechainRole from '../assets/limechain-role.png'
+import limechainProcess from '../assets/limechain-process.png'
+import limechainChallenge from '../assets/limechain-challenge.png'
+import limechainSolution from '../assets/limechain-solution.png'
+import limechainLearned from '../assets/limechain-learned.png'
 
 const PROJECT = 'Limechain Design System'
 
@@ -28,7 +35,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Introduction' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainIntro} alt="Limechain Design System" loading="lazy" style={photoImg} />
+          </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
               <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Web3 Component Library</h1>
@@ -49,7 +58,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Challenge' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainChallenge} alt="shadcn, Radix, MUI" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -73,10 +84,10 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-              <p style={{ margin: 0 }}>The problem wasn&apos;t the components themselves. It was the absence of a shared language between designers and developers working on Web3 products.</p>
-              <p style={{ margin: 0 }}>Every client project in the Web3 space began with the same set of unresolved questions: how should a wallet connection button behave across its five possible states? What is the correct way to display a token amount with its USD equivalent? How should a pending transaction be communicated while the user remains on the page? These questions were answered differently on every project - inconsistently within projects and invisibly across them.</p>
-              <p style={{ margin: 0 }}>The deeper issue was structural: Web3 UI patterns are complex enough to require documented decisions, but no open-source resource existed that documented them at the component level with both design and implementation aligned. Designers and developers were solving the same problems in parallel, independently, on every engagement.</p>
-              <p style={{ margin: 0 }}>Both dimensions pointed to the same need: a shared system where decisions about Web3 interaction patterns were made once, documented clearly, and reusable across projects without being rebuilt from scratch each time.</p>
+              <p style={{ margin: 0 }}>I was resolving the absence of a shared language between designers and developers working on Web3 products.</p>
+              <p style={{ margin: 0 }}>Each project surfaced the same unresolved questions: how a wallet connection button should behave across its states, how to present token values alongside their fiat equivalents, and how to communicate transaction status while it&apos;s still processing. These decisions were made repeatedly — often inconsistently within a single product and differently across projects — with no continuity or shared reference point.</p>
+              <p style={{ margin: 0 }}>At a structural level, Web3 interaction patterns demand clarity and consistency, yet no open resource documented them in a way that aligned design decisions with implementation. Designers and developers were addressing identical challenges in parallel, independently, on every engagement.</p>
+              <p style={{ margin: 0 }}>This highlighted a clear need: a shared system where interaction patterns are defined once, documented in a usable way, and consistently applied without being rebuilt from scratch each time.</p>
             </div>
           </div>
         </>
@@ -84,7 +95,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'My Role' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainRole} alt="My Role" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -107,7 +120,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Process' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainProcess} alt="Process" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
             <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
@@ -124,6 +139,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Key Decisions' && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={limechainDecisions} alt="Key Decisions" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -138,7 +156,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Solution' && (
         <>
-          <div style={photoCard(dark)} />
+          <div style={photoCard(dark)}>
+            <img src={limechainSolution} alt="Solution" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -156,6 +176,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === "Things I've learned.." && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={limechainLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
