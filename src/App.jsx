@@ -170,7 +170,7 @@ export default function App() {
         /></>
       )
     }
-    if (selectedProject === 'ISO-Q') {
+    if (selectedProject === 'ISO-Q Investment Platform') {
       return (
         <><MobileModal /><IsogonalPage
           dark={dark}

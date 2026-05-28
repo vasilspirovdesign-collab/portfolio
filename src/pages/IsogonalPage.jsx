@@ -3,7 +3,7 @@ import { t } from '../theme'
 import { bodyText, heading, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
 
-const PROJECT = 'ISO-Q'
+const PROJECT = 'ISO-Q Investment Platform'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",

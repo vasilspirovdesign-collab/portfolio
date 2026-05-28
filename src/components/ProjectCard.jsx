@@ -19,7 +19,7 @@ const THUMBNAILS = {
   'Binomial': bnbThumb,
   'Metawin': metawinThumb,
   'LimeCN Web3 Design System': limechainThumb,
-  'ISO-Q': isoqThumb,
+  'ISO-Q Investment Platform': isoqThumb,
 }
 
 export default function ProjectCard({ title = 'Opus Edu', description, dark: isDark, onClick, empty }) {
