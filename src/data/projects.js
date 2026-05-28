@@ -7,6 +7,7 @@ export const PROJECTS = [
   { title: 'Binomial', description: 'A shared security platform on BNB enabling restaking of native tokens and LSTs to provide economic security for Actively Validated Services.' },
   { title: 'Metawin', description: 'A predictive markets platform within the MetaWin ecosystem - bet on real-life event outcomes across sports, politics, and crypto, resolved on-chain.' },
   { title: 'LimeCN Web3 Design System', description: 'An open-source Web3 component library built on shadcn/ui and Tailwind CSS, covering wallet states, token display, transaction flows, and address patterns.' },
+  { title: 'Isogonal', description: 'A regulated investment platform enabling accredited institutional investors to discover, subscribe to, and hold interests in private funds — with tokenized ownership, multi-currency support, and AIFM regulatory oversight.' },
 ]
 
 export const FEATURED = ['Opus Edu', 'Hedera Transaction Tool', 'LimeCN Web3 Design System', 'Opus Edu AI']

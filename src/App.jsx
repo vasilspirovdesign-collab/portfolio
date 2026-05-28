@@ -12,6 +12,7 @@ import AbuDhabiPage from './pages/AbuDhabiPage'
 import BinomialPage from './pages/BinomialPage'
 import MetawinPage from './pages/MetawinPage'
 import LimechainDSPage from './pages/LimechainDSPage'
+import IsogonalPage from './pages/IsogonalPage'
 import AboutPage from './pages/AboutPage'
 import WorkflowPage from './pages/WorkflowPage'
 import MobileModal from './components/MobileModal'
@@ -162,6 +163,16 @@ export default function App() {
     if (selectedProject === 'Explore Abu Dhabi') {
       return (
         <><MobileModal /><AbuDhabiPage
+          dark={dark}
+          onHome={() => setPage('home')}
+          onBack={() => setPage('projects')}
+          onToggle={toggle}
+        /></>
+      )
+    }
+    if (selectedProject === 'Isogonal') {
+      return (
+        <><MobileModal /><IsogonalPage
           dark={dark}
           onHome={() => setPage('home')}
           onBack={() => setPage('projects')}
