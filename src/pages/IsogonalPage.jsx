@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { t } from '../theme'
-import { bodyText, heading, contentBlock } from '../styles'
+import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
+import isoqChallenge from '../assets/iso-q-challenge.png'
 
 const PROJECT = 'ISO-Q Investment Platform'
 
@@ -45,7 +46,11 @@ export default function IsogonalPage({ dark, onBack, onHome, onToggle }) {
       )}
 
       {activeTab === 'Challenge' && (
-        <div style={contentBlock}>
+        <>
+          <div style={photoCard(dark)}>
+            <img src={isoqChallenge} alt="Challenge" loading="lazy" style={photoImg} />
+          </div>
+          <div style={contentBlock}>
           <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
           <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
             <p style={{ margin: 0 }}>Designing a regulated investment platform where compliance is not a feature — it is the foundation.</p>
@@ -60,6 +65,7 @@ export default function IsogonalPage({ dark, onBack, onHome, onToggle }) {
             <p style={{ margin: 0 }}>The platform covered fifteen use cases across the complete fund investment lifecycle — from platform initialisation through fund onboarding, investor KYC, subscription, AIFM approval, funding confirmation, and token issuance — with no prior design system and a regulatory domain with exacting requirements at every interaction point.</p>
           </div>
         </div>
+        </>
       )}
 
       {activeTab === 'Problem' && (
