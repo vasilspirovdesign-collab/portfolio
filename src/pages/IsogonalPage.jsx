@@ -3,6 +3,7 @@ import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
 import isoqChallenge from '../assets/iso-q-challenge.png'
+import isoqRole from '../assets/iso-q-role.png'
 
 const PROJECT = 'ISO-Q Investment Platform'
 
@@ -81,7 +82,11 @@ export default function IsogonalPage({ dark, onBack, onHome, onToggle }) {
       )}
 
       {activeTab === 'My Role' && (
-        <div style={contentBlock}>
+        <>
+          <div style={photoCard(dark)}>
+            <img src={isoqRole} alt="My Role" loading="lazy" style={photoImg} />
+          </div>
+          <div style={contentBlock}>
           <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
           <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
             <p style={{ margin: 0 }}>Lead UX/UI Designer — Full ownership from discovery through UI delivery and design system handoff.</p>
@@ -100,6 +105,7 @@ export default function IsogonalPage({ dark, onBack, onHome, onToggle }) {
             <p style={{ margin: 0 }}>Tools: Figma · FigJam · Notion</p>
           </div>
         </div>
+        </>
       )}
 
       {activeTab === 'Process' && (
