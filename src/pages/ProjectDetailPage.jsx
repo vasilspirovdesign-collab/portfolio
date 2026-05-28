@@ -62,7 +62,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <img src={opusEduChallenge} alt={`${project} challenge`} loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Designing a multi-stakeholder platform where complexity is the product.</p>
                   <p style={{ margin: 0 }}>A single product had to serve three user types with opposing needs:</p>
@@ -84,7 +84,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <img src={opusEduProblem} alt="Problem" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Mainstream users hitting a crypto wallet for the first time don't need better UI - they need the system's complexity removed from view entirely.</p>
                   <p style={{ margin: 0 }}>The platform's Web3 foundation introduced a class of UX problems that conventional design patterns do not solve. Users were required to create and secure a crypto wallet, manage seed phrases - a concept foreign to the majority of mainstream users - and complete purchases via blockchain transactions with variable fees, unpredictable confirmation times, and price volatility. The result was a steep learning curve that drove drop-off before any product value was experienced.</p>
@@ -101,7 +101,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <img src={opusEduRole} alt="My role" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My role</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My role</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Lead UX Designer - Full ownership from discovery through delivery and handoff QA.</p>
                   <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -137,7 +137,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <SquareArrowOutUpRight size={18} strokeWidth={1.75} />
               </a>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
                 <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
                   <li><strong>Establishing an Initial Action Plan</strong> - Rather than designing top-to-bottom by product scope, I mapped user journeys against pain severity and business impact. This prioritisation directed early effort toward the highest-risk flows rather than the most visible pages.</li>
                   <li><strong>Discovery</strong> Stakeholder interviews surfaced competing priorities between business goals and user needs. User group sessions with prospective learners and instructors revealed a consistent pattern: both groups were willing to engage with unfamiliar interaction models - but only if the path felt guided rather than technical.</li>
@@ -157,7 +157,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <img src={opusEduDecisions} alt="Key decisions" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Start from the most painful page, not the most visible one. The client prioritised the homepage.</p>
                   <p style={{ margin: 0 }}>Discovery data showed that competing platforms lost the majority of new users during onboarding - before a single course was browsed. I redirected the initial effort to the onboarding and wallet connection flow, establishing trust and cognitive confidence before any monetisation touchpoint. This reframe required explicit stakeholder alignment and held through testing.</p>
@@ -175,7 +175,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <img src={opusEduSolution} alt="Solution" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Onboarding · Course Creation · Certificate Management · Marketing</p>
                   <p style={{ margin: 0 }}>The final solution was a component-driven product covering six core user journeys across three user types, built on a shared design system.</p>
@@ -195,7 +195,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 <img src={opusEduLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
                   <li><strong>Designing one flow in isolation cost me three others.</strong> Early in the project I designed the course creation flow in isolation. When mapped against the learner&apos;s browsing experience, three creator-side fields emerged that were never surfaced to learners - wasted effort on both sides. Connected thinking across user types consistently saves time and prevents the kind of inconsistency that erodes trust in a product.</li>
                   <li><strong>Two rounds of structural feedback that stakeholders hated saved a week of rework they'd have hated more.</strong> Stakeholders consistently push for high-fidelity design too early - it feels more concrete, more finished. Holding at lo-fi through two structural feedback rounds on this project saved significant rework. Visual design is always reversible. Structure rarely is.</li>

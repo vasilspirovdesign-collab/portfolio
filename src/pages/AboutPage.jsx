@@ -54,7 +54,7 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
           {activeTab === 'Introduction' && (
             <>
               <div style={photoCard(dark)}>
-                <img src={profilePhoto} alt="Vasil Spirov" loading="lazy" style={photoImg} />
+                <img src={profilePhoto} alt="Vasil Spirov" loading="eager" style={photoImg} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '694px' }}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>
@@ -104,27 +104,6 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
                     </div>
                   </div>
                   {i < CERTIFICATES.length - 1 && (
-                    <div style={{ height: '1px', backgroundColor: t(dark, 'border') }} />
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {activeTab === 'Recommendations' && (
-            <div style={{ display: 'flex', flexDirection: 'column', maxWidth: '706px', width: '100%' }}>
-              {RECOMMENDATIONS.length === 0 ? (
-                <p style={{ margin: 0, ...bodyText, color: textPrimary }}>No recommendations yet.</p>
-              ) : RECOMMENDATIONS.map((rec, i) => (
-                <div key={i}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '16px 16px 16px 0' }}>
-                    <p style={{ margin: 0, ...bodyText, color: textPrimary }}>&ldquo;{rec.quote}&rdquo;</p>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                      <span style={{ ...bodyText, color: textPrimary, fontWeight: 400 }}>{rec.name}</span>
-                      <span style={{ ...bodyText, color: dark ? '#a2a3a5' : '#757575' }}>{rec.role}</span>
-                    </div>
-                  </div>
-                  {i < RECOMMENDATIONS.length - 1 && (
                     <div style={{ height: '1px', backgroundColor: t(dark, 'border') }} />
                   )}
                 </div>

@@ -37,7 +37,7 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Introduction' && (
         <>
           <div style={photoCard(dark)}>
-            <img src={abuDhabiIntro} alt="Explore Abu Dhabi" loading="lazy" style={photoImg} />
+            <img src={abuDhabiIntro} alt="Explore Abu Dhabi" loading="eager" style={photoImg} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -63,7 +63,7 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
             <img src={abuDhabiDecisions} alt="Challenge" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Designing for two audiences with opposing relationships to the same technology.</p>
               <p style={{ margin: 0 }}>A single product had to serve users with fundamentally different starting points:</p>
@@ -85,7 +85,7 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
             <img src={abuDhabiProblem} alt="Problem" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Blockchain transactions are cold, technical, and irreversible. The job was to make one feel like opening a gift.</p>
               <p style={{ margin: 0 }}>Most Web3 consumer apps fail at the same point: the gap between social login and first on-chain action. Seed phrases, wallet prompts, gas fees, and confirmation dialogs create a wall of technical friction that drops the majority of mainstream users before they experience any product value.</p>
@@ -102,7 +102,7 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
             <img src={abuDhabiRole} alt="My Role" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Lead UX/UI Designer - Full ownership from discovery through App Store delivery, including brand identity and marketing materials.</p>
               <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -129,7 +129,7 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
             <img src={abuDhabiProcess} alt="Process" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
             <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>Establishing the Critical Path First</strong> - Rather than designing by section, I mapped the full user journey from app open to first badge claim and identified the single highest-risk moment: the transition from social login to wallet provisioning. Every structural decision in the early flows was made to protect that moment - keep it invisible, keep it fast, keep it silent.</li>
               <li><strong>Discovery</strong> - Interviews and surveys with both tourist and crypto-native user segments revealed a consistent divergence: crypto users wanted control and transparency; tourists wanted simplicity and instant gratification. Both groups, however, shared one expectation - that rewards needed to feel earned and redeemable for something real. This shaped the entire redemption architecture.</li>
@@ -148,7 +148,7 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
             <img src={abuDhabiDecisions} alt="Key Decisions" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Hide the wallet without losing it. A Solana wallet provisioned silently via Turnkey in the background - no seed phrase prompt, no password, no request to fund anything. The wallet was surfaced only inside the Profile section behind an &apos;Advanced&apos; toggle for users who wanted it. Zero wallet errors were ever visible to non-crypto users. The technical complexity was real; the user never saw it.</p>
               <p style={{ margin: 0 }}>Make claiming feel earned, not transacted. QR code scanning combined with geofencing and a time window ensured badges could only be claimed physically on location. A short mint animation with haptic confirmation turned what was technically a database write into a genuine moment of delight - the difference between a receipt and a reward.</p>
@@ -165,7 +165,7 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
             <img src={abuDhabiSolution} alt="Solution" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Attractions · Passport · Leaderboard · Redeem · Map · User Profile</p>
               <p style={{ margin: 0 }}>The final solution was a live iOS and Android app covering six sections across fourteen sub-flows, built on a silent Solana wallet integration and a full brand identity system, delivered in time for the Solana Breakpoint 2025 launch.</p>
@@ -187,7 +187,7 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
             <img src={abuDhabiLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>Platform submission is a design constraint, not a post-design task.</strong> The App Store review process consumed a significant portion of time originally allocated to design iteration. Apple&apos;s guidelines around blockchain functionality, in-app purchases, and NFT terminology required multiple submission revisions. Building familiarity with platform standards before the design phase - not after - would have recovered that time and prevented late-stage design changes driven by compliance rather than user needs.</li>
               <li><strong>Testing on real devices is non-negotiable for location-dependent flows.</strong> The QR scanning, GPS geofencing, and haptic feedback components of the badge claiming flow behaved materially differently on physical hardware than in the simulator. Camera performance, GPS accuracy, and touch responsiveness are design problems as much as engineering ones - catching them in testing rather than post-launch required real devices from early in the prototype phase.</li>

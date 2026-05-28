@@ -34,7 +34,7 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Introduction' && (
         <>
           <div style={photoCard(dark)}>
-            <img src={bnbIntro} alt="Binomial" loading="lazy" style={photoImg} />
+            <img src={bnbIntro} alt="Binomial" loading="eager" style={photoImg} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -60,7 +60,7 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
             <img src={bnbChallenge} alt="Challenge" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Designing a DeFi platform where the underlying mechanism is genuinely new.</p>
               <p style={{ margin: 0 }}>A single interface had to serve users across a wide spectrum of technical fluency:</p>
@@ -79,7 +79,7 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Problem' && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Restaking asks users to take on risk they can&apos;t fully model. Show too little and they act blind. Show too much and they leave. The design problem was finding the threshold between legible and overwhelming - at every step of a multi-party flow.</p>
               <p style={{ margin: 0 }}>Restaking introduces a layer of economic complexity that has no direct analogue in conventional DeFi. Users are not simply staking tokens - they are extending the security guarantees of those tokens to third-party services, delegating to operators who run AVS software on their behalf, and taking on correlated slashing exposure they may not fully understand. Communicating this accurately without triggering drop-off required deliberate decisions about information hierarchy at every step.</p>
@@ -93,7 +93,7 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'My Role' && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Lead UX/UI Designer - Full ownership from brand identity through responsive web app delivery.</p>
               <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -118,7 +118,7 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
             <img src={bnbProcess} alt="Process" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
             <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>Understanding the Mechanism Before Designing the Interface</strong> - Restaking on BNB introduced financial and technical relationships - operator delegation chains, AVS slashing conditions, LST market caps - that had no direct UX precedent. I spent the early phase mapping the full system logic before touching IA, ensuring that every design decision downstream was grounded in how the protocol actually worked rather than how it superficially resembled existing DeFi products.</li>
               <li><strong>Competitive Benchmarking</strong> - Reviewed the restaking and liquid staking landscape - EigenLayer, Lido, Rocket Pool, and BNB-native staking interfaces - to identify patterns worth adopting and failure modes worth avoiding. The dominant failure across all of them was the same: operator and AVS selection presented as raw data tables with no guidance on what a good choice looked like.</li>
@@ -133,7 +133,7 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Key Decisions' && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}><strong>Surface delegation context before asking for commitment.</strong> Early explorations presented the operator selection as a simple list. Stakers with no prior relationship to these operators had no basis for choosing. The redesigned operator table surfaced restake concentration, number of stakers, AVS secured, and total ETH/BNB restaked as primary columns - giving users enough signal to make an informed delegation decision without requiring them to leave the platform.</p>
               <p style={{ margin: 0 }}><strong>Separate restaking from validator staking architecturally, not just visually.</strong> The two paths - restaking LSTs as a staker versus depositing BNB to become a validator - serve fundamentally different users with different risk profiles and different mental models of what they are doing. Treating them as a single flow created confusion in early wireframes. Separating them into distinct navigation sections with distinct entry points resolved this and made the platform legible to both audiences simultaneously.</p>
@@ -150,7 +150,7 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
             <img src={bnbSolution} alt="Solution" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Dashboard · Restake · Validator Stake · Operator · AVS</p>
               <p style={{ margin: 0 }}>The final solution was a fully responsive web application covering five sections across three user role contexts, built on a shared design system with a complete brand identity, marketing website, and component library.</p>
@@ -169,7 +169,7 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === "Things I've learned.." && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>Domain expert, not domain visitor.</strong> I have designed several DeFi products, but restaking on BNB introduced relationships - operator delegation chains, AVS slashing conditions, LST concentration risk - that I had to genuinely understand before I could structure them clearly. Rushing to wireframes before that understanding was solid would have produced an interface that looked like a DeFi dashboard but failed to communicate what actually mattered. Domain fluency is a design prerequisite, not background reading.</li>
               <li><strong>Data-dense interfaces fail at the column level, not the page level.</strong> The operator and AVS tables looked fine in wireframes. In high fidelity with real data, the column hierarchy became the core usability problem - what leads, what supports, what is secondary. Getting this wrong at the component level compounds across every table in the product. The decision to lead with restake concentration and TVL rather than operator name and staker count was the single most impactful information design choice in the entire project.</li>

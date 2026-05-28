@@ -36,7 +36,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
           {activeTab === 'Introduction' && (
             <>
               <div style={photoCard(dark)}>
-                <img src={carbonChainIntro} alt="Rowan Carbon Chain" loading="lazy" style={photoImg} />
+                <img src={carbonChainIntro} alt="Rowan Carbon Chain" loading="eager" style={photoImg} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -62,7 +62,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
                 <img src={carbonChainChallenge} alt="Challenge" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Designing for a market where data integrity is the product.</p>
                   <p style={{ margin: 0 }}>A single platform had to serve five user types with fundamentally different goals and levels of technical fluency:</p>
@@ -86,7 +86,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
                 <img src={carbonChainProblem} alt="Problem" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>A carbon certificate is only as credible as the data trail behind it - and that trail spans devices, operators, process stages, and blockchain transactions that most users never see and can&apos;t interpret. The design problem was making that trail legible without making it overwhelming.</p>
                   <p style={{ margin: 0 }}>Carbon offset certificates derive their value entirely from the integrity of the data behind them. The platform&apos;s blockchain foundation introduced a class of UX problems that conventional data management patterns do not solve. Users needed to trace a certificate back through readings, devices, operators, and process stages - and trust what they found at every step.</p>
@@ -103,7 +103,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
                 <img src={carbonChainRole} alt="My Role" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Lead UX/UI Designer and Researcher - Full ownership from discovery through UI delivery.</p>
                   <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -128,7 +128,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
                 <img src={carbonChainProcess} alt="Process" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
                 <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
                   <li><strong>Domain Research First</strong> - The carbon offset market is structurally complex and heavily regulated. Before any design work began, I mapped the full biomethane production process - feedstock inputs, anaerobic digestion, biogas outputs, carbon intensity calculations - to understand what data the platform needed to capture and why each data point mattered to the certificate&apos;s integrity.</li>
                   <li><strong>User Role Mapping</strong> - Stakeholder sessions revealed five distinct user types across two organisational contexts, each with different permissions, mental models, and operational cadences. Mapping these explicitly before touching IA prevented the role-permission conflicts that typically surface late in platforms of this complexity.</li>
@@ -143,7 +143,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
           {activeTab === 'Key Decisions' && (
             <>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Treat provenance as a navigation problem, not a data problem. Early explorations surfaced too much raw data on primary views. The key decision was to layer the audit trail - summary metrics on the dashboard, certificate-level detail one level deep, readings and device data accessible from there. Users who need the full chain can reach it; users who don&apos;t are never overwhelmed by it.</p>
                   <p style={{ margin: 0 }}>Design for the manual entry operator, not the automated system. The platform was designed around smart device integrations, but a significant portion of real-world data entry comes from operators submitting manual readings from physical logs. Rather than treating manual input as an edge case, I designed the readings submission flow with clear field labelling, inline validation, and explicit blockchain transaction warnings - acknowledging that these users are entering data under operational pressure, not in controlled conditions.</p>
@@ -159,7 +159,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
                 <img src={carbonChainSolution} alt="Solution" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Dashboard · Sources · Certificates · Carbon Credits · Readings · Users</p>
                   <p style={{ margin: 0 }}>The final solution was a role-aware web platform covering the full carbon offset certificate lifecycle, from raw device readings through to blockchain-issued and retired ERC-721 certificates, built on a shared design system supporting both light and dark modes.</p>
@@ -176,7 +176,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
           {activeTab === "Things I've learned.." && (
             <>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
                   <li><strong>Domain complexity is a design input, not background reading.</strong> Early in the project I treated the biomethane production process as context. When I mapped it against the data model, it became clear that the certificate&apos;s credibility depended on capturing specific process stages - and that gaps in that coverage were invisible in the UI but structurally significant. Understanding the domain deeply changed what I designed, not just how I described it.</li>
                   <li><strong>Role-permission design needs to be resolved before wireframes, not during them.</strong> Five user roles across two organisational contexts created a matrix of access states that became increasingly expensive to manage as fidelity increased. Resolving permission logic at the IA and user flow stage - before any component design - prevented the kind of late-stage inconsistency that erodes trust in a platform built around data integrity.</li>

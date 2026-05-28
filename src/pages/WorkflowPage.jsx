@@ -62,7 +62,7 @@ export default function WorkflowPage({ dark, onBack, onToggle }) {
                 <img src={designApproachImg} alt="Design approach" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Design Approach</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Design Approach</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', ...bodyText, color: textPrimary }}>
                   <p style={{ margin: 0 }}>There&apos;s no universal playbook for UX Design - just a commitment to iteration, user understanding, and designing experiences that genuinely work for the people using them.</p>
                   <p style={{ margin: 0 }}>The best experiences aren&apos;t designed once - they&apos;re shaped through continuous iteration, deep user understanding, and the willingness to keep improving.</p>
