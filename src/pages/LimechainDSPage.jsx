@@ -34,7 +34,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Introduction' && (
         <>
           <div style={photoCard(dark)}>
-            <img src={limechainIntro} alt="LimeCN Web3 Design System" loading="lazy" style={photoImg} />
+            <img src={limechainIntro} alt="LimeCN Web3 Design System" loading="eager" style={photoImg} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -60,7 +60,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
             <img src={limechainChallenge} alt="Challenge" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Building a design system for a domain that general-purpose component libraries do not serve.</p>
               <p style={{ margin: 0 }}>Existing component libraries - shadcn, Radix, MUI - solve general UI problems with precision. They do not solve Web3 UI problems. A single library had to cover interaction patterns with no mainstream analogue:</p>
@@ -80,7 +80,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Problem' && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Every project started the same way: a designer and developer independently solving the same wallet connection problem, arriving at slightly different answers. The design system was the decision to stop solving it twice.</p>
               <p style={{ margin: 0 }}>Every client project in the Web3 space began with the same set of unresolved questions: how should a wallet connection button behave across its five possible states? What is the correct way to display a token amount with its USD equivalent? How should a pending transaction be communicated while the user remains on the page? These questions were answered differently on every project - inconsistently within projects and invisibly across them.</p>
@@ -97,7 +97,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
             <img src={limechainRole} alt="My Role" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Lead Designer - Full ownership of design architecture, component design, token system, and documentation. Collaborated with developers on implementation parity and API alignment.</p>
               <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -122,7 +122,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
             <img src={limechainProcess} alt="Process" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
             <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>Audit Before Architecture</strong> - Rather than designing components speculatively, I started by auditing the Web3 UI patterns that had recurred across previous client projects - MetaWin, Transaction Tool, Binomial, CarbonChain. This produced a prioritised component backlog grounded in real usage rather than theoretical completeness, and identified the token architecture requirements before a single component was designed.</li>
               <li><strong>Token System First</strong> - Before any component design, I defined the full design token structure: primitive tokens for raw values, semantic tokens mapping primitives to intent, and component tokens scoping semantic values to specific UI contexts. This layering meant that theming - switching between light, dark, and custom client palettes - required changes only at the semantic layer, not at the component level.</li>
@@ -138,7 +138,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Key Decisions' && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}><strong>Build on shadcn/ui rather than from scratch.</strong> The decision to extend shadcn/ui rather than build a ground-up component system was deliberate. shadcn/ui provides accessible, unstyled primitives with clean APIs that developers already understand. Adding Web3-specific molecules on top of a trusted foundation meant the library inherited accessibility, keyboard behaviour, and React patterns for free - and meant developers could adopt individual components without migrating their entire stack.</p>
               <p style={{ margin: 0 }}><strong>Semantic tokens over direct value references.</strong> Early token explorations used primitive values directly in component definitions - specific hex codes, pixel values, named weights. The shift to a semantic token layer - where components reference intent (--color-surface-destructive) rather than value (--red-500) - was the architectural decision that made theming tractable. It also made the design-to-development handoff significantly cleaner: designers and developers shared the same token vocabulary rather than translating between them.</p>
@@ -155,7 +155,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
             <img src={limechainSolution} alt="Solution" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Tokens · Typography · Molecules · Themes · Documentation</p>
               <p style={{ margin: 0 }}>The final library is an open-source Web3 component system built on shadcn/ui and Tailwind CSS, covering the core interaction patterns specific to Web3 products across a documented token architecture and multi-theme system.</p>
@@ -172,7 +172,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === "Things I've learned.." && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>A design system built from project audits is more useful than one built from first principles.</strong> The components that received the most use and the least revision were the ones identified through the client project audit - patterns that had already been validated under real product conditions. Speculative components designed without a grounding use case consistently required more iteration and saw less adoption. Starting from evidence rather than intuition is the single most reliable way to build a system that gets used.</li>
               <li><strong>Token naming is a communication problem, not a naming problem.</strong> Early token names were precise but not shared - designers understood them, developers interpreted them differently. The shift to semantic naming conventions that described intent rather than value forced alignment on what each token was actually for. The time spent on token naming paid back immediately in handoff clarity and significantly reduced the back-and-forth on implementation reviews.</li>

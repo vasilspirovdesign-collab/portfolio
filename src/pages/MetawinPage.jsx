@@ -36,7 +36,7 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Introduction' && (
         <>
           <div style={photoCard(dark)}>
-            <img src={metawinIntro} alt="Metawin" loading="lazy" style={photoImg} />
+            <img src={metawinIntro} alt="Metawin" loading="eager" style={photoImg} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -62,7 +62,7 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
             <img src={metawinChallenge} alt="Challenge" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Designing a prediction market that has to work as a product and a plugin simultaneously.</p>
               <p style={{ margin: 0 }}>A single interface had to serve users across a wide range of engagement contexts:</p>
@@ -81,7 +81,7 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Problem' && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>The interface was the visible part. The harder problem was making outcome probability feel like useful information rather than noise.</p>
               <p style={{ margin: 0 }}>Prediction markets present a specific class of UX challenge: the interface must communicate probability distributions, liquidity depth, volume, and resolution timelines simultaneously - for dozens of markets across completely different domains - without overwhelming users who are there to make a decision, not read a data report.</p>
@@ -98,7 +98,7 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
             <img src={metawinRole} alt="My Role" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Lead UX Designer - Full ownership across all five project sprints from audit through implementation review.</p>
               <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -121,7 +121,7 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
             <img src={metawinProcess} alt="Process" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
             <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>UX Audit Before Any New Design</strong> - Sprint 1 was dedicated entirely to auditing the existing platform before producing a single new wireframe. This surfaced a set of recurring structural issues - inconsistent filter behaviour, unclear market state communication, and a portfolio view that conflated active positions with resolved history - that shaped the entire redesign direction. Skipping the audit would have reproduced the same problems in higher fidelity.</li>
               <li><strong>Sitemap and IA</strong> - Mapped the full Metamarket information architecture within the broader MetaWin navigation context, covering Categories, Highlighted Items, Specific Filters, Market Overview, Details, All Markets Page, Recent Activity, and Portfolio. Resolving the relationship between the Metamarket section and the host MetaWin navigation was the most structurally significant decision of the project - it determined how the plugin mode would work at every subsequent level.</li>
@@ -139,7 +139,7 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
             <img src={metawinKeyDecisions} alt="Key Decisions" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}><strong>Lead with highlights, not with volume.</strong> Early explorations organised the market homepage by volume and liquidity - the metrics most meaningful to experienced predictors. User testing revealed that new users had no frame of reference for those numbers and skipped past them entirely. The final design leads with curated Highlights - editorially selected markets with strong visual treatment - followed by filterable category tabs. Power users reach volume and liquidity sorting in one tap; casual users get a legible entry point without needing to understand market mechanics first.</p>
               <p style={{ margin: 0 }}><strong>Market cards have to work without the page.</strong> The plugin constraint meant that every market card - the primary unit of the browsing experience - had to communicate market name, category, status, and a call to action without relying on surrounding context. This drove a component-first design approach where each card was pressure-tested in isolation before being placed in a grid. The result was a tighter, more self-contained component library that also improved the standalone experience.</p>
@@ -156,7 +156,7 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
             <img src={metawinSolution} alt="Solution" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Predictive Markets · Portfolio · Wallet · Profile · Community</p>
               <p style={{ margin: 0 }}>The final solution was a fully responsive predictive markets platform covering market browsing, individual market betting, portfolio management, and wallet integration - designed to function as both a standalone product and an embedded plugin within MetaWin.</p>
@@ -173,7 +173,7 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === "Things I've learned.." && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>A UX audit is the highest-leverage activity on an existing product engagement.</strong> The 20 hours spent on the Sprint 1 audit identified structural problems that would have cost significantly more to fix if discovered during high-fidelity design. Treating the audit as a billable, time-boxed deliverable - rather than informal background review - gave the findings the same weight as any other project output and made stakeholder alignment on what needed to change substantially easier.</li>
               <li><strong>Plugin constraints are a gift to component design.</strong> The requirement to work as an embeddable module forced a level of component self-sufficiency that improved the standalone product as a side effect. Every component that had to work in isolation became more legible, more scannable, and more robust than it would have been if designed exclusively for full-page context. Designing for the most constrained use case first consistently produces better components.</li>

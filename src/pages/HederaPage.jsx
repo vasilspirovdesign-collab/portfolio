@@ -37,7 +37,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
           {activeTab === 'Introduction' && (
             <>
               <div style={photoCard(dark)}>
-                <img src={hederaIntro} alt="Hedera Transaction Tool" loading="lazy" style={photoImg} />
+                <img src={hederaIntro} alt="Hedera Transaction Tool" loading="eager" style={photoImg} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -63,7 +63,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                 <img src={hederaChallenge} alt="Challenge" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Designing for high-stakes operations where trust is the interface.</p>
                   <p style={{ margin: 0 }}>A single product had to serve users with fundamentally different mental models:</p>
@@ -86,7 +86,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               </div>
               <p style={{ margin: 0, fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: dark ? '#a2a3a5' : '#757575' }}>Outdated Designs</p>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>The existing tools gave council members just enough capability to make costly mistakes - and no way to verify what they were signing before they signed it. The design problem was making certainty possible in a system that offers none by default.</p>
                   <p style={{ margin: 0 }}>Existing tools available to Hedera council members provided insufficient coverage of transaction types and no support for multi-party signing workflows. Council operations - treasury transfers, network upgrades, software updates - required coordinated action across multiple keyholders, with no tooling built to support that process securely or legibly.</p>
@@ -103,7 +103,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                 <img src={hederaRole} alt="My Role" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Lead UX Designer - Full ownership from discovery through UI delivery and handoff.</p>
                   <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -128,7 +128,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                 <img src={hederaProcess} alt="Process" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
                 <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
                   <li><strong>Establishing an Initial Action Plan</strong> - Rather than designing by feature area, I mapped user journeys against operational risk and signing complexity. This directed early effort toward the flows with the highest consequence - transaction creation, multi-signature collection, and key setup - before any account management or secondary surfaces.</li>
                   <li><strong>Discovery</strong> - Stakeholder sessions with the Limechain team surfaced the governance requirements behind the product: who signs what, in what order, and what constitutes a valid submission. This defined the constraints that shaped every subsequent design decision.</li>
@@ -147,7 +147,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                 <img src={hederaDecisions} alt="Key Decisions" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Design for the signer who has never signed before, not the one who does it daily. Multi-signature workflows are opaque by default - keys, thresholds, and confirmation states are invisible unless explicitly surfaced. I designed the signing flow to make each party&apos;s action visible in real time, with explicit confirmation states at every step. Power users lose no capability; first-time signers gain the context they need to act with confidence.</p>
                   <p style={{ margin: 0 }}>One architecture, two role surfaces. Rather than building separate navigation structures for admin and user roles, I mapped both onto a shared IA and introduced role-specific visibility at the action level. This reduced cognitive overhead for users moving between roles and simplified developer implementation without sacrificing access control precision.</p>
@@ -163,7 +163,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                 <img src={hederaSolution} alt="Solution" loading="lazy" style={photoImg} />
               </div>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Transactions · Accounts · Tokens · Consensus Service · File Service · Contact List</p>
                   <p style={{ margin: 0 }}>The final solution was a desktop application covering six operational areas across two user roles, built on a shared component system with role-aware access controls.</p>
@@ -181,7 +181,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
           {activeTab === "Things I've learned.." && (
             <>
               <div style={contentBlock}>
-                <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
+                <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
                   <li><strong>Security-critical products require trust to be designed, not assumed.</strong> Early in the project I treated confirmation states as a final-step concern. When mapped against the full signing journey, it became clear that trust had to be established at every handoff point - not just before submission. Retrofitting trust signals into a flow that wasn&apos;t built around them is significantly more expensive than designing for them from the start.</li>
                   <li><strong>Role-based design debt compounds faster than visual debt.</strong> The decision to share a single IA across admin and user roles required careful discipline throughout. Every component, every action, every empty state needed to be considered from both perspectives simultaneously. Documenting role logic in the IA before any UI work began was the single decision that made the rest of the project tractable.</li>

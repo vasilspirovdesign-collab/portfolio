@@ -37,7 +37,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
       {activeTab === 'Introduction' && (
         <>
           <div style={photoCard(dark)}>
-            <img src={opusAIIntro} alt="Opus Edu AI" loading="lazy" style={photoImg} />
+            <img src={opusAIIntro} alt="Opus Edu AI" loading="eager" style={photoImg} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -63,7 +63,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
             <img src={opusAIChallenge} alt="Challenge" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Designing an AI assistant for a product where the interface itself is already unfamiliar.</p>
               <p style={{ margin: 0 }}>The OpusEdu platform operates in a domain that is structurally confusing for mainstream users. Adding a conversational AI layer introduced a second layer of novelty on top of an already high cognitive load:</p>
@@ -82,7 +82,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
       {activeTab === 'Problem' && (
         <>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Web3 onboarding has a &apos;valley of confusion&apos; between opening the app and completing a first action. Static tooltips don&apos;t cross it. A chatbot you have to find and open doesn&apos;t either. The problem was designing support that was already there.</p>
               <p style={{ margin: 0 }}>Web3 onboarding fails most users before they experience any product value. The friction is structural: wallet creation, seed phrase management, and blockchain transactions are concepts with no consumer analogue, and most platforms address them with static tooltips or help documentation that requires users to self-identify as confused before seeking help.</p>
@@ -99,7 +99,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
             <img src={opusAIRole} alt="My Role" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Lead UX Designer - Full ownership from concept through UI delivery across desktop and mobile.</p>
               <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -124,7 +124,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
             <img src={opusAIProcess} alt="Process" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
             <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>Friction Mapping Before Feature Design</strong> - Rather than designing the assistant as a standalone feature, I started by auditing the existing OpusEdu flows to identify where users were most likely to stall. This directed the assistant's contextual trigger logic toward wallet setup, payment confirmation, and certificate interactions - the three points with the highest drop-off risk - before any UI work began.</li>
               <li><strong>Discovery</strong> - Review of existing AI assistant integrations across both Web3-native products and mainstream SaaS platforms revealed a consistent failure mode: assistants that answered questions without enabling action. This shaped the core design requirement - the assistant needed direct action shortcuts, not just explanatory text.</li>
@@ -142,7 +142,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
             <img src={opusAIDecisions} alt="Key Decisions" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Design for the user who doesn&apos;t know what to ask. Most AI assistant interfaces are optimised for users who can articulate a question. OpusEdu&apos;s new learners often can&apos;t - they&apos;re confused about a concept they don&apos;t have language for yet. Rather than relying on open text input as the primary interaction, I prioritised contextual suggestions and direct action shortcuts that anticipated the user&apos;s next need based on where they were in the flow. The text input remained available; the shortcuts removed the need for it in the highest-friction moments.</p>
               <p style={{ margin: 0 }}>The assistant should never compete with the page. Early explorations used full-panel takeovers for the assistant interface. Testing revealed that users felt displaced from their task rather than supported through it. The final design used a persistent collapsed state, an expandable side panel, and a full-screen mode the user controlled - ensuring the assistant augmented the existing interface rather than replacing it at exactly the moments users needed to stay oriented.</p>
@@ -158,7 +158,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
             <img src={opusAISolution} alt="Solution" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <p style={{ margin: 0 }}>Onboarding Guidance · Web3 Simplified · Smart Step-by-Step Help</p>
               <p style={{ margin: 0 }}>The final solution was a context-aware AI assistant integrated directly into the OpusEdu platform workflow, available across desktop and mobile, designed to reduce Web3 onboarding friction at the moments it matters most.</p>
@@ -178,7 +178,7 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
             <img src={opusAILearned} alt="Things I've learned" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
-            <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
+            <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>Designing the assistant as its own thing made it useless.</strong> Early in the project I designed the assistant as a self-contained interface. When mapped against the actual user journeys, it became clear that the assistant&apos;s value was entirely dependent on where it appeared and what it knew about the user&apos;s current state. Redesigning around contextual integration rather than standalone functionality changed the product significantly - and made it substantially more useful.</li>
               <li><strong>Action is more valuable than explanation in high-friction moments.</strong> The instinct when designing an AI assistant is to optimise for the quality of its responses. The more important design problem was reducing the distance between a response and the action it enabled. Direct action shortcuts were the most impactful single addition to the assistant - not because they were technically sophisticated, but because they closed the loop between understanding and doing.</li>
