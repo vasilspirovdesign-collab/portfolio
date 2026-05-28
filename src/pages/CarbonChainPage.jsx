@@ -116,7 +116,6 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
                     <li><strong>High-fidelity UI delivery</strong> across light and dark modes</li>
                     <li><strong>Design QA and handoff support</strong></li>
                   </ul>
-                  <p style={{ margin: 0 }}>Tools: Figma · FigJam · Adobe Illustrator · Adobe Photoshop</p>
                 </div>
               </div>
             </>

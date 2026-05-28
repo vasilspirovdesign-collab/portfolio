@@ -117,7 +117,6 @@ export default function AbuDhabiPage({ dark, onBack, onHome, onToggle }) {
                 <li><strong>Marketing materials</strong> for event and social distribution</li>
                 <li><strong>Design QA and App Store submission support</strong></li>
               </ul>
-              <p style={{ margin: 0 }}>Tools: Figma · FigJam · Webflow · Adobe CC</p>
             </div>
           </div>
         </>

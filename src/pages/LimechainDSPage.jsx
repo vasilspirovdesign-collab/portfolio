@@ -110,7 +110,6 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
                 <li><strong>Collaboration with developers</strong> on Tailwind implementation and component API consistency</li>
                 <li><strong>Open-source release preparation</strong> including contribution guidelines and versioning structure</li>
               </ul>
-              <p style={{ margin: 0 }}>Tools: Figma · FigJam · shadcn/ui · Tailwind CSS · Notion</p>
             </div>
           </div>
         </>

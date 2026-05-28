@@ -112,7 +112,6 @@ export default function OpusAIPage({ dark, onBack, onHome, onToggle, onOpenProje
                 <li><strong>Component library extensions and design tokens</strong> for AI-specific UI patterns</li>
                 <li><strong>High-fidelity UI delivery</strong> across all assistant states and screen sizes</li>
               </ul>
-              <p style={{ margin: 0 }}>Tools: Figma · FigJam · Notion</p>
             </div>
           </div>
         </>

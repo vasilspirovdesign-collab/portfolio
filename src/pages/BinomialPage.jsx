@@ -106,7 +106,6 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
                 <li><strong>High-fidelity UI delivery</strong> across desktop and responsive mobile breakpoints</li>
                 <li><strong>Marketing website</strong> design and build</li>
               </ul>
-              <p style={{ margin: 0 }}>Tools: Figma · FigJam · Notion</p>
             </div>
           </div>
         </>
