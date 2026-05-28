@@ -8,6 +8,7 @@ import abuDhabiThumb from '../assets/abu-dhabi-thumb.png'
 import bnbThumb from '../assets/bnb-thumb.png'
 import metawinThumb from '../assets/metawin-thumb.png'
 import limechainThumb from '../assets/limechain-thumb.png'
+import isoqThumb from '../assets/iso-q-thumb.png'
 
 const THUMBNAILS = {
   'Opus Edu': opusEduCover,
@@ -18,6 +19,7 @@ const THUMBNAILS = {
   'Binomial': bnbThumb,
   'Metawin': metawinThumb,
   'LimeCN Web3 Design System': limechainThumb,
+  'ISO-Q Investment Platform': isoqThumb,
 }
 
 export default function ProjectCard({ title = 'Opus Edu', description, dark: isDark, onClick, empty }) {
