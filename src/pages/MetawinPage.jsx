@@ -109,7 +109,6 @@ export default function MetawinPage({ dark, onBack, onHome, onToggle }) {
                 <li><strong>High-fidelity UI delivery</strong> across desktop and mobile</li>
                 <li><strong>Implementation audit and design QA</strong> during developer handoff</li>
               </ul>
-              <p style={{ margin: 0 }}>Tools: Figma · FigJam · Notion</p>
             </div>
           </div>
         </>

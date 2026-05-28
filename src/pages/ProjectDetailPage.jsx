@@ -115,7 +115,6 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                     <li><strong>High-fidelity UI delivery</strong> across all core flows</li>
                     <li><strong>Design QA and specification support</strong> during developer handoff</li>
                   </ul>
-                  <p style={{ margin: 0 }}>Tools: Figma · FigJam · Maze · Notion</p>
                 </div>
               </div>
             </>

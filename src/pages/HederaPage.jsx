@@ -116,7 +116,6 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                     <li><strong>High-fidelity UI delivery</strong> across all screens</li>
                     <li><strong>Design QA and specification support</strong> during developer handoff</li>
                   </ul>
-                  <p style={{ margin: 0 }}>Tools: Figma · FigJam · Notion</p>
                 </div>
               </div>
             </>
