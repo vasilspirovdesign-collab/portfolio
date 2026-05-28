@@ -18,7 +18,7 @@ export default function Navbar({ dark: isDark, onToggle, onNavigate, page }) {
     >
       {/* Left: name */}
       <div style={{ display: 'flex', flex: '1 0 0', alignItems: 'center', gap: '8px', minWidth: 0 }}>
-        <button onClick={() => onNavigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+        <button onClick={() => onNavigate('home')} aria-label="Go to home" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
           <span
             className="transition-colors duration-300"
             style={{

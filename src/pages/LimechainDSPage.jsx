@@ -3,14 +3,14 @@ import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
 import limechainIntro from '../assets/limechain-intro.png'
+import limechainChallenge from '../assets/limechain-challenge.png'
 import limechainDecisions from '../assets/limechain-decisions.png'
 import limechainRole from '../assets/limechain-role.png'
 import limechainProcess from '../assets/limechain-process.png'
-import limechainChallenge from '../assets/limechain-challenge.png'
 import limechainSolution from '../assets/limechain-solution.png'
 import limechainLearned from '../assets/limechain-learned.png'
 
-const PROJECT = 'Limechain Design System'
+const PROJECT = 'LimeCN Web3 Design System'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
@@ -36,11 +36,11 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Introduction' && (
         <>
           <div style={photoCard(dark)}>
-            <img src={limechainIntro} alt="Limechain Design System" loading="lazy" style={photoImg} />
+            <img src={limechainIntro} alt="LimeCN Web3 Design System" loading="lazy" style={photoImg} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Web3 Component Library</h1>
+              <h1 style={{ margin: 0, ...heading, color: textPrimary }}>LimeCN Web3 Design System</h1>
               <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Role: Lead Designer · Design Systems · Component Architecture · Open Source</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -59,7 +59,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
       {activeTab === 'Challenge' && (
         <>
           <div style={photoCard(dark)}>
-            <img src={limechainChallenge} alt="shadcn, Radix, MUI" loading="lazy" style={photoImg} />
+            <img src={limechainChallenge} alt="Challenge" loading="lazy" style={photoImg} />
           </div>
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
@@ -84,10 +84,10 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
           <div style={contentBlock}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-              <p style={{ margin: 0 }}>I was resolving the absence of a shared language between designers and developers working on Web3 products.</p>
-              <p style={{ margin: 0 }}>Each project surfaced the same unresolved questions: how a wallet connection button should behave across its states, how to present token values alongside their fiat equivalents, and how to communicate transaction status while it&apos;s still processing. These decisions were made repeatedly — often inconsistently within a single product and differently across projects — with no continuity or shared reference point.</p>
-              <p style={{ margin: 0 }}>At a structural level, Web3 interaction patterns demand clarity and consistency, yet no open resource documented them in a way that aligned design decisions with implementation. Designers and developers were addressing identical challenges in parallel, independently, on every engagement.</p>
-              <p style={{ margin: 0 }}>This highlighted a clear need: a shared system where interaction patterns are defined once, documented in a usable way, and consistently applied without being rebuilt from scratch each time.</p>
+              <p style={{ margin: 0 }}>Every project started the same way: a designer and developer independently solving the same wallet connection problem, arriving at slightly different answers. The design system was the decision to stop solving it twice.</p>
+              <p style={{ margin: 0 }}>Every client project in the Web3 space began with the same set of unresolved questions: how should a wallet connection button behave across its five possible states? What is the correct way to display a token amount with its USD equivalent? How should a pending transaction be communicated while the user remains on the page? These questions were answered differently on every project - inconsistently within projects and invisibly across them.</p>
+              <p style={{ margin: 0 }}>The deeper issue was structural: Web3 UI patterns are complex enough to require documented decisions, but no open-source resource existed that documented them at the component level with both design and implementation aligned. Designers and developers were solving the same problems in parallel, independently, on every engagement.</p>
+              <p style={{ margin: 0 }}>Both dimensions pointed to the same need: a shared system where decisions about Web3 interaction patterns were made once, documented clearly, and reusable across projects without being rebuilt from scratch each time.</p>
             </div>
           </div>
         </>
@@ -184,7 +184,7 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
               <li><strong>A design system built from project audits is more useful than one built from first principles.</strong> The components that received the most use and the least revision were the ones identified through the client project audit - patterns that had already been validated under real product conditions. Speculative components designed without a grounding use case consistently required more iteration and saw less adoption. Starting from evidence rather than intuition is the single most reliable way to build a system that gets used.</li>
               <li><strong>Token naming is a communication problem, not a naming problem.</strong> Early token names were precise but not shared - designers understood them, developers interpreted them differently. The shift to semantic naming conventions that described intent rather than value forced alignment on what each token was actually for. The time spent on token naming paid back immediately in handoff clarity and significantly reduced the back-and-forth on implementation reviews.</li>
-              <li><strong>Open-source discipline is different from internal design system discipline.</strong> An internal system can rely on shared context - people know what the components are for because they were in the room when they were designed. An open-source library has to communicate that context entirely through documentation. Writing component documentation for a developer who has never seen the product decisions behind a component is a different skill than designing the component itself - and one that took more time and iteration than anticipated.</li>
+              <li><strong>Writing docs for strangers is harder than designing the components.</strong> An internal system can rely on shared context - people know what the components are for because they were in the room when they were designed. An open-source library has to communicate that context entirely through documentation. Writing component documentation for a developer who has never seen the product decisions behind a component is a different skill than designing the component itself - and one that took more time and iteration than anticipated.</li>
             </ul>
           </div>
         </>

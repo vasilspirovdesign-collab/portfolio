@@ -48,9 +48,9 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', ...bodyText, color: textPrimary }}>
                   <p style={{ margin: 0 }}>Role: Senior UX Designer · End-to-End Product Design</p>
-                  <p style={{ margin: 0 }}>OpusEdu is a scalable learning platform where instructors create and publish courses, learners discover and purchase them, and blockchain-verified certificates serve as tamper-proof proof of completion.</p>
+                  <p style={{ margin: 0 }}>OpusEdu is a scalable learning platform where instructors create and publish courses, learners discover and purchase them, and blockchain-verified certificates act as permanent, tamper-proof credentials.</p>
                   <p style={{ margin: 0 }}>The platform serves three distinct user types - admins, content creators, and learners - each with fundamentally different goals, mental models, and levels of technical fluency.</p>
-                  <p style={{ margin: 0 }}>The engagement required designing a cohesive product from the ground up: information architecture, interaction patterns, a shared component library, and high-fidelity screens across six core user journeys - with no prior design system and a technically novel domain that offered no established UX conventions to reference.</p>
+                  <p style={{ margin: 0 }}>Starting with no design system and no UX playbook for Web3 education meant every pattern had to be invented - then tested against three fundamentally different user types.</p>
                 </div>
               </div>
             </>
@@ -86,7 +86,7 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                  <p style={{ margin: 0 }}>The hardest problem wasn't the interface. It was reducing invisible friction.</p>
+                  <p style={{ margin: 0 }}>Mainstream users hitting a crypto wallet for the first time don't need better UI - they need the system's complexity removed from view entirely.</p>
                   <p style={{ margin: 0 }}>The platform's Web3 foundation introduced a class of UX problems that conventional design patterns do not solve. Users were required to create and secure a crypto wallet, manage seed phrases - a concept foreign to the majority of mainstream users - and complete purchases via blockchain transactions with variable fees, unpredictable confirmation times, and price volatility. The result was a steep learning curve that drove drop-off before any product value was experienced.</p>
                   <p style={{ margin: 0 }}>The parallel challenge on the creator side was structural: instructors needed a multi-step course creation flow guided enough for first-time publishers but flexible enough for power users managing large catalogues.</p>
                   <p style={{ margin: 0 }}>Both problems were versions of the same root issue - users encountering system complexity at exactly the moment they needed to feel in control. The design had to absorb that complexity so users did not have to.</p>
@@ -197,9 +197,9 @@ export default function ProjectDetailPage({ dark, onBack, onHome, onToggle, proj
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
-                  <li><strong>Think in connected strategies, not isolated screens.</strong> Early in the project I designed the course creation flow in isolation. When mapped against the learner&apos;s browsing experience, three creator-side fields emerged that were never surfaced to learners - wasted effort on both sides. Connected thinking across user types consistently saves time and prevents the kind of inconsistency that erodes trust in a product.</li>
-                  <li><strong>Low fidelity longer than feels comfortable.</strong> Stakeholders consistently push for high-fidelity design too early - it feels more concrete, more finished. Holding at lo-fi through two structural feedback rounds on this project saved significant rework. Visual design is always reversible. Structure rarely is.</li>
-                  <li><strong>Bring engineers in before the spec, not after.</strong> Weekly critique sessions with developers did not slow the project down - they accelerated handoff. Four interactions identified in those sessions were technically infeasible as designed. Catching them at whiteboard stage rather than build stage eliminated the most common and most expensive category of late-stage friction. Earlier involvement consistently produces fewer surprises and a better final product.</li>
+                  <li><strong>Designing one flow in isolation cost me three others.</strong> Early in the project I designed the course creation flow in isolation. When mapped against the learner&apos;s browsing experience, three creator-side fields emerged that were never surfaced to learners - wasted effort on both sides. Connected thinking across user types consistently saves time and prevents the kind of inconsistency that erodes trust in a product.</li>
+                  <li><strong>Two rounds of structural feedback that stakeholders hated saved a week of rework they'd have hated more.</strong> Stakeholders consistently push for high-fidelity design too early - it feels more concrete, more finished. Holding at lo-fi through two structural feedback rounds on this project saved significant rework. Visual design is always reversible. Structure rarely is.</li>
+                  <li><strong>Four technically infeasible interactions caught at whiteboard stage. Zero at build stage. Weekly engineer critiques made that possible.</strong> Weekly critique sessions with developers did not slow the project down - they accelerated handoff. Four interactions identified in those sessions were technically infeasible as designed. Catching them at whiteboard stage rather than build stage eliminated the most common and most expensive category of late-stage friction. Earlier involvement consistently produces fewer surprises and a better final product.</li>
                 </ul>
               </div>
             </>

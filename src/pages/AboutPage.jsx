@@ -7,6 +7,7 @@ import profilePhoto from '../assets/smallerVasko.png'
 import resumePdf from '../assets/resume.pdf'
 
 
+
 const CERTIFICATES = [
   { title: 'Artificial Intelligence Specialization', issuer: 'IBM',                logo: 'https://www.figma.com/api/mcp/asset/ab9cfaab-2982-42f5-8a85-2c8bdc3f0d98', logoW: 81,  logoH: 44  },
   { title: 'Web Accessibility',                      issuer: 'W3Cx',               logo: 'https://www.figma.com/api/mcp/asset/e41ac9bd-01c4-473d-a307-f44b37a8b0a9', logoW: 81,  logoH: 44  },
@@ -16,8 +17,6 @@ const CERTIFICATES = [
   { title: 'Cursor Masterclass',                     issuer: 'Memorisely',         logo: 'https://www.figma.com/api/mcp/asset/8de4d62f-6b15-48b5-be95-4a48a32a8ad7', logoW: 54,  logoH: 54, rounded: '4px' },
   { title: 'Claude Code in Action',                  issuer: 'Anthropic Academy',  logo: 'https://www.figma.com/api/mcp/asset/8177c409-9f06-4958-b78c-0e2424cddf39', logoW: 54,  logoH: 54, invert: true  },
 ]
-
-const RECOMMENDATIONS = []
 
 const TABS = ['Introduction', 'Resume', 'Certificates', 'Contacts']
 
@@ -73,11 +72,11 @@ export default function AboutPage({ dark, onBack, onToggle, initialTab }) {
           )}
 
           {activeTab === 'Resume' && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '694px', maxWidth: '694px', flex: 1 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '694px', maxWidth: '694px', flex: 1 }}>
               <iframe
                 src={resumePdf}
                 title="Resume"
-                style={{ width: '100%', height: '700px', border: 'none', borderRadius: '8px', display: 'block' }}
+                style={{ width: '100%', height: '900px', border: 'none', borderRadius: '8px', display: 'block' }}
               />
             </div>
           )}

@@ -9,7 +9,6 @@ import hederaRole from '../assets/hedera-role.png'
 import hederaProcess from '../assets/hedera-process.png'
 import hederaSolution from '../assets/hedera-solution.png'
 import hederaDecisions from '../assets/hedera-decisions.png'
-import hederaLearned from '../assets/hedera-learned.png'
 
 const PROJECT = 'Hedera Transaction Tool'
 
@@ -49,7 +48,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                   {[
                     'Transaction Tool is a desktop application built for Hedera council members to execute critical network operations - including treasury management, file updates, token transfers, and software upgrades - through a secure, collaborative signing environment.',
                     'The platform serves two distinct user types - business users and technical power users - each operating with different levels of blockchain fluency but sharing the same need for auditability and operational confidence.',
-                    'The engagement required designing a tool from the ground up for a domain with no established UX conventions: multi-signature blockchain workflows where a single misstep carries real financial and governance consequences.',
+                    'Council members of a live public blockchain network needed tooling to execute irreversible financial operations. The margin for error was zero - and the existing tools gave them no way to verify what they were signing before they signed it.',
                   ].map((para, i) => (
                     <p key={i} style={{ margin: 0, ...bodyText, color: textPrimary }}>{para}</p>
                   ))}
@@ -89,10 +88,10 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                  <p style={{ margin: 0 }}>The challenge was not the interface itself, but designing confidence into irreversible actions.</p>
-                  <p style={{ margin: 0 }}>Existing tools available to Hedera council members provided insufficient coverage of transaction types and lacked support for multi-party signing workflows. Council operations — treasury transfers, network upgrades, software updates — required coordinated action across multiple keyholders, yet no tooling existed to support that process in a secure or legible way.</p>
-                  <p style={{ margin: 0 }}>Another constraint was the breadth of users. The same interface needed to serve both a business user signing a transaction for the first time and a developer managing key pairs and batch operations at scale. Designing for the least technical user without limiting the most advanced one required careful layering at every interaction point.</p>
-                  <p style={{ margin: 0 }}>At the core, both challenges reflected the same issue: users needed to act with certainty in environments where certainty is inherently difficult. The design had to surface the right information at the right moment, so high-stakes decisions felt informed rather than blind.</p>
+                  <p style={{ margin: 0 }}>The existing tools gave council members just enough capability to make costly mistakes - and no way to verify what they were signing before they signed it. The design problem was making certainty possible in a system that offers none by default.</p>
+                  <p style={{ margin: 0 }}>Existing tools available to Hedera council members provided insufficient coverage of transaction types and no support for multi-party signing workflows. Council operations - treasury transfers, network upgrades, software updates - required coordinated action across multiple keyholders, with no tooling built to support that process securely or legibly.</p>
+                  <p style={{ margin: 0 }}>The parallel challenge was user range. The same interface had to serve a business user signing a transaction for the first time and a developer managing key pairs and batch operations at scale. Designing for the least technical user without stripping capability from the most technical one required deliberate layering at every interaction point.</p>
+                  <p style={{ margin: 0 }}>Both problems shared a root: users needed to act with certainty in a context where certainty is structurally hard to provide. The design had to surface enough information - at the right moment - to make high-stakes decisions feel informed rather than blind.</p>
                 </div>
               </div>
             </>
@@ -135,7 +134,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                   <li><strong>Discovery</strong> - Stakeholder sessions with the Limechain team surfaced the governance requirements behind the product: who signs what, in what order, and what constitutes a valid submission. This defined the constraints that shaped every subsequent design decision.</li>
                   <li><strong>Competitive Analysis</strong> - Reviewed existing Hedera tooling alongside analogous multi-signature interfaces in hardware wallet and institutional custody products to identify gaps in clarity, signing transparency, and error recovery.</li>
                   <li><strong>Information Architecture</strong> - Mapped the full IA for both admin and user roles before any UI work began. The two role structures shared navigation patterns but diverged significantly in available actions - surfacing these differences early prevented inconsistency at prototype stage.</li>
-                  <li><strong>Wireframes and Prototype</strong> - Maintained low fidelity through two rounds of structural feedback before moving to visual design. Pressure to progress to high fidelity came early; holding at lo-fi preserved the ability to restructure flows without compounding visual debt.</li>
+                  <li><strong>Wireframes and Prototype</strong> - Maintaining lo-fi through two structural rounds was especially important given the dark-mode, security-critical visual direction - moving to high fidelity early would have locked visual decisions before the signing flow was structurally sound.</li>
                   <li><strong>Style Guide and UI Design</strong> - Built a dark-mode component library anchored in the purple/near-black palette appropriate for a security-critical professional tool. Inter was selected for its technical legibility at small sizes across dense data views.</li>
                 </ol>
               </div>
@@ -152,7 +151,7 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
                   <p style={{ margin: 0 }}>Design for the signer who has never signed before, not the one who does it daily. Multi-signature workflows are opaque by default - keys, thresholds, and confirmation states are invisible unless explicitly surfaced. I designed the signing flow to make each party&apos;s action visible in real time, with explicit confirmation states at every step. Power users lose no capability; first-time signers gain the context they need to act with confidence.</p>
                   <p style={{ margin: 0 }}>One architecture, two role surfaces. Rather than building separate navigation structures for admin and user roles, I mapped both onto a shared IA and introduced role-specific visibility at the action level. This reduced cognitive overhead for users moving between roles and simplified developer implementation without sacrificing access control precision.</p>
-                  <p style={{ margin: 0 }}>Treat irreversibility as a design constraint, not a warning. Blockchain transactions cannot be undone. Rather than relying on confirmation dialogs as a catch-all, I introduced progressive disclosure throughout the transaction creation flow - surfacing fee estimates, recipient details, and signing requirements before any commitment point. The goal was informed action, not friction for friction&apos;s sake.</p>
+                  <p style={{ margin: 0 }}>Design the signing pipeline so every party&apos;s action is visible before any party acts. Multi-signature workflows are opaque by default - the interface had to make each threshold, each confirmation, each pending state explicit in real time.</p>
                 </div>
               </div>
             </>
@@ -181,9 +180,6 @@ export default function HederaPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === "Things I've learned.." && (
             <>
-              <div style={photoCard(dark)}>
-                <img src={hederaLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
-              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>

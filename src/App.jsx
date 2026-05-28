@@ -149,7 +149,7 @@ export default function App() {
         /></>
       )
     }
-    if (selectedProject === 'Limechain Design System') {
+    if (selectedProject === 'LimeCN Web3 Design System') {
       return (
         <><MobileModal /><LimechainDSPage
           dark={dark}

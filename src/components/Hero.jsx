@@ -1,4 +1,5 @@
 import heroImage from '../assets/hero.jpg'
+import resumeImg from '../assets/resume.png'
 
 const mailIcon     = 'https://www.figma.com/api/mcp/asset/2fb53aaf-fbf3-421c-83ba-c6c85ea420eb'
 const phoneIcon    = 'https://www.figma.com/api/mcp/asset/d682cee7-9b4f-44ed-b9a1-479512f9aa57'
@@ -20,12 +21,31 @@ export default function Hero({ onGoResume }) {
     <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', flexShrink: 0 }}>
       <img
         src={heroImage}
-        alt="Vasil Spirov"
+        alt="Vasil Spirov - click to view resume"
         fetchpriority="high"
         onClick={onGoResume}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onGoResume?.() } }}
+        role="button"
+        tabIndex={0}
         className="transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.02] cursor-pointer"
         style={{ width: '100%', height: 'auto', display: 'block' }}
       />
+
+      {/* Resume preview */}
+      <div
+        onClick={onGoResume}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onGoResume?.() } }}
+        role="button"
+        tabIndex={0}
+        aria-label="View resume"
+        style={{
+          position: 'absolute', left: '30px', top: '30px', bottom: '0px',
+          width: '612px', borderRadius: '4px', overflow: 'hidden',
+          backgroundColor: '#ffffff', cursor: 'pointer',
+        }}
+      >
+        <img src={resumeImg} alt="Resume" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+      </div>
 
       {/* Contact card */}
       <div style={{
@@ -61,7 +81,7 @@ export default function Hero({ onGoResume }) {
             <span style={rowText}>+359878517684</span>
           </a>
           <div style={{ position: 'relative', width: '1px', height: '48px', backgroundColor: '#d0d2d0', flexShrink: 0 }} />
-          <a href="https://drive.google.com/file/d/1wNuYbZ1bbGMMaf4NZdFX7fS-e3YJtBN3/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', display: 'flex', width: '192px', alignItems: 'center', justifyContent: 'center', gap: '8px', textDecoration: 'none', ...rowText }}>
+          <a href="https://drive.google.com/file/d/1-WYoSnZLRGWSLbxg94zymQg0IVdhaKx7/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', display: 'flex', width: '192px', alignItems: 'center', justifyContent: 'center', gap: '8px', textDecoration: 'none', ...rowText }}>
             <img src={downloadIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
             Resume
           </a>

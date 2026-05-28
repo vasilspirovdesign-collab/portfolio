@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react'
 import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
+import carbonChainProcess from '../assets/carbonchain-process.png'
+import carbonChainIntro from '../assets/carbonchain-intro.png'
+import carbonChainChallenge from '../assets/carbonchain-challenge.png'
+import carbonChainProblem from '../assets/carbonchain-problem.png'
+import carbonChainSolution from '../assets/carbonchain-solution.png'
+import carbonChainRole from '../assets/carbonchain-role.png'
 
 const PROJECT = 'Rowan Carbon Chain'
 
@@ -29,7 +35,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Introduction' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainIntro} alt="Rowan Carbon Chain" loading="lazy" style={photoImg} />
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Rowan Carbon Chain</h1>
@@ -39,7 +47,7 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
                   {[
                     'Rowan Carbon Chain is a blockchain-based platform for issuing, managing, and retiring carbon offset certificates - enabling energy producers to tokenize verified offset data via smart contracts and transfer certificates to organisations looking to offset their carbon footprint.',
                     'The platform serves two distinct organisational contexts - producers and customers - each with multiple user roles ranging from financial directors approving certificate transfers to data entry operators submitting manual readings from physical devices on-site.',
-                    'The engagement required designing a data-dense operational product from scratch: full information architecture across five user roles, structured onboarding flows, a device and readings management system, and a certificate lifecycle from raw sensor data through to blockchain-issued ERC-721 token - with no prior design system and a regulatory domain that offered no established UX conventions to reference.',
+                    'Five user roles, two organisational contexts, a certificate lifecycle spanning raw sensor readings to blockchain-issued ERC-721 tokens - and a regulatory audit trail as the core product value, not a feature.',
                   ].map((para, i) => (
                     <p key={i} style={{ margin: 0, ...bodyText, color: textPrimary }}>{para}</p>
                   ))}
@@ -50,7 +58,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Challenge' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainChallenge} alt="Challenge" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Challenge</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -72,14 +82,16 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Problem' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainProblem} alt="Problem" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-                  <p style={{ margin: 0 }}>What needed solving was not the dashboard itself, but how to make an invisible process understandable.</p>
-                  <p style={{ margin: 0 }}>Carbon offset certificates derive their value from the integrity of the data behind them. The platform&apos;s blockchain foundation introduced UX challenges that conventional data systems don&apos;t account for. Users needed to follow a certificate across readings, devices, operators, and process stages — and feel confident in what they were seeing at every step.</p>
-                  <p style={{ margin: 0 }}>On the production side, complexity came from the inputs. The system had to accommodate both automated SmartMiner device data and manual spreadsheet uploads from on-site operators, each bringing different validation rules, error conditions, and expectations around accountability.</p>
-                  <p style={{ margin: 0 }}>This all pointed to a deeper tension: trust depends on visibility, yet visibility can easily become overwhelming. The design needed to expose the full data lineage in a way that remained usable for people whose primary role is not managing data.</p>
+                  <p style={{ margin: 0 }}>A carbon certificate is only as credible as the data trail behind it - and that trail spans devices, operators, process stages, and blockchain transactions that most users never see and can&apos;t interpret. The design problem was making that trail legible without making it overwhelming.</p>
+                  <p style={{ margin: 0 }}>Carbon offset certificates derive their value entirely from the integrity of the data behind them. The platform&apos;s blockchain foundation introduced a class of UX problems that conventional data management patterns do not solve. Users needed to trace a certificate back through readings, devices, operators, and process stages - and trust what they found at every step.</p>
+                  <p style={{ margin: 0 }}>The parallel challenge on the producer side was structural: the same interface had to support both automated SmartMiner device inputs and manual spreadsheet-based data entry from on-site operators, with each input type carrying different validation requirements, error states, and operator accountability.</p>
+                  <p style={{ margin: 0 }}>Both problems were versions of the same root issue - a system where trust is earned through transparency, but transparency requires deliberate design decisions at every layer of the data model. The design had to surface provenance without overwhelming the users whose primary job is not data management.</p>
                 </div>
               </div>
             </>
@@ -87,7 +99,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'My Role' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainRole} alt="My Role" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -110,7 +124,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Process' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainProcess} alt="Process" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h1>
                 <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
@@ -126,7 +142,6 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Key Decisions' && (
             <>
-              <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -140,7 +155,9 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === 'Solution' && (
             <>
-              <div style={photoCard(dark)} />
+              <div style={photoCard(dark)}>
+                <img src={carbonChainSolution} alt="Solution" loading="lazy" style={photoImg} />
+              </div>
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h1>
                 <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -158,7 +175,6 @@ export default function CarbonChainPage({ dark, onBack, onHome, onToggle }) {
 
           {activeTab === "Things I've learned.." && (
             <>
-              <div style={photoCard(dark)} />
               <div style={contentBlock}>
                 <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h1>
                 <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
