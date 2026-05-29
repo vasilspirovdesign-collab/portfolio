@@ -9,6 +9,7 @@ import bnbThumb from '../assets/bnb-thumb.png'
 import metawinThumb from '../assets/metawin-thumb.png'
 import limechainThumb from '../assets/limechain-thumb.png'
 import isoqThumb from '../assets/iso-q-thumb.png'
+import hederaMultisigThumb from '../assets/hedera-multisig-thumb.png'
 
 const THUMBNAILS = {
   'Opus Edu': opusEduCover,
@@ -20,6 +21,7 @@ const THUMBNAILS = {
   'Metawin': metawinThumb,
   'LimeCN Web3 Design System': limechainThumb,
   'ISO-Q Investment Platform': isoqThumb,
+  'Hedera MultiSig': hederaMultisigThumb,
 }
 
 export default function ProjectCard({ title = 'Opus Edu', description, dark: isDark, onClick, empty }) {
@@ -28,6 +30,10 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
   if (empty) {
     return <div aria-hidden="true" style={{ width: '340px', flexShrink: 0 }} />
   }
+
+  const borderColor = isDark
+    ? '#414141'
+    : hovered ? '#e0e0e0' : '#f0f0f0'
 
   return (
     <article
@@ -38,15 +44,13 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       tabIndex={onClick ? 0 : undefined}
       role={onClick ? 'button' : undefined}
       aria-label={onClick ? `View ${title} project` : undefined}
-      className="transition-[transform,box-shadow,background-color] duration-[260ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={{
-        width: '340px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden',
+        width: '340px', flexShrink: 0, borderRadius: '16px', overflow: 'hidden',
         backgroundColor: t(isDark, 'cardBg'),
+        border: `1px solid ${borderColor}`,
         cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '8px',
-        boxShadow: hovered
-          ? '1px 1px 12px 2px rgba(65,65,65,0.07), -2px -2px 20px 8px rgba(117,117,117,0.08), 5px -3px 30px 20px rgba(117,117,117,0.1)'
-          : '0 1px 3px rgba(0,0,0,0.06)',
         transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
+        transition: 'border-color 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1)',
       }}
     >
       {/* Image */}
@@ -55,13 +59,13 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       </div>
 
       {/* Text */}
-      <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px', height: '136px' }}>
+      <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px', height: '136px' }}>
         <div style={{ height: '38px', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
           <p style={{
             margin: 0, fontFamily: 'Questrial, sans-serif',
             fontSize: '18px', fontWeight: 400, lineHeight: 1.2,
             letterSpacing: '-0.18px',
-            color: t(isDark, 'text'),
+            color: isDark ? '#ffffff' : t(isDark, 'text'),
             overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%',
           }}>
             {title}
@@ -81,7 +85,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
         {/* Arrow button - visible on hover */}
         <div style={{
           position: 'absolute', right: '12px', bottom: '12px',
-          width: '40px', height: '40px', borderRadius: '38.5px',
+          width: '56px', height: '56px', borderRadius: '38.5px',
           backgroundColor: isDark ? '#2e2e2e' : '#f0f0f0',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           opacity: hovered ? 1 : 0,
