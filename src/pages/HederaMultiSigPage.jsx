@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { t } from '../theme'
-import { bodyText, heading, contentBlock } from '../styles'
+import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
+import hederaMultisigIntro from '../assets/hedera-multisig-intro.png'
+import hederaMultisigProblem from '../assets/hedera-multisig-problem.png'
+import hederaMultisigRole from '../assets/hedera-multisig-role.png'
+import hederaMultisigProcess from '../assets/hedera-multisig-process.png'
 
 const PROJECT = 'Hedera MultiSig'
 
@@ -28,7 +32,11 @@ export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
     >
 
       {activeTab === 'Introduction' && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
+        <>
+          <div style={photoCard(dark)}>
+            <img src={hederaMultisigIntro} alt="Hedera MultiSig" loading="eager" style={photoImg} />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '694px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <h1 style={{ margin: 0, ...heading, color: textPrimary }}>Hedera MultiSig</h1>
             <p style={{ margin: 0, ...bodyText, color: textPrimary }}>Role: Senior UX Designer · End-to-End Product Design · Branding · Logo Design</p>
@@ -37,12 +45,13 @@ export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
             {[
               'Hedera MultiSig is a web application that brings multi-signature wallet creation and collaborative transaction management to the Hedera network through a clean, accessible interface - making a capability previously limited to technical users available to a significantly broader audience.',
               'The platform allows users to create or load existing MultiSig accounts on Hedera, configure signing thresholds, manage signers, and initiate, review, and execute transactions - all within a single, account-aware interface supporting Mainnet, Testnet, and Previewnet environments.',
-              'The engagement covered the full product design scope: sitemap and information architecture, wireframes, logo design, style guide, and high-fidelity UI - delivering a complete, implementation-ready design package for a technically novel domain with no established consumer UX conventions to reference.',
+              'The scope covered the full product design: sitemap and information architecture, wireframes, logo design, style guide, and high-fidelity UI across light and dark modes - a complete, implementation-ready package for a technically novel workflow with no established consumer UX conventions.',
             ].map((para, i) => (
               <p key={i} style={{ margin: 0, ...bodyText, color: textPrimary }}>{para}</p>
             ))}
           </div>
         </div>
+        </>
       )}
 
       {activeTab === 'Challenge' && (
@@ -65,15 +74,19 @@ export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
         <div style={contentBlock}>
           <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Problem</h2>
           <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
-            <p style={{ margin: 0 }}>The interface was the straightforward part. The real challenge was making threshold-based signing feel like a natural, trustworthy process rather than a technical constraint.</p>
-            <p style={{ margin: 0 }}>Multi-signature wallets exist specifically because single points of failure are a security risk. But the logic of threshold signing - why 3 out of 4 signers provides meaningfully stronger guarantees than 1 - is not self-evident to users who have never encountered the pattern before. The design had to communicate that logic at the moment it mattered: during account creation, when signer lists were being assembled and thresholds were being set.</p>
+            <p style={{ margin: 0 }}>Threshold-based signing has no mainstream consumer analogue - and that&apos;s the design problem. Multi-signature wallets exist because single points of failure are a security risk. But the logic of why 3 out of 4 signers provides meaningfully stronger guarantees than 1 is not self-evident to users who have never encountered the pattern before.</p>
+            <p style={{ margin: 0 }}>The design had to communicate that logic at the moment it mattered: during account creation, when signer lists were being assembled and thresholds were being set.</p>
             <p style={{ margin: 0 }}>The parallel challenge was transaction state visibility. In a multi-sig system, a transaction exists in a pending state until enough signers have approved it - a concept with no mainstream consumer analogue. Users needed to understand at a glance how many signatures a pending transaction had collected, how many were still required, and what action, if any, was required from them. Getting this wrong at the component level would create a product that felt perpetually confusing rather than reassuringly transparent.</p>
           </div>
         </div>
       )}
 
       {activeTab === 'My Role' && (
-        <div style={contentBlock}>
+        <>
+          <div style={photoCard(dark)}>
+            <img src={hederaMultisigRole} alt="My Role" loading="lazy" style={photoImg} />
+          </div>
+          <div style={contentBlock}>
           <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
           <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
             <p style={{ margin: 0 }}>Lead UX/UI Designer - Full ownership from sitemap through UI delivery, including brand identity and logo design.</p>
@@ -88,10 +101,15 @@ export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
             </ul>
           </div>
         </div>
+        </>
       )}
 
       {activeTab === 'Process' && (
-        <div style={contentBlock}>
+        <>
+          <div style={photoCard(dark)}>
+            <img src={hederaMultisigProcess} alt="Process" loading="lazy" style={photoImg} />
+          </div>
+          <div style={contentBlock}>
           <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Process</h2>
           <ol style={{ margin: 0, paddingLeft: '24px', listStyleType: 'decimal', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
             <li><strong>Sitemap Before Screens</strong> - Mapped the full IA across five sections - Dashboard, Assets, Transactions, Signers, Settings - and two entry states (Create Account, Add Account) before any wireframes were produced. The Transactions section required the most structural attention: Waiting Signature, History, Sort/Filter, New Transaction, Send Tokens, and Contract Interaction each had distinct data models and action states that had to be resolved at the sitemap level to avoid conflicts downstream.</li>
@@ -101,6 +119,7 @@ export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
             <li><strong>Style Guide and UI</strong> - Built a dual-mode design system anchored in a lime green gradient primary (#B7F133 to #42E365) against a near-black (#000000) and white palette, with Sora as the typeface across all weights. The light mode UI served as the primary interface for most user-facing flows, with the dark mode creation and loading flows providing visual distinction for the setup context.</li>
           </ol>
         </div>
+        </>
       )}
 
       {activeTab === 'Key Decisions' && (
@@ -116,11 +135,15 @@ export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
       )}
 
       {activeTab === 'Solution' && (
-        <div style={contentBlock}>
+        <>
+          <div style={photoCard(dark)}>
+            <img src={hederaMultisigProblem} alt="Solution" loading="lazy" style={photoImg} />
+          </div>
+          <div style={contentBlock}>
           <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Solution</h2>
           <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
             <p style={{ margin: 0 }}>Dashboard · Assets · Transactions · Signers · Settings</p>
-            <p style={{ margin: 0 }}>The final solution was a fully designed web application covering the complete Hedera MultiSig lifecycle across five sections, built on a dual-mode design system with a complete brand identity and component library.</p>
+            <p style={{ margin: 0 }}>Five sections. Two entry states. One design system covering both modes. The delivered product covered the complete Hedera MultiSig lifecycle - from account creation through transaction execution - built on a dual-mode component library with a full brand identity.</p>
             <p style={{ margin: 0 }}><strong>Account Creation Wizard</strong> - A five-step guided flow (Connect Wallet - Personalise - Add Signers - Set Threshold - Summary) supporting wallet connections via Blade Wallet, Hashpack, and MyHbarWallet, with network selection across Previewnet, Testnet, and Mainnet, and a full configuration summary before on-chain commitment.</p>
             <p style={{ margin: 0 }}><strong>Dashboard</strong> - Account overview surfacing HBAR balance, NFTs, token count, recent transactions, and a persistent New Transaction CTA - with account details, threshold display, and connected signer list visible in the sidebar for constant contextual reference.</p>
             <p style={{ margin: 0 }}><strong>Assets</strong> - Organised token and NFT holdings view providing a clear picture of what the MultiSig account holds across the Hedera network.</p>
@@ -129,15 +152,16 @@ export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
             <p style={{ margin: 0 }}><strong>Settings</strong> - Threshold configuration and gas fee management, giving account owners control over the signing requirements and network cost parameters without requiring a new account creation flow.</p>
           </div>
         </div>
+        </>
       )}
 
       {activeTab === "Things I've learned.." && (
         <div style={contentBlock}>
           <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
           <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
-            <li><strong>Security concepts need to be taught at the moment they are configured, not before.</strong> The instinct when designing a security-focused product is to front-load educational content - an explainer screen early in onboarding. On this project, the more effective approach was contextual: surfacing the explanation of threshold signing at the exact step where users had to make a threshold decision. Information delivered at the point of relevance is retained and acted on; information delivered in advance is skipped. The same principle applies to any product where users are configuring something they do not yet fully understand.</li>
-            <li><strong>Multi-account navigation is a first-class design problem, not a navigation edge case.</strong> The Switch Accounts requirement appeared late in the project brief and was initially treated as a secondary feature. When mapped against the full user journey, it became clear that users managing treasury accounts, team funds, and personal accounts simultaneously would encounter the account context problem on every session. Designing the sidebar account model early - rather than retrofitting it - would have resolved several layout decisions that had to be revisited when the requirement was properly scoped.</li>
-            <li><strong>Grid discipline in wireframes pays back in UI consistency.</strong> Building wireframes on the 12-column grid from the first frame, rather than applying grid constraints after structural decisions were made, produced a UI that required significantly less alignment correction at the high-fidelity stage. The grid is not a design constraint - it is a decision-making tool that eliminates an entire category of questions about spacing, proportion, and layout hierarchy before visual design begins.</li>
+            <li><strong>Teach security concepts at the moment of configuration, not before.</strong> The instinct when designing a security-focused product is to front-load educational content - an explainer screen early in onboarding. On this project, the more effective approach was contextual: surfacing the explanation of threshold signing at the exact step where users had to make a threshold decision. Information delivered at the point of relevance is retained and acted on; information delivered in advance is skipped. The same principle applies to any product where users are configuring something they do not yet fully understand.</li>
+            <li><strong>Multi-account navigation that arrives late in the brief costs twice as much.</strong> The Switch Accounts requirement appeared late in the project brief and was initially treated as a secondary feature. When mapped against the full user journey, it became clear that users managing treasury accounts, team funds, and personal accounts simultaneously would encounter the account context problem on every session. Designing the sidebar account model early - rather than retrofitting it - would have resolved several layout decisions that had to be revisited when the requirement was properly scoped.</li>
+            <li><strong>A grid is a decision-making tool, not a finishing step.</strong> Building wireframes on the 12-column grid from the first frame, rather than applying grid constraints after structural decisions were made, produced a UI that required significantly less alignment correction at the high-fidelity stage. The grid is not a design constraint - it is a decision-making tool that eliminates an entire category of questions about spacing, proportion, and layout hierarchy before visual design begins.</li>
           </ul>
         </div>
       )}
