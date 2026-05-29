@@ -7,6 +7,7 @@ const PROJECT = 'Hedera MultiSig'
 
 const TABS = [
   'Introduction', 'Challenge', 'Problem', 'My Role', 'Process', 'Key Decisions', 'Solution', "Things I've learned..",
+  { label: 'Case Study', href: 'https://www.behance.net/gallery/249420957/Hedera-MultiSig' },
 ]
 
 export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
@@ -40,14 +41,6 @@ export default function HederaMultiSigPage({ dark, onBack, onHome, onToggle }) {
             ].map((para, i) => (
               <p key={i} style={{ margin: 0, ...bodyText, color: textPrimary }}>{para}</p>
             ))}
-            <a
-              href="https://www.behance.net/gallery/249420957/Hedera-MultiSig"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ ...bodyText, color: '#005AFF', textDecoration: 'underline' }}
-            >
-              View case study on Behance
-            </a>
           </div>
         </div>
       )}
