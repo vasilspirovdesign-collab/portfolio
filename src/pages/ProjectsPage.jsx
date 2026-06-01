@@ -4,7 +4,7 @@ import InnerHeader from '../components/InnerHeader'
 import ProjectCard from '../components/ProjectCard'
 import { PROJECTS } from '../data/projects'
 
-export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) {
+export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject, visitedProjects = new Set() }) {
   useEffect(() => { document.title = 'Projects - Vasil Spirov' }, [])
 
   return (
@@ -23,6 +23,7 @@ export default function ProjectsPage({ dark, onBack, onToggle, onOpenProject }) 
               dark={dark}
               title={project.title}
               description={project.description}
+              visited={visitedProjects.has(project.title)}
               onClick={() => onOpenProject?.(project.title)}
             />
           ))}

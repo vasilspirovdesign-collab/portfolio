@@ -56,7 +56,10 @@ export default function App() {
     ? [...PROJECTS, { empty: true }]
     : FEATURED
 
+  const [visitedProjects, setVisitedProjects] = useState(new Set())
+
   const openProject = (title) => {
+    setVisitedProjects(prev => new Set([...prev, title]))
     setSelectedProject(title)
     setPage('project-detail')
   }
@@ -209,6 +212,7 @@ export default function App() {
         onBack={() => setPage('home')}
         onOpenProject={openProject}
         onToggle={toggle}
+        visitedProjects={visitedProjects}
       /></>
     )
   }
@@ -256,6 +260,7 @@ export default function App() {
                 title={project.title}
                 description={project.description}
                 empty={project.empty}
+                visited={project.empty ? false : visitedProjects.has(project.title)}
                 onClick={project.empty ? undefined : () => openProject(project.title)}
               />
             ))}

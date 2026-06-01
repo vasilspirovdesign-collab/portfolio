@@ -24,16 +24,14 @@ const THUMBNAILS = {
   'Hedera MultiSig': hederaMultisigThumb,
 }
 
-export default function ProjectCard({ title = 'Opus Edu', description, dark: isDark, onClick, empty }) {
+export default function ProjectCard({ title = 'Opus Edu', description, dark: isDark, onClick, empty, visited = false }) {
   const [hovered, setHovered] = useState(false)
 
   if (empty) {
     return <div aria-hidden="true" style={{ width: '340px', flexShrink: 0 }} />
   }
 
-  const borderColor = isDark
-    ? '#414141'
-    : hovered ? '#e0e0e0' : '#f0f0f0'
+  const borderColor = isDark ? '#414141' : hovered ? '#e0e0e0' : '#f0f0f0'
 
   return (
     <article
@@ -54,8 +52,22 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
       }}
     >
       {/* Image */}
-      <div style={{ width: '100%', aspectRatio: '329 / 219', overflow: 'hidden' }}>
+      <div style={{ width: '100%', aspectRatio: '329 / 219', overflow: 'hidden', position: 'relative' }}>
         <img src={THUMBNAILS[title] || opusEduCover} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        {visited && (
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+            style={{ position: 'absolute', top: '8px', left: '8px' }}
+            aria-hidden="true">
+            <defs>
+              <linearGradient id="vc" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop stopColor="#00B5F1" />
+                <stop offset="1" stopColor="#0070F2" />
+              </linearGradient>
+            </defs>
+            <circle cx="28" cy="28" r="28" fill="none" />
+            <path d="M17 28.5L24 35.5L39 20.5" stroke="url(#vc)" strokeWidth="2.52381" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        )}
       </div>
 
       {/* Text */}
@@ -65,7 +77,7 @@ export default function ProjectCard({ title = 'Opus Edu', description, dark: isD
             margin: 0, fontFamily: 'Questrial, sans-serif',
             fontSize: '18px', fontWeight: 400, lineHeight: 1.2,
             letterSpacing: '-0.18px',
-            color: isDark ? '#ffffff' : t(isDark, 'text'),
+            color: visited ? (isDark ? '#a0a0a0' : '#414141') : (isDark ? '#ffffff' : t(isDark, 'text')),
             overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%',
           }}>
             {title}

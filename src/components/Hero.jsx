@@ -1,9 +1,6 @@
+import { Mail, Phone, Download } from 'lucide-react'
 import heroImage from '../assets/hero.jpg'
 import resumeImg from '../assets/resume.png'
-
-const mailIcon     = 'https://www.figma.com/api/mcp/asset/2fb53aaf-fbf3-421c-83ba-c6c85ea420eb'
-const phoneIcon    = 'https://www.figma.com/api/mcp/asset/d682cee7-9b4f-44ed-b9a1-479512f9aa57'
-const downloadIcon = 'https://www.figma.com/api/mcp/asset/260452f1-fe0b-493c-9d62-85bb175c7dff'
 
 const cardShadow  = '1px 1px 12px 0px rgba(65,65,65,0.07), -2px -2px 20px 0px rgba(117,117,117,0.08), 5px -3px 30px 0px rgba(117,117,117,0.1)'
 const innerShadow = 'inset 1px -1px 10px 0px rgba(255,255,255,0.15), inset 0px 1px 6px 0px rgba(240,240,240,0.06)'
@@ -63,7 +60,7 @@ export default function Hero({ onGoResume }) {
         }}>
           <div style={{ position: 'absolute', inset: 0, backgroundColor: '#fafafa', pointerEvents: 'none' }} />
           <a href="mailto:vasilspirovdesign@gmail.com" style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-            <img src={mailIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
+            <Mail size={24} strokeWidth={1.5} color="#414141" aria-hidden="true" style={{ flexShrink: 0 }} />
             <span style={rowText}>vasilspirovdesign@gmail.com</span>
           </a>
           <div style={{ position: 'absolute', inset: 0, borderRadius: 'inherit', boxShadow: innerShadow, pointerEvents: 'none' }} />
@@ -77,12 +74,12 @@ export default function Hero({ onGoResume }) {
         }}>
           <div style={{ position: 'absolute', inset: 0, backgroundColor: '#fafafa', pointerEvents: 'none' }} />
           <a href="tel:+359878517684" style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-            <img src={phoneIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
+            <Phone size={24} strokeWidth={1.5} color="#414141" aria-hidden="true" style={{ flexShrink: 0 }} />
             <span style={rowText}>+359878517684</span>
           </a>
           <div style={{ position: 'relative', width: '1px', height: '48px', backgroundColor: '#d0d2d0', flexShrink: 0 }} />
           <a href="https://drive.google.com/file/d/1-WYoSnZLRGWSLbxg94zymQg0IVdhaKx7/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', display: 'flex', width: '192px', alignItems: 'center', justifyContent: 'center', gap: '8px', textDecoration: 'none', ...rowText }}>
-            <img src={downloadIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
+            <Download size={24} strokeWidth={1.5} color="#414141" aria-hidden="true" style={{ flexShrink: 0 }} />
             Resume
           </a>
           <div style={{ position: 'absolute', inset: 0, borderRadius: 'inherit', boxShadow: innerShadow, pointerEvents: 'none' }} />
