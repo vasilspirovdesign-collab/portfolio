@@ -14,7 +14,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange, complet
         const isNavLink = typeof tab === 'object' && tab.onClick
         const label = (isExternal || isNavLink) ? tab.label : tab
         const isActive = !isExternal && !isNavLink && tab === activeTab
-        const isCompleted = !isExternal && !isNavLink && !isActive && completedTabs.has(tab)
+        const isCompleted = !isExternal && !isNavLink && completedTabs.has(tab)
 
         const handleClick = () => {
           if (isExternal) {
