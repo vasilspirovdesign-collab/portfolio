@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { SquareArrowOutUpRight } from 'lucide-react'
+import { SquareArrowOutUpRight, Check } from 'lucide-react'
 import { t } from '../theme'
 import { navLabel } from '../styles'
 
-export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
+export default function SidebarNav({ dark, tabs, activeTab, onTabChange, completedTabs = new Set() }) {
   const [hovered, setHovered] = useState(null)
   const textSecondary = dark ? '#a2a3a5' : '#757575'
 
@@ -14,6 +14,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
         const isNavLink = typeof tab === 'object' && tab.onClick
         const label = (isExternal || isNavLink) ? tab.label : tab
         const isActive = !isExternal && !isNavLink && tab === activeTab
+        const isCompleted = !isExternal && !isNavLink && !isActive && completedTabs.has(tab)
 
         const handleClick = () => {
           if (isExternal) {
@@ -56,6 +57,7 @@ export default function SidebarNav({ dark, tabs, activeTab, onTabChange }) {
             >
               {label}
               {(isExternal || isNavLink) && <SquareArrowOutUpRight size={18} strokeWidth={1.75} style={{ flexShrink: 0 }} />}
+              {isCompleted && <Check size={18} strokeWidth={1.75} style={{ flexShrink: 0, marginLeft: 'auto' }} />}
             </span>
           </button>
         )

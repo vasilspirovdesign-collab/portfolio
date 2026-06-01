@@ -5,17 +5,22 @@ import { heading, bodyText, photoCard, photoImg } from '../styles'
 import PageLayout from '../components/PageLayout'
 import profilePhoto from '../assets/smallerVasko.png'
 import resumePdf from '../assets/resume.pdf'
-
-
+import logoIbm from '../assets/logo-ibm.png'
+import logoW3cx from '../assets/logo-w3cx.png'
+import logoGoogle from '../assets/logo-google.png'
+import logoIxdf from '../assets/logo-ixdf.png'
+import logoTelerik from '../assets/logo-telerik.png'
+import logoMemorisely from '../assets/logo-memorisely.png'
+import logoAnthropic from '../assets/logo-anthropic.png'
 
 const CERTIFICATES = [
-  { title: 'Artificial Intelligence Specialization', issuer: 'IBM',                logo: 'https://www.figma.com/api/mcp/asset/ab9cfaab-2982-42f5-8a85-2c8bdc3f0d98', logoW: 81,  logoH: 44  },
-  { title: 'Web Accessibility',                      issuer: 'W3Cx',               logo: 'https://www.figma.com/api/mcp/asset/e41ac9bd-01c4-473d-a307-f44b37a8b0a9', logoW: 81,  logoH: 44  },
-  { title: 'Google UX Design Specialization',        issuer: 'Google',             logo: 'https://www.figma.com/api/mcp/asset/667dcfb4-1353-4ed1-8a0c-ae9c378e7f85', logoW: 50,  logoH: 50  },
-  { title: 'Masterclass 21st century Design',        issuer: 'IxDF',               logo: 'https://www.figma.com/api/mcp/asset/ed1bf4b3-960a-4dfa-8f91-98b2d354318e', logoW: 54,  logoH: 54, rounded: '64px' },
-  { title: 'UX/UI Upskill',                          issuer: 'Telerik Academy',    logo: 'https://www.figma.com/api/mcp/asset/6a524c8c-e559-4b3c-b12d-f903bf5315c5', logoW: 54,  logoH: 54  },
-  { title: 'Cursor Masterclass',                     issuer: 'Memorisely',         logo: 'https://www.figma.com/api/mcp/asset/8de4d62f-6b15-48b5-be95-4a48a32a8ad7', logoW: 54,  logoH: 54, rounded: '4px' },
-  { title: 'Claude Code in Action',                  issuer: 'Anthropic Academy',  logo: 'https://www.figma.com/api/mcp/asset/8177c409-9f06-4958-b78c-0e2424cddf39', logoW: 54,  logoH: 54, invert: true  },
+  { title: 'Artificial Intelligence Specialization', issuer: 'IBM',                logo: logoIbm,        logoW: 81,  logoH: 44  },
+  { title: 'Web Accessibility',                      issuer: 'W3Cx',               logo: logoW3cx,       logoW: 81,  logoH: 44  },
+  { title: 'Google UX Design Specialization',        issuer: 'Google',             logo: logoGoogle,     logoW: 50,  logoH: 50  },
+  { title: 'Masterclass 21st century Design',        issuer: 'IxDF',               logo: logoIxdf,       logoW: 54,  logoH: 54, rounded: '64px' },
+  { title: 'UX/UI Upskill',                          issuer: 'Telerik Academy',    logo: logoTelerik,    logoW: 54,  logoH: 54  },
+  { title: 'Cursor Masterclass',                     issuer: 'Memorisely',         logo: logoMemorisely, logoW: 54,  logoH: 54, rounded: '4px' },
+  { title: 'Claude Code in Action',                  issuer: 'Anthropic Academy',  logo: logoAnthropic,  logoW: 54,  logoH: 54, invert: true  },
 ]
 
 const TABS = ['Introduction', 'Resume', 'Certificates', 'Contacts']
