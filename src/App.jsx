@@ -59,10 +59,15 @@ export default function App() {
   const [visitedProjects, setVisitedProjects] = useState(new Set())
 
   const openProject = (title) => {
-    setVisitedProjects(prev => new Set([...prev, title]))
     setSelectedProject(title)
     setPage('project-detail')
   }
+
+  useEffect(() => {
+    const handler = (e) => setVisitedProjects(prev => new Set([...prev, e.detail.title]))
+    window.addEventListener('project-read', handler)
+    return () => window.removeEventListener('project-read', handler)
+  }, [])
 
   const toggle = () => setDark((d) => {
     const next = !d

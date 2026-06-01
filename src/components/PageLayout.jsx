@@ -1,10 +1,11 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { t } from '../theme'
 import InnerHeader from './InnerHeader'
 import SidebarNav from './SidebarNav'
 
 export default function PageLayout({ dark, onToggle, onHome, crumbs, tabs, activeTab, onTabChange, mainStyle, children }) {
   const [completedTabs, setCompletedTabs] = useState(new Set())
+  const hasMarkedVisited = useRef(false)
 
   const markCompleted = useCallback(() => {
     const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 80
@@ -15,6 +16,16 @@ export default function PageLayout({ dark, onToggle, onHome, crumbs, tabs, activ
       })
     }
   }, [activeTab])
+
+  useEffect(() => {
+    if (completedTabs.size > 0 && !hasMarkedVisited.current) {
+      hasMarkedVisited.current = true
+      const projectTitle = crumbs?.[crumbs.length - 1]?.label
+      if (projectTitle) {
+        window.dispatchEvent(new CustomEvent('project-read', { detail: { title: projectTitle } }))
+      }
+    }
+  }, [completedTabs.size, crumbs])
 
   useEffect(() => {
     window.addEventListener('scroll', markCompleted, { passive: true })
