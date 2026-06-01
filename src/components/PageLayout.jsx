@@ -1,10 +1,11 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { t } from '../theme'
 import InnerHeader from './InnerHeader'
 import SidebarNav from './SidebarNav'
 
 export default function PageLayout({ dark, onToggle, onHome, crumbs, tabs, activeTab, onTabChange, mainStyle, children }) {
   const [completedTabs, setCompletedTabs] = useState(new Set())
+  const hasMarkedVisited = useRef(false)
 
   const markCompleted = useCallback(() => {
     const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 80
@@ -15,6 +16,16 @@ export default function PageLayout({ dark, onToggle, onHome, crumbs, tabs, activ
       })
     }
   }, [activeTab])
+
+  useEffect(() => {
+    if (completedTabs.size > 0 && !hasMarkedVisited.current) {
+      hasMarkedVisited.current = true
+      const projectTitle = crumbs?.[crumbs.length - 1]?.label
+      if (projectTitle) {
+        window.dispatchEvent(new CustomEvent('project-read', { detail: { title: projectTitle } }))
+      }
+    }
+  }, [completedTabs.size, crumbs])
 
   useEffect(() => {
     window.addEventListener('scroll', markCompleted, { passive: true })
@@ -33,7 +44,7 @@ export default function PageLayout({ dark, onToggle, onHome, crumbs, tabs, activ
     <div className="transition-colors duration-300" style={{ minHeight: '100vh', backgroundColor: t(dark, 'bg'), fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
       <InnerHeader dark={dark} onToggle={onToggle} onHome={onHome} crumbs={crumbs} />
       <div style={{ display: 'flex', maxWidth: '1920px', margin: '0 auto', width: '100%' }}>
-        <SidebarNav dark={dark} tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} completedTabs={completedTabs} />
+        <SidebarNav dark={dark} tabs={tabs} activeTab={activeTab} onTabChange={(tab) => { window.scrollTo({ top: 0, behavior: 'smooth' }); onTabChange?.(tab) }} completedTabs={completedTabs} />
         <main
           id="main-content"
           className="page-enter"
