@@ -4,9 +4,11 @@ import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
 import limechainIntro from '../assets/limechain-intro.png'
 import limechainChallenge from '../assets/limechain-challenge.png'
+import limechainDecisions from '../assets/limechain-decisions.png'
 import limechainRole from '../assets/limechain-role.png'
 import limechainProcess from '../assets/limechain-process.png'
 import limechainSolution from '../assets/limechain-solution.png'
+import limechainLearned from '../assets/limechain-learned.png'
 
 const PROJECT = 'LimeCN Web3 Design System'
 
@@ -136,6 +138,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'Key Decisions' && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={limechainDecisions} alt="Key Decisions" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Key Decisions</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -170,6 +175,9 @@ export default function LimechainDSPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === "Things I've learned.." && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={limechainLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>

@@ -3,9 +3,11 @@ import { t } from '../theme'
 import { bodyText, heading, photoCard, photoImg, contentBlock } from '../styles'
 import PageLayout from '../components/PageLayout'
 import bnbIntro from '../assets/bnb-intro.png'
+import bnbChallenge from '../assets/bnb-challenge.png'
+import bnbRole from '../assets/bnb-role.png'
 import bnbProcess from '../assets/bnb-process.png'
 import bnbSolution from '../assets/bnb-solution.png'
-import bnbChallenge from '../assets/bnb-challenge.png'
+import bnbLearned from '../assets/bnb-learned.png'
 
 const PROJECT = 'Binomial'
 
@@ -92,6 +94,9 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === 'My Role' && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={bnbRole} alt="My Role" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h2 style={{ margin: 0, ...heading, color: textPrimary }}>My Role</h2>
             <div style={{ ...bodyText, color: textPrimary, display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -167,6 +172,9 @@ export default function BinomialPage({ dark, onBack, onHome, onToggle }) {
 
       {activeTab === "Things I've learned.." && (
         <>
+          <div style={photoCard(dark)}>
+            <img src={bnbLearned} alt="Things I've learned" loading="lazy" style={photoImg} />
+          </div>
           <div style={contentBlock}>
             <h2 style={{ margin: 0, ...heading, color: textPrimary }}>Things I&apos;ve learned..</h2>
             <ul style={{ margin: 0, paddingLeft: '24px', listStyleType: 'disc', display: 'flex', flexDirection: 'column', gap: '32px', ...bodyText, color: textPrimary }}>
